@@ -4,6 +4,10 @@
     src: url("../fonts/PixeloidSans-Bold.ttf");
 }
 
+html {
+    background-color: #c9a0a0;
+}
+
 h1, h2, h3  {
     font-family: monospace;
     font-size: 150%;
@@ -11,23 +15,35 @@ h1, h2, h3  {
     padding: 10px;
 }
 
-p, details, #cr, #salt {
+p, details, #cr, #salt, #pag1, #pag2, #secinsp, #secofer {
     font-family: monospace;
-    font-size: 130%;
+    font-size: 120%;
     color: black;
-    padding: 15px;
+    padding: 10px;
 }
+
 
 #sec1 {
-    box-shadow: 5px 2px 5px 2px #5C1E20;
-    padding: 15px;
+    /*box-shadow: 5px 2px 5px 2px #5C1E20;*/
+    padding: 10px;
 }
 
-#inspiratie, #ceoferim, footer {
+#inspiratie, #ceoferim, footer, #sec1 {
     border: 5px solid #5C1E20;
     border-radius: 15px 50px;
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#video {
+    display: block;
+    margin: auto;
+}
+
+#pic {
+    display: block;
+    margin: auto;
+    max-width: fit-content;
 }
 
 footer {
@@ -39,6 +55,7 @@ header {
     border: 5px solid #5C1E20;
     border-radius: 30px;
     padding: 30px;
+    margin-bottom: 10px;
 }
 
 #logo {
@@ -53,6 +70,13 @@ header {
 
 #logo, #titlu {
     display: inline-flex;
+}
+
+#caption {
+    font-family: monospace;
+    font-size: 110%;
+    padding: 10px;
+    text-align: center;
 }
 
 #terms {
