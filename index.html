@@ -18,19 +18,19 @@
     </head>
     <body>
         <header>
-            <img id="logo" src="./resurse/imagini/logo.png">
+            <img id="logo" src="./resurse/imagini/logo.png" alt="logo">
             <h1 id="titlu">FansTOME</h1><br>
             <nav>
                 <ol>
                     <li>
-                        <a href="">Despre noi</a> <!--se va schimba in path-ul paginii Despre Noi unde va fi mutat textul de mai jos-->
+                        <a href="" id="pag1">Despre noi</a> <!--se va schimba in path-ul paginii Despre Noi unde va fi mutat textul de mai jos-->
                         
                     </li>
                     <li>
-                        <a href="">Acasa</a>
+                        <a href="" id="pag2">Acasa</a>
                         <ul>
-                            <li><a href="#inspiratie">Inspiratie</a></li>
-                            <li><a href="#ceoferim">Ce oferim</a></li>
+                            <li><a href="#inspiratie" id="secinsp">Inspiratie</a></li>
+                            <li><a href="#ceoferim" id="secofer">Ce oferim</a></li>
                         </ul>
                     </li>
                 </ol>
@@ -44,6 +44,10 @@
                 <section id="inspiratie">
                     <h3>Inspiratie</h3>
                     <p>Initiativa de a crea aceasta afacere a venit dintr-o pasiune personala a copilariei, cititul. Intrand in adolescenta, am realizat ca am prefera sa citim o <b>carte in engleza</b> in schimbul uneia in limba romana, din dorinta de a ne imbunatatii abilitatile lingvistice. In acelasi timp, am descoperit lumea plina de actiune a <i lang="ja">anime</i>-urilor si a principalei inspiratii a lor, seriile <b><i lang="ja">manga</i></b>, a caror comunitate de fani este inca crescanda in tara.</p>
+                    <p>
+                        De asemenea, benzile desenate, volumele ilustrate sau manga sunt o mare treapta ajutatoare in invatarea unei alte limbi. Mai multe detalii:
+                    </p>
+                    <iframe id="video" width="710" height="412" src="https://www.youtube.com/embed/gJpFboFcGfE" title="Are Graphic Novels... Novels? (Feat. Princess Weekes) | It&#39;s Lit" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </section>
                 <section id="ceoferim">
                     <h3>Ce oferim</h3>
@@ -53,16 +57,17 @@
                 </section>
             </section>
             
-            <br/><br/>
+            <br><br>
             <figure>
-                <picture>
-                  <source srcset="./resurse/imagini/footerx3.png" media="(max-width:500px)">
-                  <source srcset="./resurse/imagini/footerx5.png" media="(max-width:1000px)">
-                  <source srcset="./resurse/imagini/footerx10.png" media="(max-width:1500px)">
-                  <img src="./resurse/imagini/footerx10.png" alt="books">
+                <picture id="pic">
+                  <source srcset="./resurse/imagini/footerx3.png" media="(max-width:400px)" id="picmobil">
+                  <source srcset="./resurse/imagini/footerx5.png" media="(max-width:1000px)" id="pictableta">
+                  <source srcset="./resurse/imagini/footerx10.png" media="(max-width:1500px)" id="picdesktop">
+                  <img src="./resurse/imagini/footerx10.png" alt="books" id="picdefault">
                 </picture>
-                <figcaption>Carti</figcaption>
+                <figcaption id="caption">Carti</figcaption>
             </figure>
+            
 
                <!-- bonus MATHML formula discount -->
         </main>
@@ -73,7 +78,7 @@
                 <summary>
                     <b>Telefon</b>
                 </summary>
-                <a href="tel:+40334123456" target="_blank">0334123456</a><br><br>
+                <br><a href="tel:+40334123456" target="_blank">0334123456</a><br><br>
                 <a href="https://wa.me/40334123456" target="_blank">WhatsApp</a>
             </details>
             <br>
@@ -81,7 +86,7 @@
                 <summary>
                     <b>E-mail</b>
                 </summary>
-                <a href="mailto:fanstome.service@gmail.com" target="_blank">fanstome.service@gmail.com</a>
+                <br><a href="mailto:fanstome.service@gmail.com" target="_blank">fanstome.service@gmail.com</a>
             </details>
             <br>
             <details>
@@ -97,7 +102,7 @@
                 <summary>
                     <a href="https://www.google.com/maps/place/Facultatea+de+Matematică+și+Informatică/@44.4357607,26.102147,17z/data=!4m6!3m5!1s0x40b1ff472f47f047:0x493984726f0235f9!8m2!3d44.4355355!4d26.0995867!16s%2Fg%2F1td63tdh?entry=ttu&g_ep=EgoyMDI1MDIyNi4xIKXMDSoASAFQAw%3D%3D" target="_blank"><b>Adresa</b></a>
                 </summary>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d356.1115899386841!2d26.09963205179512!3d44.43536279419564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff472f47f047%3A0x493984726f0235f9!2sFacultatea%20de%20Matematic%C4%83%20%C8%99i%20Informatic%C4%83!5e0!3m2!1sro!2sro!4v1741022788431!5m2!1sro!2sro" width="400" height="250" style="border:5px solid #421112;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                <br><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d356.1115899386841!2d26.09963205179512!3d44.43536279419564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff472f47f047%3A0x493984726f0235f9!2sFacultatea%20de%20Matematic%C4%83%20%C8%99i%20Informatic%C4%83!5e0!3m2!1sro!2sro!4v1741022788431!5m2!1sro!2sro" width="400" height="250" style="border:5px solid #421112;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                 </iframe><br>
             </details><br>
             <small id="cr">&copy; Copyright <time datetime="2025-03-03">Martie 2025</time>, FansTOME</small>
