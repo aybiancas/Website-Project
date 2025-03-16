@@ -8,6 +8,7 @@ html {
     background-color: #c9a0a0;
 }
 
+
 h1, h2, h3  {
     font-family: monospace;
     font-size: 150%;
@@ -23,15 +24,34 @@ p, details, #cr, #salt, #pag1, #pag2, #secinsp, #secofer {
 }
 
 
-#sec1 {
-    /*box-shadow: 5px 2px 5px 2px #5C1E20;*/
+#grid_pag {
+    display: grid;
+    grid-template-areas: "desprenoi inspiratie"
+                         "ceoferim inspiratie";
     padding: 10px;
-}
-
-#inspiratie, #ceoferim, footer, #sec1 {
+    background-color: #A77272;
     border: 5px solid #5C1E20;
     border-radius: 15px 50px;
+}
+
+#desprenoi {
+    grid-area: desprenoi;
+}
+
+#inspiratie {
+    grid-area: inspiratie;
+}
+
+#ceoferim {
+    grid-area: ceoferim;
+}
+
+#desprenoi, #inspiratie, #ceoferim, footer {
+    border: 5px solid #5C1E20;
+    border-radius: 15px 50px;
+    background-color: #c9a0a0;
     padding: 10px;
+    margin: 10px;
     margin-bottom: 10px;
 }
 
