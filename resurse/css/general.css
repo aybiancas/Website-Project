@@ -16,7 +16,7 @@ h1, h2, h3  {
     padding: 10px;
 }
 
-p, details, #cr, #salt, #pag1, #pag2, #secinsp, #secofer {
+p, details, #cr, #salt, #pag1, #pag2, #secinsp, #secofer, #tab_video1, #tab_video2 {
     font-family: monospace;
     font-size: 120%;
     color: black;
@@ -58,6 +58,12 @@ p, details, #cr, #salt, #pag1, #pag2, #secinsp, #secofer {
 #video {
     display: block;
     margin: auto;
+}
+
+#tab_video1, #tab_video2 {
+    display: block;
+    margin: auto;
+    text-align: center;
 }
 
 #pic {
