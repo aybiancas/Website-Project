@@ -60,8 +60,8 @@
                         De asemenea, benzile desenate, volumele ilustrate sau manga sunt <s>de mare ajutor</s> <ins>o treapta ajutatoare</ins> in invatarea unei alte limbi. Mai multe detalii:
                     </p>
                     <!-- minim două linkuri care se deschid într-un iframe (se poate face ca în exemplul de curs, linkuri care deschid videoclipuri relevante de pe youtube în iframe). Atentie nu e vorba de src-ul iframe-ului ce de taguri <a> care la click se deschid in iframe. Iframe-ul va contine in mod default una dintre resursele specificate in linkuri -->
-                    <div class="iframe-container">
-                        <div class="taburi">
+                    <div class="container-iframe">
+                        <div class="taburi-iframe">
                             <a id="tab_video1" href="https://www.youtube.com/embed/gJpFboFcGfE" target="video">Graphic Novels</a>
                             <a id="tab_video2" href="https://www.youtube.com/embed/8OYEBRdAlNk" target="video">History</a><br>
                         </div>
@@ -80,7 +80,7 @@
             <!-- Adăugați în pagină o imagine cu descriere, folosind figure și figcaption. Pe ecran mic (mobil) trebuie să se încarce o variantă mai redusă în dimensiune (bytes) a imaginii, pe tabletă o variantă medie, iar pe ecran mare varianta cea mai mare a imaginii. Folosiți un editor grafic pentru cropping și redimensionare pentru a obține cele 3 variante de imagini. -->
             <figure>
                 <picture id="pic">
-                  <source srcset="./resurse/imagini/footerx3.png" media="(max-width:400px)" id="picmobil">
+                  <source srcset="./resurse/imagini/footerx3.png" media="(max-width:500px)" id="picmobil">
                   <source srcset="./resurse/imagini/footerx5.png" media="(max-width:1000px)" id="pictableta">
                   <source srcset="./resurse/imagini/footerx10.png" media="(max-width:1500px)" id="picdesktop">
                   <img src="./resurse/imagini/footerx10.png" alt="books" id="picdefault">
@@ -90,8 +90,7 @@
 
         </main>
         <footer>
-            <!-- un link în footer către începutul paginii, -->
-            <a id="salt" href="#"><b>Salt sus</b></a><br>
+            
             <h1>Contact</h1>
             <!-- Creați în pagină mai multe zone de details și summary. Pot fi întrebări frecvente, pot fi niște oferte pentru care afișăm titlul și utilizatorul le deschide pe cele care îl interesează, pot fi secțiuni explicative etc. -->
             <details>
@@ -135,6 +134,8 @@
             </details><br>
             <!-- În footer se va adăuga informație de copyright, folosind tagul small, simbolul specific de copyright cu codul html necesar (forma &cod;) și data creării paginii scrisă în limba română și pusă în tagul time cu atributul datetime corespunzător.  -->
             <small id="cr">&copy; Copyright <time datetime="2025-03-03">Martie 2025</time>, FansTOME</small>
+            <!-- un link în footer către începutul paginii, -->
+            <a id="link-top" title="Mergi sus" href="#"><div id="triunghi"></div></a>
         </footer>
     </body>
 </html>
