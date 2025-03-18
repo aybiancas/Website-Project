@@ -5,22 +5,64 @@
 }
 
 html {
-    background-color: #c9a0a0;
+    font-size: 10px;
+    font-family: monospace;
+    --culoare-text: #050301;
+    background-color: #C9A0A0;
 }
 
-
 h1, h2, h3  {
-    font-family: monospace;
-    font-size: 150%;
-    color: black;
+    /* font-family: monospace; */
+    font-size: 2rem;
+    /* color: #050301; */
     padding: 10px;
+}
+
+#titlu {
+    font-family: Pixeloid;
+    font-size: 3rem;
 }
 
 p, details, #cr, #salt, #pag1, #pag2, #secinsp, #secofer, #tab_video1, #tab_video2 {
-    font-family: monospace;
-    font-size: 120%;
-    color: black;
+    /* font-family: monospace; */
+    font-size: 1.5rem;
+    color: var(--culoare-text);
     padding: 10px;
+}
+
+.taburi-iframe > a {
+    width: 100px;
+    height: 50px;
+    display: block;
+    margin: 5px;
+    border: 2px solid #5C1E20;
+    border-radius: 10px 10px 30px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.container-iframe {
+    /* width: 60%; */
+    margin: 0 auto;
+    max-width: 650px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.taburi-iframe {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.taburi-iframe > a:hover {
+    background-color: #5C1E20;
+    color: #C9A0A0;
+    transition: 0.3s;
+}
+
+.container-iframe > iframe {
+    width: 90%;
 }
 
 
@@ -49,22 +91,22 @@ p, details, #cr, #salt, #pag1, #pag2, #secinsp, #secofer, #tab_video1, #tab_vide
 #desprenoi, #inspiratie, #ceoferim, footer {
     border: 5px solid #5C1E20;
     border-radius: 15px 50px;
-    background-color: #c9a0a0;
+    background-color: #C9A0A0;
     padding: 10px;
     margin: 10px;
     margin-bottom: 10px;
 }
-
+/* 
 #video {
     display: block;
     margin: auto;
-}
-
+} */
+/* 
 #tab_video1, #tab_video2 {
     display: block;
     margin: auto;
     text-align: center;
-}
+} */
 
 #pic {
     display: block;
@@ -90,9 +132,6 @@ header {
     vertical-align: text-bottom;
 }
 
-#titlu {
-    font-family: Pixeloid;
-}
 
 #logo, #titlu {
     display: inline-flex;
@@ -109,4 +148,36 @@ header {
     border:5px solid #421112;
     width: 500px; 
     height: 600px;
+}
+
+
+#link-top {
+    position:fixed;
+    bottom:0.7em;
+    opacity:0.5;
+    left:0.7em;
+    width:4.5rem;
+    box-sizing: border-box;
+    height:4.5rem;
+    line-height:3rem;
+    text-align:center;
+    border:5px solid grey;
+    border-top-color: #421112;
+    border-radius:50%;
+    background: rgb(220,220,220);
+}
+
+#link-top:hover {
+    opacity:1;
+}
+
+#triunghi {
+    height:0px;
+    width:0;
+    display:inline-block;
+    border-bottom:1.5rem solid grey;
+    border-left:1rem solid transparent;
+    border-right:1rem solid transparent;
+    vertical-align: center;
+    transform: translateY(30%);
 }
