@@ -15,7 +15,9 @@
         <link rel="apple-touch-icon" sizes="180x180" href="./resurse/imagini/favicon/apple-touch-icon.png">
         <meta name="apple-mobile-web-app-title" content="Librarie">
         <link rel="manifest" href="./resurse/imagini/favicon/site.webmanifest">
-        <link rel="stylesheet" type="text/css" href="./resurse/css/general.css">
+        <link rel="stylesheet" href="./resurse/css/general.css" type="text/css">
+        <link rel="stylesheet" href="./resurse/css/general500.css" type="text/css" media="screen and (max-width:500px)"/>
+        <link rel="stylesheet" href="./resurse/css/nav.css" type="text/css" />
         <!-- #8c5e5e cod background - paleta de culori pt css -->
     </head>
     <body>
@@ -26,13 +28,13 @@
             <!-- În header faceți un sistem de navigare ca în curs (nav cu listă neordonată de linkuri), cu opțiuni  principale (care vor reprezenta paginile site-ului) și secundare (pentru opțiunea "Acasă", adică pagina principală, subopțiunile vor cuprinde linkuri către secțiunile paginii, care vor avea id-uri relevante). Folosiți în header h1 pentru titlul site-ului.  -->
             <!-- În cadrul secțiunilor folosiți minim 2 taguri dintre următoare taguri de grupare: p, ol, ul, blockquote, dl -->
             <nav>
-                <ol>
+                <ol class="meniu">
                     <li>
-                        <a href="" id="pag1">Despre noi</a> <!--se va schimba in path-ul paginii Despre Noi unde va fi mutat textul de mai jos-->
+                        <a href="index.html" id="pag1">Acasa</a>
                         
                     </li>
                     <li>
-                        <a href="" id="pag2">Acasa</a>
+                        <a href="" id="pag2">Despre noi</a>
                         <ul>
                             <li><a href="#inspiratie" id="secinsp">Inspiratie</a></li>
                             <li><a href="#ceoferim" id="secofer">Ce oferim</a></li>
@@ -90,7 +92,6 @@
 
         </main>
         <footer>
-            
             <h1>Contact</h1>
             <!-- Creați în pagină mai multe zone de details și summary. Pot fi întrebări frecvente, pot fi niște oferte pentru care afișăm titlul și utilizatorul le deschide pe cele care îl interesează, pot fi secțiuni explicative etc. -->
             <details>
@@ -129,7 +130,7 @@
                     <a href="https://www.google.com/maps/place/Facultatea+de+Matematică+și+Informatică/@44.4357607,26.102147,17z/data=!4m6!3m5!1s0x40b1ff472f47f047:0x493984726f0235f9!8m2!3d44.4355355!4d26.0995867!16s%2Fg%2F1td63tdh?entry=ttu&g_ep=EgoyMDI1MDIyNi4xIKXMDSoASAFQAw%3D%3D" target="_blank"><b>Adresa</b></a>
                 </summary>
                 <!-- Bonus (0.05) Adăugați pentru adresa facultății (de la un subpunct anterior) și un iframe cu locația marcată pe google maps. -->
-                <br><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d356.1115899386841!2d26.09963205179512!3d44.43536279419564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff472f47f047%3A0x493984726f0235f9!2sFacultatea%20de%20Matematic%C4%83%20%C8%99i%20Informatic%C4%83!5e0!3m2!1sro!2sro!4v1741022788431!5m2!1sro!2sro" width="400" height="250" style="border:5px solid #421112;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                <br><iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d356.1115899386841!2d26.09963205179512!3d44.43536279419564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff472f47f047%3A0x493984726f0235f9!2sFacultatea%20de%20Matematic%C4%83%20%C8%99i%20Informatic%C4%83!5e0!3m2!1sro!2sro!4v1741022788431!5m2!1sro!2sro" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                 </iframe><br>
             </details><br>
             <!-- În footer se va adăuga informație de copyright, folosind tagul small, simbolul specific de copyright cu codul html necesar (forma &cod;) și data creării paginii scrisă în limba română și pusă în tagul time cu atributul datetime corespunzător.  -->
