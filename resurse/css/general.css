@@ -23,7 +23,7 @@ h1, h2, h3  {
     font-size: 3rem;
 }
 
-p, details, #cr, #salt, #pag1, #pag2, #secinsp, #secofer, #tab_video1, #tab_video2 {
+p, details, #cr, #tab_video1, #tab_video2 {
     /* font-family: monospace; */
     font-size: 1.5rem;
     color: var(--culoare-text);
@@ -58,7 +58,7 @@ p, details, #cr, #salt, #pag1, #pag2, #secinsp, #secofer, #tab_video1, #tab_vide
 .taburi-iframe > a:hover {
     background-color: #5C1E20;
     color: #C9A0A0;
-    transition: 0.3s;
+    transition: all 0.2s linear;
 }
 
 .container-iframe > iframe {
@@ -164,7 +164,7 @@ header {
     border:5px solid grey;
     border-top-color: #421112;
     border-radius:50%;
-    background: rgb(220,220,220);
+    background: white;
 }
 
 #link-top:hover {
