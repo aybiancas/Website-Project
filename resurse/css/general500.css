@@ -190,3 +190,9 @@ header {
     vertical-align: center;
     transform: translateY(30%);
 }
+
+figure  picture {
+    height: 100%;
+    width: 100%;
+    max-width: 450px;
+}
