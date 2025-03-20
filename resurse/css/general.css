@@ -11,6 +11,11 @@ html {
     background-color: #C9A0A0;
 }
 
+body {
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
 h1, h2, h3  {
     /* font-family: monospace; */
     font-size: 2rem;
@@ -65,27 +70,54 @@ p, details, #cr, #tab_video1, #tab_video2 {
     width: 90%;
 }
 
+.zona {
+    border: 2px solid #421112;
+    margin: 10px;
+}
+
+#zona1 {
+    grid-area: zona1;
+}
+
+#zona2 {
+    grid-area: zona2;
+}
+
+#zona3 {
+    grid-area: zona3;
+}
+
+#zona4 {
+    grid-area: zona4;
+}
+
+#zona5 {
+    grid-area: zona5;
+}
+
+#zona6 {
+    grid-area: zona6;
+}
+
+#zona7 {
+    grid-area: zona7;
+}
+
+#zona8 {
+    grid-area: zona8;
+}
 
 #grid_pag {
     display: grid;
-    grid-template-areas: "desprenoi inspiratie"
-                         "ceoferim inspiratie";
+    grid-template-areas: "zona1 zona1 zona1 zona1"
+                         "zona2 zona2 zona8 zona8"
+                         "zona3 zona6 zona8 zona8"
+                         "zona5 zona6 zona8 zona8"
+                         "zona5 zona4 zona4 zona7";
     padding: 10px;
     background-color: #A77272;
     border: 5px solid #5C1E20;
     border-radius: 15px 50px;
-}
-
-#desprenoi {
-    grid-area: desprenoi;
-}
-
-#inspiratie {
-    grid-area: inspiratie;
-}
-
-#ceoferim {
-    grid-area: ceoferim;
 }
 
 #desprenoi, #inspiratie, #ceoferim, footer {
@@ -110,8 +142,9 @@ p, details, #cr, #tab_video1, #tab_video2 {
 
 #pic {
     display: block;
-    margin: auto;
-    max-width: fit-content;
+    width: 70%;
+    max-width: 500px;
+    height: 100%;
 }
 
 footer {
