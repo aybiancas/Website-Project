@@ -67,27 +67,53 @@ p, details, #cr, #salt, #pag1, #pag2, #secinsp, #secofer, #tab_video1, #tab_vide
 }
 
 
+.zona {
+    border: 2px solid #421112;
+    margin: 10px;
+}
+
+#zona1 {
+    grid-area: zona1;
+}
+
+#zona2 {
+    grid-area: zona2;
+}
+
+#zona3 {
+    grid-area: zona3;
+}
+
+#zona4 {
+    grid-area: zona4;
+}
+
+#zona5 {
+    grid-area: zona5;
+}
+
+#zona6 {
+    grid-area: zona6;
+}
+
+#zona7 {
+    grid-area: zona7;
+}
+
+#zona8 {
+    grid-area: zona8;
+}
+
 #grid_pag {
     display: grid;
-    grid-template-areas: "desprenoi"
-                         "ceoferim"
-                         "inspiratie";
-    padding: 10px;
-    background-color: #A77272;
-    border: 5px solid #5C1E20;
-    border-radius: 15px 50px;
-}
-
-#desprenoi {
-    grid-area: desprenoi;
-}
-
-#inspiratie {
-    grid-area: inspiratie;
-}
-
-#ceoferim {
-    grid-area: ceoferim;
+    grid-template-areas: "zona1"
+                         "zona2"
+                         "zona3"
+                         "zona4"
+                         "zona5"
+                         "zona6"
+                         "zona7"
+                         "zona8";
 }
 
 #desprenoi, #inspiratie, #ceoferim, footer {
