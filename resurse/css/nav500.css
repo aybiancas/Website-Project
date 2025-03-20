@@ -11,6 +11,15 @@ ul.meniu li div.imag-icon {
 }
     */
 
+ol.meniu li div.img-icon{
+    display: block;
+}
+
+
+ol.meniu li div.txt-icon {
+    display: none;
+}
+
 ol.meniu ul {
     display: none;
     padding: 0;
