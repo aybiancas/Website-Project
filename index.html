@@ -8,6 +8,7 @@
         <meta name="keywords" content="librarie, magazin, banda desenata, benzi desenate, carte, carti, manga, carte in engleza, carti in engleza">
         <meta name="description" content="Librarie online pentru carti in engleza, benzi desenate si manga.">
         <meta name="author" content="Bianca S.">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
         <!-- Adaugati un favicon relevant pentru temă. Folosiți https://realfavicongenerator.net pentru a genera toate dimensiunile necesare de favicon și codul compatibil pentru diversele browsere și sisteme de operare. -->
         <link rel="icon" type="image/png" href="./resurse/imagini/favicon/favicon-96x96.png" sizes="96x96">
         <link rel="icon" type="image/svg+xml" href="./resurse/imagini/favicon/favicon.svg">
@@ -18,6 +19,7 @@
         <link rel="stylesheet" href="./resurse/css/general.css" type="text/css">
         <link rel="stylesheet" href="./resurse/css/general500.css" type="text/css" media="screen and (max-width:500px)"/>
         <link rel="stylesheet" href="./resurse/css/nav.css" type="text/css" />
+        <link rel="stylesheet" href="./resurse/css/nav500.css" type="text/css" media="screen and (max-width:500px)"/>
         <!-- #8c5e5e cod background - paleta de culori pt css -->
     </head>
     <body>
@@ -30,7 +32,10 @@
             <nav>
                 <ol class="meniu">
                     <li>
-                        <a href="index.html" id="pag1">Acasa</a>
+                        <div class="img-icon" id="pag1-icon">
+                            <span class="fas fa-regular fa-house"></span>
+                        </div>
+                        <div class="txt-icon" id="pag1-text"><a href="index.html" id="pag1">Acasa</a></div>
                         
                     </li>
                     <li>
@@ -45,50 +50,76 @@
         </header>
         <main>
             <div id="grid_pag">
-                <!-- Folosiți minim un tag dintre: section, article, aside. Trebuie să existe măcar un caz de taguri de secționare imbricate (secțiune în secțiune). -->
-                <section id="desprenoi">
-                    <h2>Despre noi</h2>
-                    <!-- Textul trebuie să conțină toate cuvintele cheie identificate pentru pagina curentă.  -->
-                    <!-- marcați cuvintele și sintagmele cheie cu ajutorul tagului b -->
-                    <!-- marcați textul idiomatic (termeni științifici, în altă limbă, termeni tehnici, de jargon, etc) cu tagul i -->
-                    <p><b>Librarie</b> <i>online</i> pentru pasionatii de citit!
-                        Aici vei gasi o mare colectie de <b>carti in engleza</b>, <b>benzi desenate</b> din seriile copilariei si volume <b><i lang="ja">manga</i></b> pentru pasionatii de <i lang="ja">anime</i> si doritorii de actiune!</p>
-                </section>
-                <section id="inspiratie">
-                    <h2>Inspiratie</h2>
-                    <p>Initiativa de a crea aceasta afacere a venit dintr-o pasiune personala a copilariei, cititul. Intrand in adolescenta, am realizat ca am prefera sa citim o <b>carte in engleza</b> in schimbul uneia in limba romana, din dorinta de a ne imbunatatii abilitatile lingvistice. In acelasi timp, am descoperit lumea plina de actiune a <i lang="ja">anime</i>-urilor si a principalei inspiratii a lor, seriile <b><i lang="ja">manga</i></b>, a caror comunitate de fani este inca crescanda in tara.</p>
-                    <p>
-                        <!-- marcați textul șters (corectat sau care nu mai e relevant) cu tagul s și textul inserat în loc cu tagul ins -->
-                        De asemenea, benzile desenate, volumele ilustrate sau manga sunt <s>de mare ajutor</s> <ins>o treapta ajutatoare</ins> in invatarea unei alte limbi. Mai multe detalii:
-                    </p>
-                    <!-- minim două linkuri care se deschid într-un iframe (se poate face ca în exemplul de curs, linkuri care deschid videoclipuri relevante de pe youtube în iframe). Atentie nu e vorba de src-ul iframe-ului ce de taguri <a> care la click se deschid in iframe. Iframe-ul va contine in mod default una dintre resursele specificate in linkuri -->
-                    <div class="container-iframe">
-                        <div class="taburi-iframe">
-                            <a id="tab_video1" href="https://www.youtube.com/embed/gJpFboFcGfE" target="video">Graphic Novels</a>
-                            <a id="tab_video2" href="https://www.youtube.com/embed/8OYEBRdAlNk" target="video">History</a><br>
+                <div class="zona" id="zona1"> <!--PREZENTARE-->
+                     <!-- Adăugați în pagină o imagine cu descriere, folosind figure și figcaption. Pe ecran mic (mobil) trebuie să se încarce o variantă mai redusă în dimensiune (bytes) a imaginii, pe tabletă o variantă medie, iar pe ecran mare varianta cea mai mare a imaginii. Folosiți un editor grafic pentru cropping și redimensionare pentru a obține cele 3 variante de imagini. -->
+                    <figure>
+                        <picture id="pic">
+                        <source srcset="./resurse/imagini/footerx3.png" media="(max-width:500px)" id="picmobil">
+                        <source srcset="./resurse/imagini/footerx5.png" media="(max-width:1000px)" id="pictableta">
+                        <source srcset="./resurse/imagini/footerx10.png" media="(max-width:1500px)" id="picdesktop">
+                        <img src="./resurse/imagini/footerx10.png" alt="books" id="picdefault">
+                        </picture>
+                        <figcaption id="caption">Carti</figcaption>
+                    </figure>
+                </div>
+                <div class="zona" id="zona2"> <!--TABEL-->
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi soluta aut, voluptate, qui eum officia iusto iste autem repudiandae non cum illo beatae earum inventore libero. Adipisci repellat molestiae ratione.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi soluta aut, voluptate, qui eum officia iusto iste autem repudiandae non cum illo beatae earum inventore libero. Adipisci repellat molestiae ratione.</p>              
+                </div>
+                <div class="zona" id="zona3"> <!--CALENDAR-->
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi soluta aut, voluptate, qui eum officia iusto iste autem repudiandae non cum illo beatae earum inventore libero. Adipisci repellat molestiae ratione.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi soluta aut, voluptate, qui eum officia iusto iste autem repudiandae non cum illo beatae earum inventore libero. Adipisci repellat molestiae ratione.</p>
+                </div>
+                <div class="zona" id="zona4"> <!--ANUNTURI-->
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi soluta aut, voluptate, qui eum officia iusto iste autem repudiandae non cum illo beatae earum inventore libero. Adipisci repellat molestiae ratione.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi soluta aut, voluptate, qui eum officia iusto iste autem repudiandae non cum illo beatae earum inventore libero. Adipisci repellat molestiae ratione.</p>
+                </div>
+                <div class="zona" id="zona5"> <!--USERS-->
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, rem provident nisi doloremque, non nulla eius quisquam officia voluptates animi nesciunt minima architecto neque quis nemo, fuga saepe expedita amet.</p>
+                </div>
+                <div class="zona" id="zona6"> <!--user statistics-->
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum possimus consectetur sapiente, necessitatibus, molestiae odio harum quas, expedita maxime cupiditate suscipit sequi ullam deleniti ipsam molestias! Ratione corporis inventore facere.</p>
+                </div>
+                <div class="zona" id="zona7"> <!--date site-->
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam corrupti quidem rem eos nam explicabo illo! Porro perspiciatis ab atque aliquid voluptatibus nobis magni illum autem? Vel sequi ipsa optio?</p>
+                </div>
+                <div class="zona" id="zona8">
+                    <!-- Folosiți minim un tag dintre: section, article, aside. Trebuie să existe măcar un caz de taguri de secționare imbricate (secțiune în secțiune). -->
+                    <section id="desprenoi">
+                        <h2>Despre noi</h2>
+                        <!-- Textul trebuie să conțină toate cuvintele cheie identificate pentru pagina curentă.  -->
+                        <!-- marcați cuvintele și sintagmele cheie cu ajutorul tagului b -->
+                        <!-- marcați textul idiomatic (termeni științifici, în altă limbă, termeni tehnici, de jargon, etc) cu tagul i -->
+                        <p><b>Librarie</b> <i>online</i> pentru pasionatii de citit!
+                            Aici vei gasi o mare colectie de <b>carti in engleza</b>, <b>benzi desenate</b> din seriile copilariei si volume <b><i lang="ja">manga</i></b> pentru pasionatii de <i lang="ja">anime</i> si doritorii de actiune!</p>
+                    </section>
+                    <section id="inspiratie">
+                        <h2>Inspiratie</h2>
+                        <p>Initiativa de a crea aceasta afacere a venit dintr-o pasiune personala a copilariei, cititul. Intrand in adolescenta, am realizat ca am prefera sa citim o <b>carte in engleza</b> in schimbul uneia in limba romana, din dorinta de a ne imbunatatii abilitatile lingvistice. In acelasi timp, am descoperit lumea plina de actiune a <i lang="ja">anime</i>-urilor si a principalei inspiratii a lor, seriile <b><i lang="ja">manga</i></b>, a caror comunitate de fani este inca crescanda in tara.</p>
+                        <p>
+                            <!-- marcați textul șters (corectat sau care nu mai e relevant) cu tagul s și textul inserat în loc cu tagul ins -->
+                            De asemenea, benzile desenate, volumele ilustrate sau manga sunt <s>de mare ajutor</s> <ins>o treapta ajutatoare</ins> in invatarea unei alte limbi. Mai multe detalii:
+                        </p>
+                        <!-- minim două linkuri care se deschid într-un iframe (se poate face ca în exemplul de curs, linkuri care deschid videoclipuri relevante de pe youtube în iframe). Atentie nu e vorba de src-ul iframe-ului ce de taguri <a> care la click se deschid in iframe. Iframe-ul va contine in mod default una dintre resursele specificate in linkuri -->
+                        <div class="container-iframe">
+                            <div class="taburi-iframe">
+                                <a id="tab_video1" href="https://www.youtube.com/embed/gJpFboFcGfE" target="video">Graphic Novels</a>
+                                <a id="tab_video2" href="https://www.youtube.com/embed/8OYEBRdAlNk" target="video">History</a><br>
+                            </div>
+                                <iframe name="video" id="video" width="550" height="350" src="https://www.youtube.com/embed/gJpFboFcGfE" title="Are Graphic Novels... Novels? (Feat. Princess Weekes) | It&#39;s Lit" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
-                            <iframe name="video" id="video" width="550" height="350" src="https://www.youtube.com/embed/gJpFboFcGfE" title="Are Graphic Novels... Novels? (Feat. Princess Weekes) | It&#39;s Lit" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                </section>
-                <section id="ceoferim">
-                    <h2>Ce oferim</h2>
-                    <p>        
-                    Destinata fanilor de toate varstele, <b>libraria FansTOME</b> nu este un simplu <b>magazin</b> de carti, ci un loc unde acestia isi pot satisface pofta imaginatiei prin anumite piese media ce nu sunt gasite peste tot in Romania. <b>FansTOME</b> ofera posibilitatea raspandirii 
-                    </p>
-                </section>
+                    </section>
+                    <section id="ceoferim">
+                        <h2>Ce oferim</h2>
+                        <p>        
+                        Destinata fanilor de toate varstele, <b>libraria FansTOME</b> nu este un simplu <b>magazin</b> de carti, ci un loc unde acestia isi pot satisface pofta imaginatiei prin anumite piese media ce nu sunt gasite peste tot in Romania. <b>FansTOME</b> ofera posibilitatea raspandirii 
+                        </p>
+                    </section>
+                </div>
             </div>
             
             <br><br>
-            <!-- Adăugați în pagină o imagine cu descriere, folosind figure și figcaption. Pe ecran mic (mobil) trebuie să se încarce o variantă mai redusă în dimensiune (bytes) a imaginii, pe tabletă o variantă medie, iar pe ecran mare varianta cea mai mare a imaginii. Folosiți un editor grafic pentru cropping și redimensionare pentru a obține cele 3 variante de imagini. -->
-            <figure>
-                <picture id="pic">
-                  <source srcset="./resurse/imagini/footerx3.png" media="(max-width:500px)" id="picmobil">
-                  <source srcset="./resurse/imagini/footerx5.png" media="(max-width:1000px)" id="pictableta">
-                  <source srcset="./resurse/imagini/footerx10.png" media="(max-width:1500px)" id="picdesktop">
-                  <img src="./resurse/imagini/footerx10.png" alt="books" id="picdefault">
-                </picture>
-                <figcaption id="caption">Carti</figcaption>
-            </figure>
+           
 
         </main>
         <footer>
