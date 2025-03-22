@@ -6,14 +6,9 @@ nav {
     --latime-buton:100px;
     height:var(--inaltime-meniu);
 }
-/* 
-ul.meniu li div.imag-icon {
-    display: none;
-}
-    */
 
 ol.meniu li div.img-icon{
-    display: none;
+    display: inline-block;
 }
 
 ol.meniu ul {
@@ -25,7 +20,6 @@ ol.meniu {
     display: flex;
     list-style-type: none;
     padding: 0;
-
 }
 
 ol.meniu li {
@@ -33,6 +27,7 @@ ol.meniu li {
     height: var(--inaltime-meniu);
     border: 2px solid #421112;
     box-sizing: border-box;
+    position: relative;
     text-align: center;
     font-weight: bold;
     line-height: var(--inaltime-meniu);
@@ -46,21 +41,19 @@ ol.meniu li:hover {
 ol.meniu li:hover ul{
     display: block;
     background-color: #C9A0A0;
-    position: relative; /*meniul este pus peste sectiune -- se poate repozitiona pe axele xOy*/
-    list-style-type: none; /*fala bullet points*/
-    /* left: -1px; */
-}
-
-ol.meniu li:hover > a, ol.meniu li:hover > div {
-    color:white;
+    position: relative;
+    list-style-type: none;
 }
 
 ol.meniu a, ol.meniu div {
     color: black;
     text-decoration: none;
     transition: all 0.2s linear;
-    display: block;
-    height:100%;
-    cursor:pointer;
+    display: inline-flex;
+    height: 100%;
+    cursor: pointer;
 }
 
+ol.meniu li:hover > .txt-icon a , ol.meniu li:hover > div , ol.meniu li:hover > a {
+    color:white;
+}
