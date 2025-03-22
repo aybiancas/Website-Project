@@ -6,20 +6,19 @@
 
 html {
     font-size: 10px;
-    font-family: monospace;
+    font-family: Oxanium;
     --culoare-text: #050301;
     background-color: #C9A0A0;
 }
 
 body {
+    /*a. Spatiere in stanga si in dreapta paginii pentru continut*/
     padding-left: 3px;
     padding-right: 3px;
 }
 
 h1, h2, h3  {
-    /* font-family: monospace; */
     font-size: 2rem;
-    /* color: #050301; */
     padding: 10px;
 }
 
@@ -29,25 +28,31 @@ h1, h2, h3  {
 }
 
 p, details, #cr, #tab_video1, #tab_video2 {
-    /* font-family: monospace; */
     font-size: 1.5rem;
     color: var(--culoare-text);
     padding: 10px;
 }
 
+/* stilizare taburi iframe */
 .taburi-iframe > a {
-    width: 100px;
-    height: 50px;
+    width: 70px;
+    height: 35px;
     display: block;
     margin-bottom: 5px;
     border: 2px solid #5C1E20;
-    border-radius: 5px 40px 5px 0;
+    border-radius: 5px 30px 5px 0;
     text-decoration: none;
     text-align: center;
 }
 
+
+/*
+1. Vezi ca zonele dau overflow in dreapta la latime foarte mica
+2. Vezi figure imaginea cu carti sa fie centrata cum trebuie
+3. Creeaza general1000 pt ecran mediu
+*/
+
 .container-iframe {
-    /* width: 60%; */
     margin: 0 auto;
     max-width: 650px;
     display: flex;
@@ -128,17 +133,6 @@ p, details, #cr, #tab_video1, #tab_video2 {
     margin: 10px;
     margin-bottom: 10px;
 }
-/* 
-#video {
-    display: block;
-    margin: auto;
-} */
-/* 
-#tab_video1, #tab_video2 {
-    display: block;
-    margin: auto;
-    text-align: center;
-} */
 
 #pic {
     display: block;
@@ -185,32 +179,35 @@ header {
 
 
 #link-top {
-    position:fixed;
-    bottom:0.7em;
-    opacity:0.5;
-    left:0.7em;
-    width:4.5rem;
+    position: fixed;
+    bottom: 1.3em;
+    opacity: 0.5;
+    left: 1.3em;
+    width: 4rem;
+    height: 4rem;
     box-sizing: border-box;
-    height:4.5rem;
-    line-height:3rem;
-    text-align:center;
-    border:5px solid grey;
-    border-top-color: #421112;
-    border-radius:50%;
+    line-height: 3rem;
+    text-align: center;
+    border: 3px solid #421112;
+    /* border-top-color: #421112; */
+    /* border-radius: 50%; */
+    transform: rotate(45deg);
     background: white;
+    justify-content: center;
 }
 
 #link-top:hover {
-    opacity:1;
+    opacity: 1;
 }
 
 #triunghi {
-    height:0px;
-    width:0;
-    display:inline-block;
-    border-bottom:1.5rem solid grey;
-    border-left:1rem solid transparent;
-    border-right:1rem solid transparent;
+    height: 0;
+    width: 0;
+    display: inline-block;
+    border-bottom: 2rem solid #421112;
+    border-radius: 0 0 1.3rem 1.3rem;
+    border-left: 1.1rem solid transparent;
+    border-right: 1.1rem solid transparent;
     vertical-align: center;
-    transform: translateY(30%);
+    transform: translateY(35%) rotate(-45deg);
 }
