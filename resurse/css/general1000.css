@@ -1,0 +1,300 @@
+/* voi importa fonturi cu licenta free use, toate resursele sunt in readme*/
+@font-face {
+    font-family: Pixeloid;
+    src: url("../fonts/PixeloidSans-Bold.ttf");
+}
+
+/* * {
+    box-sizing: border-box;
+} */
+
+html {
+    font-size: 7px;
+    font-family: Oxanium;
+    --culoare-text: #050301;
+    background-color: #C9A0A0;
+}
+
+body {
+    margin-left: 3px;
+    margin-right: 3px;
+    width: auto;
+    display: block;
+}
+
+h1, h2, h3  {
+    font-size: 1.8rem;
+    padding: 5px;
+}
+
+#titlu {
+    font-family: Pixeloid;
+    font-size: 3rem;
+}
+
+p, details, #cr {
+    font-size: 1.5rem;
+    color: var(--culoare-text);
+    padding: 10px;
+}
+
+.taburi-iframe > a {
+    width: 50px;
+    height: 30px;
+    display: block;
+    margin: 5px;
+    border: 2px solid #5C1E20;
+    border-radius: 5px 5px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.container-iframe {
+    /* width: 60%; */
+    margin: 0 auto;
+    max-width: 650px;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.taburi-iframe {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.taburi-iframe > a:hover {
+    background-color: #5C1E20;
+    color: #C9A0A0;
+    transition: 0.3s;
+}
+
+.container-iframe > iframe {
+    width: 100%;
+    height: 90%;
+}
+
+.zona {
+    border: 5px solid #421112;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#zona1 {
+    justify-items: center;
+    align-items: center;
+    grid-area: zona1;
+}
+
+#zona2 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    align-self: center;
+    /* border: 5px solid #5C1E20;
+    border-radius: 20px; */
+    background-color: #C9A0A0;
+    overflow: hidden;
+    overflow-x: auto;
+    width: 80%;
+    position: relative;
+    grid-area: zona2;
+}
+
+#zona3 {
+    grid-area: zona3;
+}
+
+#zona4 {
+    grid-area: zona4;
+}
+
+#zona5 {
+    grid-area: zona5;
+}
+
+#zona6 {
+    grid-area: zona6;
+}
+
+#zona7 {
+    grid-area: zona7;
+}
+
+#zona8 {
+    grid-area: zona8;
+}
+
+#grid_pag {
+    display: grid;
+    gap: 1px 1px;
+    grid-template-areas: "zona1 zona1 zona1 zona1"
+                         "zona2 zona2 zona8 zona8"
+                         "zona3 zona6 zona8 zona8"
+                         "zona5 zona6 zona8 zona8"
+                         "zona5 zona4 zona4 zona7";
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    overflow: hidden;
+}
+
+#desprenoi, #inspiratie, #ceoferim, footer {
+    border: 5px solid #5C1E20;
+    border-radius: 15px 50px;
+    background-color: #C9A0A0;
+    padding: 10px;
+    margin: 10px;
+    margin-bottom: 10px;
+}
+
+#pic {
+    display: block;
+    margin: auto;
+    width: 50%;
+    max-width: fit-content;
+}
+
+footer {
+    background-color: #A77272;
+}
+
+header {
+    background-color: #A77272;
+    border: 5px solid #5C1E20;
+    border-radius: 30px;
+    padding: 30px;
+    margin-bottom: 10px;
+}
+
+#logo {
+    width: 30px;
+    height: 40px;
+    vertical-align: text-bottom;
+}
+
+#logo, #titlu {
+    display: inline-flex;
+}
+
+#caption {
+    font-family: monospace;
+    font-size: 110%;
+    padding: 10px;
+    text-align: center;
+}
+
+#terms {
+    border:5px solid #421112;
+    width: 90%; 
+    max-height: 400px;
+}
+
+#map {
+    width: 90%; 
+    height: 90%;
+    max-height: 500px;
+    border: 5px solid #421112;
+}
+
+#link-top {
+    position: fixed;
+    bottom: 1.3em;
+    opacity: 0.5;
+    left: 1.3em;
+    width: 4rem;
+    height: 4rem;
+    box-sizing: border-box;
+    line-height: 3rem;
+    text-align: center;
+    border: 3px solid #421112;
+    /* border-top-color: #421112; */
+    /* border-radius: 50%; */
+    transform: rotate(45deg);
+    background: white;
+    justify-content: center;
+}
+
+#link-top:hover {
+    opacity: 1;
+}
+
+#triunghi {
+    height: 0;
+    width: 0;
+    display: inline-block;
+    border-bottom: 2rem solid #421112;
+    border-radius: 0 0 1.3rem 1.3rem;
+    border-left: 1.1rem solid transparent;
+    border-right: 1.1rem solid transparent;
+    vertical-align: center;
+    transform: translateY(35%) rotate(-45deg);
+}
+
+figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    max-width: 500px;
+}
+
+figure img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.tabel {
+    justify-content: center;
+    align-content: center;
+    padding: 30px;
+    font-size: 1.5rem;
+    width: 90%;
+    min-width: 100%;
+    border-collapse: collapse;
+}
+
+.tabel thead th, .tabel tbody td {
+    padding: 30px;
+    font-size: 1.5rem;
+    border: 2px solid #421112;
+    transition: all 0.3s ease-in-out;
+}
+
+.tabel thead tr {
+    background-color: #A77272;
+}
+
+.tabel tbody td:nth-child(1), .tabel tbody td:nth-child(3) {
+    background-color: #A77272;
+}
+
+.tabel thead tr:nth-child(1), .tabel thead tr:nth-child(3) {
+    background-color: #8A5151;
+}
+
+.tabel tbody td:hover {
+    background-color: white;
+}
+
+.tabel tbody tr:hover td:not(:hover) {
+    background-color: #F6CCCC;
+}
+
+/* CAPTION SUB TABEL */
+.tabel caption {
+    border: none;
+    caption-side: bottom;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.tabel tfoot td, .tabel tfoot > tr {
+    text-align: justify;
+    padding: 10px;
+    border: none;
+}
