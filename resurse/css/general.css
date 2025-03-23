@@ -263,31 +263,6 @@ header {
     background-color: #f6cccc;
 }
 
-/* 
-.tabel tbody td:nth-child(1):hover {
-    background-color: white;
-}
-
-.tabel tbody td:nth-child(1):hover,
-.tabel tbody td:nth-child(1):hover ~ td:nth-child(1) {
-    background-color: #f6cccc;
-}
-
-.tabel tbody td:nth-child(2):hover,
-.tabel tbody td:nth-child(2):hover ~ td:nth-child(2) {
-    background-color: #f6cccc;
-}
-
-.tabel tbody td:nth-child(3):hover,
-.tabel tbody td:nth-child(3):hover ~ td:nth-child(3) {
-    background-color: #f6cccc;
-}
-
-.tabel tbody td:nth-child(4):hover,
-.tabel tbody td:nth-child(4):hover ~ td:nth-child(4) {
-    background-color: #f6cccc;
-} */
-
 /* CAPTION SUB TABEL */
 .tabel caption {
     border: none;
