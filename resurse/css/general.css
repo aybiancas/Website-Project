@@ -13,8 +13,8 @@ html {
 
 body {
     /*a. Spatiere in stanga si in dreapta paginii pentru continut*/
-    padding-left: 3px;
-    padding-right: 3px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 h1, h2, h3  {
@@ -78,6 +78,7 @@ p, details, #cr, #tab_video1, #tab_video2 {
 .zona {
     border: 2px solid #421112;
     margin: 10px;
+    padding: 30px;
 }
 
 #zona1 {
@@ -85,6 +86,16 @@ p, details, #cr, #tab_video1, #tab_video2 {
 }
 
 #zona2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    justify-self: center;
+    border: 5px solid #5C1E20;
+    border-radius: 20px;
+    background-color: #C9A0A0;
+    overflow: hidden;
+    width: 90%;
     grid-area: zona2;
 }
 
@@ -132,6 +143,7 @@ p, details, #cr, #tab_video1, #tab_video2 {
     padding: 10px;
     margin: 10px;
     margin-bottom: 10px;
+    width: 90%;
 }
 
 #pic {
@@ -177,7 +189,7 @@ header {
     height: 600px;
 }
 
-
+/* link catre inceputul paginii */
 #link-top {
     position: fixed;
     bottom: 1.3em;
@@ -189,8 +201,6 @@ header {
     line-height: 3rem;
     text-align: center;
     border: 3px solid #421112;
-    /* border-top-color: #421112; */
-    /* border-radius: 50%; */
     transform: rotate(45deg);
     background: white;
     justify-content: center;
@@ -198,6 +208,8 @@ header {
 
 #link-top:hover {
     opacity: 1;
+    background: #421112 ;
+    transition: all 0.2s linear;
 }
 
 #triunghi {
@@ -211,3 +223,48 @@ header {
     vertical-align: center;
     transform: translateY(35%) rotate(-45deg);
 }
+
+#link-top:hover #triunghi {
+    border-bottom: 2rem solid white;
+    transition: all 0.2s linear;
+}
+
+.tabel {
+    padding: 30px;
+    font-size: 1.5rem;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabel tr th, .tabel tbody td {
+    padding: 30px;
+    font-size: 1.5rem;
+    border: 2px solid #421112;
+}
+
+.tabel thead tr {
+    background-color: #A77272;
+}
+
+.tabel tbody td:nth-child(1), .tabel tbody td:nth-child(3) {
+    background-color: #A77272;
+}
+
+.tabel thead tr:nth-child(1), .tabel thead tr:nth-child(3) {
+    background-color: #8A5151;
+}
+
+/* CAPTION SUB TABEL */
+.tabel caption {
+    border: none;
+    caption-side: bottom;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.tabel tfoot td, .tabel tfoot > tr {
+    text-align: justify;
+    padding: 10px;
+    border: none;
+}
+
