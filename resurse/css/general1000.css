@@ -37,13 +37,13 @@ p, details, #cr {
 
 .taburi-iframe > a {
     width: 50px;
-    height: 30px;
+    height: 25px;
     display: block;
     margin: 5px;
     border: 2px solid #5C1E20;
     border-radius: 5px 5px 20px;
     text-decoration: none;
-    text-align: center;
+    /* text-align: center; */
 }
 
 .container-iframe {
@@ -66,8 +66,15 @@ p, details, #cr {
 }
 
 .container-iframe > iframe {
+    position: relative;
+    display: flex;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
     width: 100%;
-    height: 90%;
+    height: 100%;
+    border: none;   
 }
 
 .zona {

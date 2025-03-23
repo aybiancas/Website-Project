@@ -35,14 +35,14 @@ p, details, #cr {
 }
 
 .taburi-iframe > a {
-    width: 50px;
-    height: 30px;
+    width: 35px;
+    height: 20px;
     display: block;
     margin: 5px;
     border: 2px solid #5C1E20;
     border-radius: 5px 5px 20px;
     text-decoration: none;
-    text-align: center;
+    /* text-align: center; */
 }
 
 .container-iframe {
