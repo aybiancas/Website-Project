@@ -9,7 +9,7 @@
 } */
 
 html {
-    font-size: 7px;
+    font-size: 8px;
     font-family: Oxanium;
     --culoare-text: #050301;
     background-color: #C9A0A0;
@@ -91,8 +91,6 @@ p, details, #cr {
     justify-content: flex-start;
     align-items: center;
     align-self: center;
-    /* border: 5px solid #5C1E20;
-    border-radius: 20px; */
     background-color: #C9A0A0;
     overflow: hidden;
     overflow-x: auto;
@@ -122,17 +120,21 @@ p, details, #cr {
 }
 
 #zona8 {
+    border: none;
+    margin: 0 auto;
+    padding: 0;
     grid-area: zona8;
 }
 
 #grid_pag {
     display: grid;
-    gap: 1px 1px;
+    gap: 3px 3px;
     grid-template-areas: "zona1 zona1 zona1 zona1"
                          "zona2 zona2 zona8 zona8"
-                         "zona3 zona6 zona8 zona8"
-                         "zona5 zona6 zona8 zona8"
-                         "zona5 zona4 zona4 zona7";
+                         "zona3 zona3 zona8 zona8"
+                         "zona6 zona6 zona8 zona8"
+                         "zona5 zona5 zona4 zona4"
+                         "zona7 zona7 zona7 zona7";
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
@@ -140,12 +142,20 @@ p, details, #cr {
     overflow: hidden;
 }
 
-#desprenoi, #inspiratie, #ceoferim, footer {
+#desprenoi, #inspiratie, #ceoferim {
     border: 5px solid #5C1E20;
     border-radius: 15px 50px;
     background-color: #C9A0A0;
     padding: 10px;
-    margin: 10px;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+footer {
+    border: 5px solid #5C1E20;
+    border-radius: 15px 50px;
+    background-color: #C9A0A0;
+    padding: 10px;
     margin-bottom: 10px;
 }
 
