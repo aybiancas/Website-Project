@@ -43,20 +43,15 @@ p, details, #cr, #tab_video1, #tab_video2 {
     border-radius: 5px 30px 5px 0;
     text-decoration: none;
     text-align: center;
+    align-content: center;
 }
-
-
-/*
-1. Vezi ca zonele dau overflow in dreapta la latime foarte mica
-2. Vezi figure imaginea cu carti sa fie centrata cum trebuie
-3. Creeaza general1000 pt ecran mediu
-*/
 
 .container-iframe {
     margin: 0 auto;
     max-width: 650px;
     display: flex;
     flex-direction: row-reverse;
+    justify-content: center;
 }
 
 .taburi-iframe {
@@ -75,10 +70,14 @@ p, details, #cr, #tab_video1, #tab_video2 {
     width: 90%;
 }
 
+#video {
+    width: 350px; 
+    height: 250px;
+}
+
 .zona {
     border: 5px solid #421112;
     border-radius: 20px;
-    margin: 10px;
     padding: 30px;
 }
 
@@ -126,15 +125,16 @@ p, details, #cr, #tab_video1, #tab_video2 {
 
 #grid_pag {
     display: grid;
+    gap: 10px 10px;
     grid-template-areas: "zona1 zona1 zona1 zona1"
                          "zona2 zona2 zona8 zona8"
                          "zona3 zona6 zona8 zona8"
                          "zona5 zona6 zona8 zona8"
                          "zona5 zona4 zona4 zona7";
-    padding: 10px;
+    padding: 20px;
     background-color: #A77272;
     border: 5px solid #5C1E20;
-    border-radius: 15px 50px;
+    border-radius: 20px;
 }
 
 #desprenoi, #inspiratie, #ceoferim, footer {
