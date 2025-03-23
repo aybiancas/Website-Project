@@ -231,6 +231,8 @@ header {
 }
 
 .tabel {
+    justify-content: center;
+    align-content: center;
     padding: 30px;
     font-size: 1.5rem;
     width: 100%;
