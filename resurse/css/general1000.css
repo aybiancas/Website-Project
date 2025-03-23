@@ -4,9 +4,6 @@
     src: url("../fonts/PixeloidSans-Bold.ttf");
 }
 
-/* * {
-    box-sizing: border-box;
-} */
 
 html {
     font-size: 8px;
@@ -50,7 +47,6 @@ p, details, #cr {
 }
 
 .container-iframe {
-    /* width: 60%; */
     margin: 0 auto;
     max-width: 650px;
     display: flex;
@@ -219,8 +215,6 @@ header {
     line-height: 3rem;
     text-align: center;
     border: 3px solid #421112;
-    /* border-top-color: #421112; */
-    /* border-radius: 50%; */
     transform: rotate(45deg);
     background: white;
     justify-content: center;
