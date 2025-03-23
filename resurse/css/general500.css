@@ -4,10 +4,6 @@
     src: url("../fonts/PixeloidSans-Bold.ttf");
 }
 
-/* * {
-    box-sizing: border-box;
-} */
-
 html {
     font-size: 7px;
     font-family: Oxanium;
@@ -50,8 +46,11 @@ p, details, #cr {
 }
 
 .container-iframe {
-    /* width: 60%; */
+    position: relative;
+    width: 100%;
+    height: auto;
     margin: 0 auto;
+    overflow: hidden;
     max-width: 650px;
     display: flex;
     flex-direction: column-reverse;
@@ -64,14 +63,22 @@ p, details, #cr {
 }
 
 .taburi-iframe > a:hover {
+    position: absolute;
     background-color: #5C1E20;
     color: #C9A0A0;
     transition: 0.3s;
 }
 
 .container-iframe > iframe {
+    position: relative;
+    display: flex;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
     width: 100%;
-    height: 90%;
+    height: 100%;
+    border: none;
 }
 
 .zona {
@@ -91,8 +98,6 @@ p, details, #cr {
     justify-content: flex-start;
     align-items: center;
     align-self: center;
-    /* border: 5px solid #5C1E20;
-    border-radius: 20px; */
     background-color: #C9A0A0;
     overflow: hidden;
     overflow-x: auto;
@@ -122,6 +127,9 @@ p, details, #cr {
 }
 
 #zona8 {
+    border: none;
+    margin: 0 auto;
+    padding: 0;
     grid-area: zona8;
 }
 
@@ -143,10 +151,19 @@ p, details, #cr {
     overflow: hidden;
 }
 
-#desprenoi, #inspiratie, #ceoferim, footer {
+#desprenoi, #inspiratie, #ceoferim {
     border: 5px solid #5C1E20;
     border-radius: 15px 50px;
     background-color: #C9A0A0;
+    padding: 10px;
+    box-sizing: border-box;
+    justify-content: flex-start;
+}
+
+footer {
+    border: 5px solid #5C1E20;
+    border-radius: 15px 50px;
+    background-color: #A77272;
     padding: 10px;
     margin: 10px;
     margin-bottom: 10px;
@@ -157,10 +174,6 @@ p, details, #cr {
     margin: auto;
     width: 50%;
     max-width: fit-content;
-}
-
-footer {
-    background-color: #A77272;
 }
 
 header {
@@ -212,8 +225,6 @@ header {
     line-height: 3rem;
     text-align: center;
     border: 3px solid #421112;
-    /* border-top-color: #421112; */
-    /* border-radius: 50%; */
     transform: rotate(45deg);
     background: white;
     justify-content: center;
