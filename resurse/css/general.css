@@ -236,10 +236,11 @@ header {
     border-collapse: collapse;
 }
 
-.tabel tr th, .tabel tbody td {
+.tabel thead th, .tabel tbody td {
     padding: 30px;
     font-size: 1.5rem;
     border: 2px solid #421112;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .tabel thead tr {
@@ -253,6 +254,39 @@ header {
 .tabel thead tr:nth-child(1), .tabel thead tr:nth-child(3) {
     background-color: #8A5151;
 }
+
+.tabel tbody td:hover {
+    background-color: white;
+}
+
+.tabel tbody tr:hover td:not(:hover) {
+    background-color: #f6cccc;
+}
+
+/* 
+.tabel tbody td:nth-child(1):hover {
+    background-color: white;
+}
+
+.tabel tbody td:nth-child(1):hover,
+.tabel tbody td:nth-child(1):hover ~ td:nth-child(1) {
+    background-color: #f6cccc;
+}
+
+.tabel tbody td:nth-child(2):hover,
+.tabel tbody td:nth-child(2):hover ~ td:nth-child(2) {
+    background-color: #f6cccc;
+}
+
+.tabel tbody td:nth-child(3):hover,
+.tabel tbody td:nth-child(3):hover ~ td:nth-child(3) {
+    background-color: #f6cccc;
+}
+
+.tabel tbody td:nth-child(4):hover,
+.tabel tbody td:nth-child(4):hover ~ td:nth-child(4) {
+    background-color: #f6cccc;
+} */
 
 /* CAPTION SUB TABEL */
 .tabel caption {
