@@ -76,7 +76,8 @@ p, details, #cr, #tab_video1, #tab_video2 {
 }
 
 .zona {
-    border: 2px solid #421112;
+    border: 5px solid #421112;
+    border-radius: 20px;
     margin: 10px;
     padding: 30px;
 }
@@ -91,8 +92,8 @@ p, details, #cr, #tab_video1, #tab_video2 {
     align-items: center;
     align-self: center;
     justify-self: center;
-    border: 5px solid #5C1E20;
-    border-radius: 20px;
+    /* border: 5px solid #5C1E20;
+    border-radius: 20px; */
     background-color: #C9A0A0;
     overflow: hidden;
     width: 90%;
