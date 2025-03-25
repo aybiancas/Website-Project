@@ -5,6 +5,8 @@ nav {
     --inaltime-meniu:30px;
     --latime-buton:100px;
     height:var(--inaltime-meniu);
+    position: sticky;
+    top: 0;
 }
 
 ol.meniu li div.img-icon{

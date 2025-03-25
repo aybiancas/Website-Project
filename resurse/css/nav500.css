@@ -1,9 +1,11 @@
 
 nav {
     background-color: #C9A0A0;
-    --inaltime-meniu:30px;
-    --latime-buton:100px;
+    --inaltime-meniu:25px;
+    --latime-buton:70px;
     height:var(--inaltime-meniu);
+    position: sticky;
+    top: 0;
 }
 /* 
 ul.meniu li div.imag-icon {
@@ -11,12 +13,12 @@ ul.meniu li div.imag-icon {
 }
     */
 
-ol.meniu li div.img-icon{
+ol.meniu li div.img-icon {
     display: block;
 }
 
 
-ol.meniu li div.txt-icon {
+ol.meniu li .txt-icon {
     display: none;
 }
 
