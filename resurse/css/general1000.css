@@ -91,14 +91,10 @@ p, details, #cr {
 
 #zona2 {
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    align-self: center;
     background-color: #C9A0A0;
     overflow: hidden;
     overflow-x: auto;
-    width: 80%;
-    position: relative;
+    width: 100%;
     grid-area: zona2;
 }
 
@@ -162,13 +158,6 @@ footer {
     margin-bottom: 10px;
 }
 
-#pic {
-    display: block;
-    margin: auto;
-    width: 50%;
-    max-width: fit-content;
-}
-
 footer {
     background-color: #A77272;
 }
@@ -189,13 +178,6 @@ header {
 
 #logo, #titlu {
     display: inline-flex;
-}
-
-#caption {
-    font-family: monospace;
-    font-size: 110%;
-    padding: 10px;
-    text-align: center;
 }
 
 #terms {
@@ -270,10 +252,8 @@ figure source {
 .tabel {
     justify-content: center;
     align-content: center;
-    padding: 30px;
     font-size: 1.5rem;
-    width: 90%;
-    min-width: 100%;
+    width: 100%;
     border-collapse: collapse;
 }
 

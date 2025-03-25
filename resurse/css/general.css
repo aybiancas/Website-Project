@@ -1,9 +1,3 @@
-/* voi importa fonturi cu licenta free use, toate resursele sunt in readme*/
-@font-face {
-    font-family: Pixeloid;
-    src: url("../fonts/PixeloidSans-Bold.ttf");
-}
-
 /* RESETARE CSS */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -48,6 +42,14 @@ table {
 	border-spacing: 0;
 }
 
+/**************************************************************************************/
+
+/* voi importa fonturi cu licenta free use, toate resursele sunt in readme*/
+@font-face {
+    font-family: Pixeloid;
+    src: url("../fonts/PixeloidSans-Bold.ttf");
+}
+
 b {
     font-weight: bold;
 }
@@ -55,8 +57,6 @@ b {
 i {
     font-style: italic;
 }
-
-
 
 html {
     padding-top: 10px;
@@ -145,6 +145,7 @@ p, details, #cr {
 }
 
 .zona {
+    background-color: #C9A0A0;
     border: 5px solid #5C1E20;
     border-radius: 20px;
     padding: 30px;
@@ -153,16 +154,14 @@ p, details, #cr {
 
 #zona1 {
     grid-area: zona1;
+    align-items: center;
+    overflow: hidden;
+    padding: 0;
 }
 
 #zona2 {
     padding: 0;
     display: flex;
-    justify-self: baseline;
-    /* justify-content: center; */
-    /* align-items: center; */
-    /* align-self: center; */
-    /* justify-self: center; */
     background-color: #C9A0A0;
     overflow: hidden;
     width: 100%;
@@ -191,6 +190,7 @@ p, details, #cr {
 }
 
 #zona8 {
+    background-color: #A77272;
     border: none;
     margin: 0;
     padding: 0;
@@ -209,6 +209,7 @@ p, details, #cr {
     background-color: #A77272;
     border: 5px solid #5C1E20;
     border-radius: 20px;
+    box-shadow: 5px 5px #5C1E20;
 }
 
 #desprenoi, #inspiratie, #ceoferim {
@@ -221,24 +222,20 @@ p, details, #cr {
     justify-content: flex-start;
 }
 
-#pic {
-    display: block;
-    margin: auto;
-    width: 50%;
-    max-width: fit-content;
-}
-
 footer {
     border: 5px solid #5C1E20;
     border-radius: 20px;
+    box-shadow: 5px 5px #5C1E20;
     background-color: #A77272;
     padding: 10px;
+    margin-bottom: 10px;
 }
 
 header {
     background-color: #A77272;
     border: 5px solid #5C1E20;
     border-radius: 30px;
+    box-shadow: 5px 5px #5C1E20;
     padding: 30px;
     margin-bottom: 10px;
 }
@@ -249,16 +246,8 @@ header {
     vertical-align: text-bottom;
 }
 
-
 #logo, #titlu {
     display: inline-flex;
-}
-
-#caption {
-    font-family: monospace;
-    font-size: 110%;
-    padding: 10px;
-    text-align: center;
 }
 
 #map {
@@ -313,20 +302,23 @@ header {
 }
 
 figure {
-    display: flex;
-    justify-content: center;
+    display: block;
     align-items: center;
+    justify-content: center;
     margin: 0;
     height: 100%;
     width: 100%;
-    max-width: 500px;
 }
 
-/* figure img {
+figure img {
     display: block;
-    max-width: 100%;
-    height: auto;
-} */
+    justify-self: center;
+}
+
+figure figcaption {
+    font-size: 1.5rem;
+    text-align: center;
+}
 
 .tabel {
     justify-content: center;
