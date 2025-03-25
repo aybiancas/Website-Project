@@ -5,7 +5,7 @@
 }
 
 /* RESETARE CSS */
-/* html, body, div, span, applet, object, iframe,
+html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -46,7 +46,15 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-} */
+}
+
+b {
+    font-weight: bold;
+}
+
+i {
+    font-style: italic;
+}
 
 
 
@@ -56,15 +64,19 @@ html {
     font-family: Oxanium;
     --culoare-text: #050301;
     background-color: #C9A0A0;
+    --latime-harta: 400px;
+    --inaltime-harta: 400px;
 }
 
 body {
     /*a. Spatiere in stanga si in dreapta paginii pentru continut*/
     margin-left: 20px;
     margin-right: 20px;
+    line-height: 1.5;
 }
 
 h1, h2, h3  {
+    font-weight: bold;
     font-size: 2rem;
     padding: 10px;
 }
@@ -83,21 +95,23 @@ p, details, #cr {
 /* stilizare taburi iframe */
 .taburi-iframe > a {
     font-weight: bolder;
-    width: 70px;
+    width: 60px;
     height: 35px;
     display: block;
     margin-bottom: 5px;
-    color: #050301;
+    color: var(--culoare-text);
     border: 2px solid #5C1E20;
-    border-radius: 5px 30px 5px 0;
+    border-radius: 5px 25px 5px 0;
     text-decoration: none;
     text-align: center;
+    justify-content: center;
     align-content: center;
 }
 
 .container-iframe {
     margin: 0 auto;
-    max-width: 650px;
+    max-width: 450px;
+    height: 300px;
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
@@ -111,6 +125,7 @@ p, details, #cr {
 
 .taburi-iframe > a:hover {
     background-color: #5C1E20;
+    text-shadow: white 1px 0 5px;
     color: #F6CCCC;
     transition: all 0.2s linear;
 }
@@ -139,6 +154,7 @@ p, details, #cr {
 }
 
 #zona2 {
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -241,6 +257,11 @@ header {
     text-align: center;
 }
 
+#map {
+    width: var(--latime-harta);
+    height: var(--inaltime-harta);
+}
+
 #terms {
     border:5px solid #421112;
     width: 500px; 
@@ -286,6 +307,22 @@ header {
     border-bottom: 2rem solid white;
     transition: all 0.2s linear;
 }
+
+figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* figure img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+} */
 
 .tabel {
     justify-content: center;
@@ -336,4 +373,3 @@ header {
     padding: 10px;
     border: none;
 }
-

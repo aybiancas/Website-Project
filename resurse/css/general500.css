@@ -12,8 +12,8 @@ html {
 }
 
 body {
-    margin-left: 3px;
-    margin-right: 3px;
+    margin-left: 4px;
+    margin-right: 4px;
     width: auto;
     display: block;
 }
@@ -46,11 +46,11 @@ p, details, #cr {
 }
 
 .container-iframe {
-    position: relative;
-    width: 100%;
-    height: auto;
+    /* position: relative;
+    /* width: 100%;
+    height: auto; */
     margin: 0 auto;
-    overflow: hidden;
+    /* overflow: hidden; */
     max-width: 650px;
     display: flex;
     flex-direction: column-reverse;
@@ -63,7 +63,7 @@ p, details, #cr {
 }
 
 .taburi-iframe > a:hover {
-    position: absolute;
+    /* position: absolute; */
     background-color: #5C1E20;
     color: #C9A0A0;
     transition: 0.3s;
@@ -135,7 +135,7 @@ p, details, #cr {
 
 #grid_pag {
     display: grid;
-    gap: 1px 1px;
+    gap: 5px 5px;
     grid-template-areas: "zona1"
                          "zona2"
                          "zona3"
@@ -255,12 +255,12 @@ figure {
     width: 100%;
     max-width: 500px;
 }
-
+/* 
 figure img {
     display: block;
     max-width: 100%;
     height: auto;
-}
+} */
 
 .tabel {
     justify-content: center;

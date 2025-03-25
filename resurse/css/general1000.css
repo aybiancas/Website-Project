@@ -13,8 +13,8 @@ html {
 }
 
 body {
-    margin-left: 3px;
-    margin-right: 3px;
+    margin-left: 7px;
+    margin-right: 7px;
     width: auto;
     display: block;
 }
@@ -131,7 +131,7 @@ p, details, #cr {
 
 #grid_pag {
     display: grid;
-    gap: 3px 3px;
+    gap: 7px 7px;
     grid-template-areas: "zona1 zona1 zona1 zona1"
                          "zona2 zona2 zona8 zona8"
                          "zona3 zona3 zona8 zona8"
@@ -244,7 +244,7 @@ header {
 }
 
 figure {
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
     margin: 0;
@@ -253,11 +253,19 @@ figure {
     max-width: 500px;
 }
 
-figure img {
+figure source {
     display: block;
+    justify-content: start;
+    align-items: center;
     max-width: 100%;
     height: auto;
 }
+
+/* figure img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+} */
 
 .tabel {
     justify-content: center;
