@@ -66,19 +66,21 @@ html {
     background-color: #C9A0A0;
     --latime-harta: 400px;
     --inaltime-harta: 400px;
+    --margine-pagina: 20px;
+    --padding-text: 10px;
 }
 
 body {
     /*a. Spatiere in stanga si in dreapta paginii pentru continut*/
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: var(--margine-pagina);
+    margin-right: var(--margine-pagina);
     line-height: 1.5;
 }
 
 h1, h2, h3  {
     font-weight: bold;
     font-size: 2rem;
-    padding: 10px;
+    padding: var(--padding-text);
 }
 
 #titlu {
@@ -89,7 +91,7 @@ h1, h2, h3  {
 p, details, #cr {
     font-size: 1.5rem;
     color: var(--culoare-text);
-    padding: 10px;
+    padding: var(--padding-text);
 }
 
 /* stilizare taburi iframe */
@@ -143,7 +145,7 @@ p, details, #cr {
 }
 
 .zona {
-    border: 5px solid #421112;
+    border: 5px solid #5C1E20;
     border-radius: 20px;
     padding: 30px;
     overflow: hidden;
@@ -156,13 +158,15 @@ p, details, #cr {
 #zona2 {
     padding: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    align-self: center;
-    justify-self: center;
+    justify-self: baseline;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* align-self: center; */
+    /* justify-self: center; */
     background-color: #C9A0A0;
     overflow: hidden;
-    width: 90%;
+    width: 100%;
+    box-sizing: border-box;
     grid-area: zona2;
 }
 
@@ -188,8 +192,8 @@ p, details, #cr {
 
 #zona8 {
     border: none;
-    margin: 5px;
-    padding: 5px;
+    margin: 0;
+    padding: 0;
     grid-area: zona8;
 }
 
@@ -327,7 +331,6 @@ figure {
 .tabel {
     justify-content: center;
     align-content: center;
-    padding: 30px;
     font-size: 1.5rem;
     width: 100%;
     border-collapse: collapse;
@@ -335,8 +338,8 @@ figure {
 
 .tabel thead th, .tabel tbody td {
     padding: 30px;
-    font-size: 1.5rem;
-    border: 2px solid #421112;
+    text-align: center;
+    /* border: 2px solid #421112; */
     transition: all 0.3s ease-in-out;
 }
 
