@@ -104,6 +104,7 @@ p, details, #cr {
     color: var(--culoare-text);
     border: 2px solid #5C1E20;
     border-radius: 5px 25px 5px 0;
+    box-shadow: inset 0 0 10px #5C1E20;
     text-decoration: none;
     text-align: center;
     justify-content: center;
