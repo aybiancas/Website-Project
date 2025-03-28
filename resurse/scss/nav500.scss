@@ -1,0 +1,58 @@
+$inaltime-meniu: 20px;
+$latime-buton: 80px;
+$culoare-fundal: #C9A0A0;
+$culoare-bordura: #421112;
+
+@keyframes spatiere-meniu {
+    0% {
+        letter-spacing: -4px;
+    }
+    100% {
+        letter-spacing: 2px;
+    }
+}
+
+nav {
+    font-size: 1.2rem;
+    height: $inaltime-meniu;
+}
+
+#hamburger {
+    display: block;
+
+    span {
+        line-height: $inaltime-meniu;
+        width: $inaltime-meniu;
+        font-size: 20px;
+        margin-left: 5px;
+        display: block;
+    }
+}
+
+ol.meniu {
+    display: none;
+    margin: 0;
+    width: 100%;
+    background-color: $culoare-fundal;
+
+    li {
+        margin: 0;
+        width: 100%;
+        border: 1px solid $culoare-bordura;
+    }
+
+    > li {
+        animation: spatiere-meniu 0.05s ease-in-out 1;
+        animation-fill-mode: none;
+    }
+
+    > li:hover {
+        text-shadow: none;
+    }
+}
+
+#ch-menu:checked + ol.meniu {
+    display: block;
+    position: relative;
+    z-index: 1;
+}

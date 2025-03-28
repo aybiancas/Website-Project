@@ -1,0 +1,98 @@
+$inaltime-meniu: 40px;
+$latime-buton: 100px;
+$culoare-fundal: #C9A0A0;
+$culoare-bordura: #421112;
+$culoare-hover: #421112;
+$culoare-text: black;
+$culoare-text-hover: white;
+
+@keyframes animatie-submeniu {
+    0% {
+        opacity: 0;
+        transform: scaleY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scaleY(100%);
+    }
+}
+
+#hamburger, #ch-menu {
+    display: none;
+}
+
+nav {
+    font-size: 1.3rem;
+    background-color: $culoare-fundal;
+    height: $inaltime-meniu;
+    position: sticky;
+    top: 0;
+}
+
+ol.meniu {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+
+    li {
+        width: $latime-buton;
+        height: $inaltime-meniu;
+        border: 2px solid $culoare-bordura;
+        box-sizing: border-box;
+        position: relative;
+        text-align: center;
+        font-weight: bold;
+        line-height: $inaltime-meniu;
+        transition: background-color 0.3s ease-in;
+        text-shadow: 0 -15px rgba(255, 255, 255, 0);
+
+        &:hover {
+            background-color: $culoare-hover;
+            text-shadow: 0 0 2px white;
+
+            > .txt-icon a,
+            > div,
+            > a {
+                color: $culoare-text-hover;
+            }
+        }
+
+        div.img-icon {
+            display: inline-block;
+        }
+
+        ul {
+            display: none;
+            padding: 0;
+            animation: animatie-submeniu 0.5s linear forwards;
+            transform-origin: 50% 0;
+            background-color: $culoare-fundal;
+            list-style-type: none;
+        }
+
+        &:hover ul {
+            display: block;
+            position: relative;
+        }
+    }
+
+    a, div {
+        color: $culoare-text;
+        text-decoration: none;
+        transition: all 0.5s ease-in;
+        display: inline-flex;
+        height: 100%;
+        cursor: pointer;
+    }
+
+    ul > li {
+        a {
+            text-decoration: underline rgba(255, 255, 255, 0) 1px;
+            transition: text-decoration 0.4s ease-in;
+        }
+
+        &:hover a {
+            text-decoration: underline white 1px;
+        }
+    }
+}
