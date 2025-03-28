@@ -20,6 +20,7 @@
         <link rel="stylesheet" href="./resurse/css/general1000.css" type="text/css" media="screen and (max-width:1000px)">
         <link rel="stylesheet" href="./resurse/css/general500.css" type="text/css" media="screen and (max-width:500px)">
         <link rel="stylesheet" href="./resurse/css/nav.css" type="text/css">
+        <link rel="stylesheet" href="./resurse/css/nav1000.css" type="text/css" media="screen and (max-width:1000px)">
         <link rel="stylesheet" href="./resurse/css/nav500.css" type="text/css" media="screen and (max-width:500px)">
         <!-- FONT PRIN GOOGLE API -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,6 +28,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Barrio&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
     </head>
     <body>
+        <p id="watermark"></p>
         <!-- Împărțiți body-ul în header, main, footer. -->
         <header>
             <img id="logo" src="./resurse/imagini/logo.png" alt="logo">
@@ -34,6 +36,12 @@
             <!-- În header faceți un sistem de navigare ca în curs (nav cu listă neordonată de linkuri), cu opțiuni  principale (care vor reprezenta paginile site-ului) și secundare (pentru opțiunea "Acasă", adică pagina principală, subopțiunile vor cuprinde linkuri către secțiunile paginii, care vor avea id-uri relevante). Folosiți în header h1 pentru titlul site-ului.  -->
             <!-- În cadrul secțiunilor folosiți minim 2 taguri dintre următoare taguri de grupare: p, ol, ul, blockquote, dl -->
             <nav>
+                <label id="hamburger" for="ch-menu">
+                    <div class="img-icon" id="menu-icon">
+                        <span class="fa-solid fa-bars"></span>
+                    </div>
+                </label>
+                <input id="ch-menu" type="checkbox">
                 <ol class="meniu">
                     <li>
                         <div class="img-icon" id="pag1-icon">
@@ -50,6 +58,17 @@
                         <ul>
                             <li><a href="#inspiratie" id="secinsp">Inspiratie</a></li>
                             <li><a href="#ceoferim" id="secofer">Ce oferim</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="img-icon" id="pag3-icon">
+                            <span class="fa-solid fa-book"></span>
+                        </div>
+                        <a href="" id="pag3" class="txt-icon">Produse</a>
+                        <ul>
+                            <li><a href="">Carti</a></li>
+                            <li><a href="">Benzi desenate</a></li>
+                            <li><a href="">Manga</a></li>                        
                         </ul>
                     </li>
                 </ol>
@@ -133,7 +152,25 @@
                     </table>           
                 </div>
                 <div class="zona" id="zona3"> <!--CALENDAR-->
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi soluta aut, voluptate, qui eum officia iusto iste autem repudiandae non cum illo beatae earum inventore libero. Adipisci repellat molestiae ratione.</p>
+                    <p>Inscrie-te la programul nostru de loialitate! Vei primi, pe langa ultimele stiri despre produse noi, si reduceri atragatoare!</p>
+                    <p>Atentie! Dupa inscrierea la programul de loialitate, preturile pentru produsele vizate de reduceri se vor calcula folosind formula: </p>
+                    <div id="formula">
+                        <math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mi>Pret_Final</mi>
+                            <mo>=</mo>
+                            <mi>Pret</mi>
+                            <mo>&#xD7;</mo>
+                            <mo>(</mo>
+                            <mn>1</mn>
+                            <mo>-</mo>
+                            <mo>(</mo>
+                            <mi>Reducere_Zilnica</mi>
+                            <mo>+</mo>
+                            <mn>0.05</mn>
+                            <mo>)</mo>
+                            <mo>)</mo>
+                        </math>
+                    </div>
                 </div>
                 <div class="zona" id="zona4"> <!--ANUNTURI-->
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi soluta aut, voluptate, qui eum officia iusto iste autem repudiandae non cum illo beatae earum inventore libero. Adipisci repellat molestiae ratione.</p>
@@ -234,6 +271,8 @@
             <small id="cr">&copy; Copyright <time datetime="2025-03-03">Martie 2025</time>, FansTOME</small>
             <!-- un link în footer către începutul paginii, -->
             <a id="link-top" title="Mergi sus" href="#"><div id="triunghi"></div></a>
+            <p id="end">.</p>
+            <p id="banner"></p>
         </footer>
     </body>
 </html>
