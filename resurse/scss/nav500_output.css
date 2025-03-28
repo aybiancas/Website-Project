@@ -1,0 +1,50 @@
+@keyframes spatiere-meniu {
+  0% {
+    letter-spacing: -4px;
+  }
+  100% {
+    letter-spacing: 2px;
+  }
+}
+nav {
+  font-size: 1.2rem;
+  height: 20px;
+}
+
+#hamburger {
+  display: block;
+}
+#hamburger span {
+  line-height: 20px;
+  width: 20px;
+  font-size: 20px;
+  margin-left: 5px;
+  display: block;
+}
+
+ol.meniu {
+  display: none;
+  margin: 0;
+  width: 100%;
+  background-color: #C9A0A0;
+}
+ol.meniu li {
+  margin: 0;
+  width: 100%;
+  border: 1px solid #421112;
+}
+ol.meniu > li {
+  animation: spatiere-meniu 0.05s ease-in-out 1;
+  animation-fill-mode: none;
+}
+ol.meniu > li:hover {
+  text-shadow: none;
+}
+
+#ch-menu:checked + ol.meniu {
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+/*# sourceMappingURL=nav500_output.css.map */
