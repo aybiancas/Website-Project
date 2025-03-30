@@ -1,0 +1,72 @@
+@keyframes animatie-bara1 {
+    0% {
+        width: 5px;
+        background-color: white;
+        opacity: 0;
+    }
+
+    60% {
+        width: 15px;
+        background-color: rgb(159, 159, 159);
+        opacity: 0.7;
+    }
+
+    100% {
+        width: 20px;
+        background-color: black;
+        opacity: 1;
+    }
+}
+
+@keyframes animatie-bara2 {
+    0% {
+        width: 10px;
+        background-color: white;
+        opacity: 0;
+    }
+
+    60% {
+        width: 25px;
+        background-color: rgb(159, 159, 159);
+        opacity: 0.7;
+    }
+
+    100% {
+        width: 20px;
+        background-color: black;
+        opacity: 1;
+    }
+}
+
+@keyframes animatie-bara3 {
+    0% {
+        width: 15px;
+        background-color: white;
+        opacity: 0;
+    }
+
+    60% {
+        width: 35px;
+        background-color: rgb(159, 159, 159);
+        opacity: 0.7;
+    }
+
+    100% {
+        width: 20px;
+        background-color: black;
+        opacity: 1;
+    }
+}
+
+#hamburger {
+    @for $a from 1 through 3 {
+        div:nth-child(#{$a}) {
+            animation: animatie-bara#{$a};
+            animation-delay: $a * 0.1s;
+            animation-duration: (3 - ($a - 1)) * 0.5s;
+            animation-timing-function: ease-in;
+            animation-iteration-count: 1;
+            animation-fill-mode: none;
+        }
+    }
+}
