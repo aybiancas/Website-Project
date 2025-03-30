@@ -3,6 +3,12 @@ nav {
   height: 30px;
 }
 
+ol.meniu li {
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+}
+
 #pag1-text {
   display: none;
 }
