@@ -77,6 +77,10 @@ body {
     line-height: 1.5;
 }
 
+#banner, #watermark {
+    display: none;
+}
+
 h1, h2, h3  {
     font-weight: bold;
     font-size: 2rem;
@@ -172,6 +176,7 @@ p, details, #cr {
 
 #zona3 {
     grid-area: zona3;
+    overflow: auto;
 }
 
 #zona4 {
@@ -368,4 +373,167 @@ figure figcaption {
     text-align: justify;
     padding: 10px;
     border: none;
+}
+
+#formula {
+    padding-top: 10px;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    letter-spacing: -5px;
+}
+
+math {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #A77272;
+    border-radius: 25px;
+}
+
+mi {
+    font-weight: bold;
+    color: rgb(229, 221, 221);
+    font-style: italic;
+}
+
+mn {
+    color: white;
+}
+
+mo {
+    color: #421112;
+    font-style: italic;
+    font-size: 1.4rem;
+}
+
+mi:hover {
+    transform: scale(1.1);
+    transition: 0.1s ease-in;
+}
+
+@media print {
+    #grid-pag {
+        display: block !important;
+        font-size: 5px;
+        padding: 5px;
+		box-sizing: border-box;
+		background-color: white;
+        break-inside: avoid; 
+        overflow: visible;
+    }
+
+    #grid-pag, .zona {
+        page-break-inside: avoid;
+    }
+
+    html, body {
+        width: 200mm;
+		overflow: visible !important;
+	}
+
+    body {
+        box-sizing: border-box;
+        page-break-after: always;
+    }
+
+    h1 {
+        break-inside: avoid;
+		page-break-after: always;
+        font-size: 2.5rem;
+        text-decoration: underline;
+		margin-top: 10%;
+		text-align: center;
+        align-self: center;
+		margin-left: 1cm;
+	}
+
+    #titlu {
+        display: block;
+    }
+
+    #link-top, .container-iframe, #zona1, #logo, nav {
+        display: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    #banner {
+        position: absolute;
+        display: block;
+        top: 0;
+        width: 80%;
+        height: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        overflow: visible;
+        page-break-before: always;
+    }
+
+    #banner::after{
+        font-size: 20px;
+        border: 5px dotted black;
+        box-sizing: border-box;
+        width: 100%;
+        height: 40px;
+        display: block;
+        content: "Acesta este un proiect școlar!";
+    }
+
+    #watermark {
+		display: block;
+		position: fixed;
+		bottom: 1cm;
+        right: 0.5cm;
+		color:rgba(0,0,0,0.4);
+	}
+
+	#watermark::after {
+		opacity: 0.65;
+        width: 100px;
+        height: 2cm;
+		padding: 5px;
+		display: block;
+		background: white;
+		border: 4px double black;
+		border-right: none;
+        text-align: center;
+        line-height: 2cm;
+		content: "Bianca Sandu";
+	}
+
+    #end{
+		page-break-before: always;
+	}
+
+    @page {
+		size: A4 portrait;
+		margin-bottom:2cm;
+		margin-top:2cm;
+		counter-increment: page;
+			
+	}
+
+	@page:left{
+		margin-left: 2.5cm;
+		margin-right: 0.5cm;
+	}
+
+	@page:right{
+		margin-right: 2.5cm;
+		margin-left: 0.5cm;
+	}
+
+    
+
+    @page:first {
+        #banner {
+            display: block; /* Show banner on the first page */
+        }
+    }
+
 }
