@@ -13,19 +13,23 @@ $culoare-bordura: #421112;
 }
 
 nav {
+    padding: 5px;
     font-size: 1.2rem;
     height: $inaltime-meniu;
 }
 
 #hamburger {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: $inaltime-meniu;
+    width: $inaltime-meniu;
 
-    span {
-        line-height: $inaltime-meniu;
-        width: $inaltime-meniu;
-        font-size: 20px;
-        margin-left: 5px;
-        display: block;
+    div {
+        width: 100%;
+        height: 15%;
+        background-color: black;
+        border-radius: 2px;
     }
 }
 
@@ -39,10 +43,14 @@ ol.meniu {
         margin: 0;
         width: 100%;
         border: 1px solid $culoare-bordura;
+        background-color: $culoare-fundal;
     }
 
     > li {
-        animation: spatiere-meniu 0.05s ease-in-out 1;
+        animation-name: spatiere-meniu;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+        animation-duration: 0.05s;
         animation-fill-mode: none;
     }
 

@@ -6,6 +6,14 @@ nav {
     height: $inaltime-meniu;
 }
 
+ol.meniu {
+    li {
+        width: $latime-buton;
+        height: $inaltime-meniu;
+        line-height: $inaltime-meniu;
+    }
+}
+
 #pag1-text {
     display: none;
 }
