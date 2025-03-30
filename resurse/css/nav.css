@@ -1,10 +1,24 @@
+@keyframes animatie-submeniu {
+    0% {
+        opacity: 0;
+        transform: scaleY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scaleY(100%); 
+    }
+}
+
+#hamburger, #ch-menu {
+    display: none;
+}
 
 nav {
     font-size: 1.3rem;
     background-color: #C9A0A0;
-    --inaltime-meniu:30px;
-    --latime-buton:100px;
-    height:var(--inaltime-meniu);
+    --inaltime-meniu: 40px;
+    --latime-buton: 100px;
+    height: var(--inaltime-meniu);
     position: sticky;
     top: 0;
 }
@@ -16,6 +30,12 @@ ol.meniu li div.img-icon{
 ol.meniu ul {
     display: none;
     padding: 0;
+    animation-name: animatie-submeniu;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    transform-origin: 50% 0;
 }
 
 ol.meniu {
@@ -29,15 +49,19 @@ ol.meniu li {
     height: var(--inaltime-meniu);
     border: 2px solid #421112;
     box-sizing: border-box;
-    position: relative;
     text-align: center;
     font-weight: bold;
     line-height: var(--inaltime-meniu);
-    transition: all 0.2s linear;
+    transition: background-color 0.3s ease-in;
+    text-shadow: 0 -15px rgba(255, 255, 255, 0); /*IMPORTANT: CODUL ASTA E PENTRU CULOAREA **TRANSPARENTA** */
 }
 
 ol.meniu li:hover {
-    background-color: #421112;
+    background-color: #421112; 
+}
+
+ol.meniu>li:hover {
+    text-shadow: 0 0 2px white;
 }
 
 ol.meniu li:hover ul{
@@ -50,10 +74,19 @@ ol.meniu li:hover ul{
 ol.meniu a, ol.meniu div {
     color: black;
     text-decoration: none;
-    transition: all 0.2s linear;
+    transition: all 0.5s ease-in;
     display: inline-flex;
     height: 100%;
     cursor: pointer;
+}
+
+ol.meniu ul > li a {
+    text-decoration: underline rgba(255, 255, 255, 0) 1px;
+    transition: text-decoration 0.4s ease-in;
+}
+
+ol.meniu ul > li:hover a {
+    text-decoration: underline white 1px;
 }
 
 ol.meniu li:hover > .txt-icon a , ol.meniu li:hover > div , ol.meniu li:hover > a {

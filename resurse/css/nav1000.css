@@ -1,0 +1,12 @@
+nav {
+    font-size: 1.2rem;
+    --inaltime-meniu: 30px;
+    --latime-buton: 80px;
+}
+
+#pag1-text {
+    display: none;
+}
+
+/* ol.meniu li {
+} */
