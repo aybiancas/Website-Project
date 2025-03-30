@@ -1,0 +1,86 @@
+@keyframes animatie-bara1 {
+    0% {
+        width: 5px;
+        background-color: white;
+        opacity: 0;
+    }
+
+    60% {
+        width: 15px;
+        background-color: rgb(159, 159, 159);
+        opacity: 0.7;
+    }
+
+    100% {
+        width: 20px;
+        background-color: black;
+        opacity: 1;
+    }
+}
+
+@keyframes animatie-bara2 {
+    0% {
+        width: 10px;
+        background-color: white;
+        opacity: 0;
+    }
+
+    60% {
+        width: 25px;
+        background-color: rgb(159, 159, 159);
+        opacity: 0.7;
+    }
+
+    100% {
+        width: 20px;
+        background-color: black;
+        opacity: 1;
+    }
+}
+
+@keyframes animatie-bara3 {
+    0% {
+        width: 15px;
+        background-color: white;
+        opacity: 0;
+    }
+
+    60% {
+        width: 35px;
+        background-color: rgb(159, 159, 159);
+        opacity: 0.7;
+    }
+
+    100% {
+        width: 20px;
+        background-color: black;
+        opacity: 1;
+    }
+}
+
+#hamburger #linia1 {
+    animation: animatie-bara1;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+    animation-duration: 1.2s;
+    animation-fill-mode: none;
+    animation-delay: 0.1s;
+}
+
+#hamburger #linia2 {
+    animation: animatie-bara2;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+    animation-duration: 1s;
+    animation-fill-mode: none;
+    animation-delay: 0.2s;
+}
+
+#hamburger #linia3 {
+    animation: animatie-bara3;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+    animation-duration: 0.7s;
+    animation-fill-mode: none;
+    animation-delay: 0.3s;
+}
