@@ -30,6 +30,7 @@ nav {
 }
 
 ol.meniu {
+    position: relative;
     display: flex;
     list-style-type: none;
     padding: 0;
@@ -39,7 +40,6 @@ ol.meniu {
         height: $inaltime-meniu;
         border: 2px solid $culoare-bordura;
         box-sizing: border-box;
-        position: relative;
         text-align: center;
         font-weight: bold;
         line-height: $inaltime-meniu;
@@ -80,7 +80,7 @@ ol.meniu {
         color: $culoare-text;
         text-decoration: none;
         transition: all 0.5s ease-in;
-        display: inline-flex;
+        display: inline-block;
         height: 100%;
         cursor: pointer;
     }

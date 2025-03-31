@@ -13,6 +13,7 @@ $culoare-bordura: #421112;
 }
 
 nav {
+    z-index: 1;
     padding: 5px;
     font-size: 1.2rem;
     height: $inaltime-meniu;
@@ -55,6 +56,7 @@ ol.meniu {
     }
 
     > li:hover {
+        position: relative;
         text-shadow: none;
     }
 }
@@ -64,3 +66,9 @@ ol.meniu {
     position: relative;
     z-index: 1;
 }
+
+#ch-menu:checked + ol.meniu ul {
+    position: relative;
+    z-index: 1;
+}
+
