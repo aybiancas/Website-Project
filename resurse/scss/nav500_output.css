@@ -7,6 +7,7 @@
   }
 }
 nav {
+  z-index: 1;
   padding: 5px;
   font-size: 1.2rem;
   height: 20px;
@@ -46,13 +47,19 @@ ol.meniu > li {
   animation-fill-mode: none;
 }
 ol.meniu > li:hover {
+  position: relative;
   text-shadow: none;
 }
 
 #ch-menu:checked + ol.meniu {
   display: block;
-  position: absolute;
-  z-index: 100;
+  position: relative;
+  z-index: 1;
+}
+
+#ch-menu:checked + ol.meniu ul {
+  position: relative;
+  z-index: 1;
 }
 
 /*# sourceMappingURL=nav500_output.css.map */

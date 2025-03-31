@@ -21,6 +21,7 @@ nav {
 }
 
 ol.meniu {
+  position: relative;
   display: flex;
   list-style-type: none;
   padding: 0;
@@ -30,7 +31,6 @@ ol.meniu li {
   height: 40px;
   border: 2px solid #421112;
   box-sizing: border-box;
-  position: relative;
   text-align: center;
   font-weight: bold;
   line-height: 40px;
@@ -65,7 +65,7 @@ ol.meniu a, ol.meniu div {
   color: black;
   text-decoration: none;
   transition: all 0.5s ease-in;
-  display: inline-flex;
+  display: inline-block;
   height: 100%;
   cursor: pointer;
 }
