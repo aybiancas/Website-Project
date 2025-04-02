@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ro">
+    <head>
+        <meta name="keywords" content="librarie, magazin, banda desenata, benzi desenate, carte, carti, manga, carte in engleza, carti in engleza">
+        <meta name="description" content="Librarie online pentru carti in engleza, benzi desenate si manga.">
+        <title>FansTOME</title>
+        <%- include("../fragmente/head.ejs") %>
+    </head>
+    <body>
+        <p id="watermark"></p>
+        <%- include("../fragmente/header.ejs") %>
+        <main>
+            <div id="grid_pag">
+                <div class="zona" id="zona1">
+                    <figure>
+                        <picture id="pic">
+                        <source srcset="./resurse/imagini/footerx3.png" media="(max-width:500px)" id="picmobil">
+                        <source srcset="./resurse/imagini/footerx5.png" media="(max-width:1000px)" id="pictableta">
+                        <source srcset="./resurse/imagini/footerx10.png" media="(max-width:1500px)" id="picdesktop">
+                        <img src="/resurse/imagini/footerx10.png" alt="books" id="picdefault">
+                        </picture>
+                        <figcaption id="caption">Carti</figcaption>
+                    </figure>
+                </div>
+                <div class="zona" id="zona2"> <!--TABEL-->
+                    <table class="tabel">
+                        <caption> OFERTE SAPTAMANALE </caption>
+                        <thead>
+                            <tr>
+                                <!--TABEL DE OFERTE ZILNICE!!-->
+                                <th></th>
+                                <th>ZIUA</th>
+                                <th>ORA*</th>
+                                <th>OFERTA</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>LUNI</td>
+                                <td>8:00 - 22:00</td>
+                                <td>insert oferta</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>MARTI</td>
+                                <td>8:00 - 22:00</td>
+                                <td>insert oferta</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>MIERCURI</td>
+                                <td>8:00 - 22:00</td>
+                                <td>insert oferta</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>JOI</td>
+                                <td>8:00 - 22:00</td>
+                                <td>insert oferta</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>VINERI</td>
+                                <td>8:00 - 22:00</td>
+                                <td>insert oferta</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>SAMBATA</td>
+                                <td>Toata ziua</td>
+                                <td>insert oferta</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>DUMINICA</td>
+                                <td>Toata ziua</td>
+                                <td>insert oferta</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="4">*Ofertele sunt valabile in intervalul de timp precizat, orele sunt in functie de fusul orar UTC+2</td>
+                            </tr>
+                        </tfoot>
+                    </table>           
+                </div>
+                <div class="zona" id="zona3"> <!--CALENDAR-->
+                    <p>Inscrie-te la programul nostru de loialitate! Vei primi, pe langa ultimele stiri despre produse noi, si reduceri atragatoare!</p>
+                    <p>Atentie! Dupa inscrierea la programul de loialitate, preturile pentru produsele vizate de reduceri se vor calcula folosind formula: </p>
+                    <div id="formula">
+                        <math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mi>Pret_Final</mi>
+                            <mo>=</mo>
+                            <mi>Pret</mi>
+                            <mo>&#xD7;</mo>
+                            <mo>(</mo>
+                            <mn>1</mn>
+                            <mo>-</mo>
+                            <mo>(</mo>
+                            <mi>Reducere_Zilnica</mi>
+                            <mo>+</mo>
+                            <mn>0.05</mn>
+                            <mo>)</mo>
+                            <mo>)</mo>
+                        </math>
+                    </div>
+                </div>
+                <div class="zona" id="zona4"> <!--ANUNTURI-->
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi soluta aut, voluptate, qui eum officia iusto iste autem repudiandae non cum illo beatae earum inventore libero. Adipisci repellat molestiae ratione.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi soluta aut, voluptate, qui eum officia iusto iste autem repudiandae non cum illo beatae earum inventore libero. Adipisci repellat molestiae ratione.</p>
+                </div>
+                <div class="zona" id="zona5"> <!--USERS-->
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, rem provident nisi doloremque, non nulla eius quisquam officia voluptates animi nesciunt minima architecto neque quis nemo, fuga saepe expedita amet.</p>
+                </div>
+                <div class="zona" id="zona6"> <!--user statistics-->
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum possimus consectetur sapiente, necessitatibus, molestiae odio harum quas, expedita maxime cupiditate suscipit sequi ullam deleniti ipsam molestias! Ratione corporis inventore facere.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi soluta aut, voluptate, qui eum officia iusto iste autem repudiandae non cum illo beatae earum inventore libero. Adipisci repellat molestiae ratione.</p>
+                </div>
+                <div class="zona" id="zona7"> <!--date site-->
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam corrupti quidem rem eos nam explicabo illo! Porro perspiciatis ab atque aliquid voluptatibus nobis magni illum autem? Vel sequi ipsa optio?</p>
+                </div>
+                <div class="zona" id="zona8">
+                    <section id="desprenoi">
+                        <h2>Despre noi</h2>
+                        <p><b>Librarie</b> <i>online</i> pentru pasionatii de citit!
+                            Aici vei gasi o mare colectie de <b>carti in engleza</b>, <b>benzi desenate</b> din seriile copilariei si volume <b><i lang="ja">manga</i></b> pentru pasionatii de <i lang="ja">anime</i> si doritorii de actiune!</p>
+                    </section>
+                    <section id="inspiratie">
+                        <h2>Inspiratie</h2>
+                        <p>Initiativa de a crea aceasta afacere a venit dintr-o pasiune personala a copilariei, cititul. Intrand in adolescenta, am realizat ca am prefera sa citim o <b>carte in engleza</b> in schimbul uneia in limba romana, din dorinta de a ne imbunatatii abilitatile lingvistice. In acelasi timp, am descoperit lumea plina de actiune a <i lang="ja">anime</i>-urilor si a principalei inspiratii a lor, seriile <b><i lang="ja">manga</i></b>, a caror comunitate de fani este inca crescanda in tara.</p>
+                        <p>
+                            De asemenea, benzile desenate, volumele ilustrate sau manga sunt <s>de mare ajutor</s> <ins>o treapta ajutatoare</ins> in invatarea unei alte limbi. Mai multe detalii:
+                        </p>
+                        <div class="container-iframe">
+                            <div class="taburi-iframe">
+                                <a id="tab_video1" href="https://www.youtube.com/embed/gJpFboFcGfE" target="video">Graphic Novels</a>
+                                <a id="tab_video2" href="https://www.youtube.com/embed/8OYEBRdAlNk" target="video">History</a>
+                            </div>
+                                <iframe name="video" id="video" src="https://www.youtube.com/embed/gJpFboFcGfE" title="Are Graphic Novels... Novels? (Feat. Princess Weekes) | It&#39;s Lit" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </section>
+                    <section id="ceoferim">
+                        <h2>Ce oferim</h2>
+                        <p>        
+                        Destinata fanilor de toate varstele, <b>libraria FansTOME</b> nu este un simplu <b>magazin</b> de carti, ci un loc unde acestia isi pot satisface pofta imaginatiei prin anumite piese media ce nu sunt gasite peste tot in Romania. <b>FansTOME</b> ofera posibilitatea raspandirii 
+                        </p>
+                    </section>
+                </div>
+            </div>
+            <br><br>
+        </main>
+        <%- include("../fragmente/footer.ejs") %>
+    </body>
+</html>
