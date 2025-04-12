@@ -1,0 +1,29 @@
+#err-imag{
+    background-image: url("/resurse/imagini/logo.png");
+    background-size: 100% auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 30%; 
+}
+
+#err-imag img{
+    width: 100%;
+}
+
+#err-coloane {
+    display: inline-flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 1rem;
+    justify-content: center;
+}
+
+#err-coloane section{
+    font-size: 2rem;
+    padding-left: 1rem;
+    align-self: center;
+}
+#err-coloane h2{
+    font-family: "Press Start 2P";
+    font-size: 2rem;
+}
