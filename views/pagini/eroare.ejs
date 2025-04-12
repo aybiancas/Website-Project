@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ro">
+    <head>
+        <meta name="keywords" content="librarie, magazin, banda desenata, benzi desenate, carte, carti, manga, carte in engleza, carti in engleza">
+        <meta name="description" content="Librarie online pentru carti in engleza, benzi desenate si manga.">
+        <title>FansTOME</title>
+        <link rel="stylesheet" type="text/css" href="/resurse/css/eroare.css"
+        <%- include("../fragmente/head.ejs");  %> 
+    </head>
+    <body>
+    <%- include("../fragmente/header.ejs");  %> 
+    <main>
+        <div id="err-coloane">
+			<div id="err-imag">
+				<img src="<%- locals.imagine %>" />
+			</div>
+			<section>
+				<h2><%- locals.titlu %></h2>
+				<p><%- locals.text %></p>
+			</section>
+		</div>
+    </main>
+    <%- include("../fragmente/footer.ejs");  %> 
+    </body>
+</html>
