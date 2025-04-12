@@ -14,23 +14,31 @@
 
 nav {
   font-size: 1.3rem;
-  background-color: #C9A0A0;
+  background-color: rgba(255, 255, 255, 0);
   height: 40px;
   position: sticky;
   top: 0;
+  margin-left: -15px;
+  margin-right: -15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  z-index: 1;
+  width: 100%;
 }
 
 ol.meniu {
   position: relative;
   display: flex;
+  justify-content: center;
   list-style-type: none;
   padding: 0;
 }
 ol.meniu li {
-  width: 100px;
+  background-color: #A77272;
+  width: 35%;
   height: 40px;
-  border: 2px solid #421112;
-  box-sizing: border-box;
+  border: 2px solid #5C1E20;
+  border-top: none;
   text-align: center;
   font-weight: bold;
   line-height: 40px;
@@ -38,7 +46,7 @@ ol.meniu li {
   text-shadow: 0 -15px rgba(255, 255, 255, 0);
 }
 ol.meniu li:hover {
-  background-color: #421112;
+  background-color: #5C1E20;
   text-shadow: 0 0 2px white;
 }
 ol.meniu li:hover > .txt-icon a,
@@ -54,8 +62,9 @@ ol.meniu li ul {
   padding: 0;
   animation: animatie-submeniu 0.5s linear forwards;
   transform-origin: 50% 0;
-  background-color: #C9A0A0;
+  background-color: #A77272;
   list-style-type: none;
+  width: 100%;
 }
 ol.meniu li:hover ul {
   display: block;
@@ -68,6 +77,11 @@ ol.meniu a, ol.meniu div {
   display: inline-block;
   height: 100%;
   cursor: pointer;
+}
+ol.meniu ul > li {
+  width: 100%;
+  position: relative;
+  left: -2px;
 }
 ol.meniu ul > li a {
   text-decoration: underline rgba(255, 255, 255, 0) 1px;

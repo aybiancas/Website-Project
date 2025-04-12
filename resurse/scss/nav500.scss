@@ -1,6 +1,7 @@
 $inaltime-meniu: 20px;
 $latime-buton: 80px;
-$culoare-fundal: #C9A0A0;
+$culoare-fundal-nav: #C9A0A0;
+$culoare-fundal: #A77272;
 $culoare-bordura: #421112;
 
 @keyframes spatiere-meniu {
@@ -14,7 +15,9 @@ $culoare-bordura: #421112;
 
 nav {
     z-index: 1;
-    padding: 5px;
+    background-color: $culoare-fundal;
+    padding-top: 5px;
+    padding-bottom: 5px;
     font-size: 1.2rem;
     height: $inaltime-meniu;
 }

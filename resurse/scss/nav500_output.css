@@ -8,7 +8,9 @@
 }
 nav {
   z-index: 1;
-  padding: 5px;
+  background-color: #A77272;
+  padding-top: 5px;
+  padding-bottom: 5px;
   font-size: 1.2rem;
   height: 20px;
 }
@@ -31,13 +33,13 @@ ol.meniu {
   display: none;
   margin: 0;
   width: 100%;
-  background-color: #C9A0A0;
+  background-color: #A77272;
 }
 ol.meniu li {
   margin: 0;
   width: 100%;
   border: 1px solid #421112;
-  background-color: #C9A0A0;
+  background-color: #A77272;
 }
 ol.meniu > li {
   animation-name: spatiere-meniu;
