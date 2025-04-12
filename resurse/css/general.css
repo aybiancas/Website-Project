@@ -75,6 +75,11 @@ body {
     margin-left: var(--margine-pagina);
     margin-right: var(--margine-pagina);
     line-height: 1.5;
+    box-sizing: border-box;
+}
+
+main {
+    margin-top: 10px;
 }
 
 #banner, #watermark {
@@ -238,12 +243,12 @@ footer {
 }
 
 header {
+    box-sizing: border-box;
     background-color: #A77272;
     border: 5px solid #5C1E20;
-    border-radius: 30px;
-    box-shadow: 5px 5px #5C1E20;
+    border-radius: 30px 30px 0 0;
+    box-shadow: -6px 6px 0px #C9A0A0, 5px 5px 0px #5C1E20;
     padding: 30px;
-    margin-bottom: 10px;
 }
 
 #logo {

@@ -176,14 +176,6 @@ footer {
     max-width: fit-content;
 }
 
-header {
-    background-color: #A77272;
-    border: 5px solid #5C1E20;
-    border-radius: 30px;
-    padding: 30px;
-    margin-bottom: 10px;
-}
-
 #logo {
     width: 30px;
     height: 40px;
