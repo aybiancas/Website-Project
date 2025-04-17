@@ -12,9 +12,6 @@ html {
 }
 
 body {
-    margin-left: 4px;
-    margin-right: 4px;
-    width: auto;
     display: block;
 }
 
@@ -101,7 +98,7 @@ p, details, #cr {
     background-color: #C9A0A0;
     overflow: hidden;
     overflow-x: auto;
-    width: 80%;
+    width: 100%;
     position: relative;
     grid-area: zona2;
 }
