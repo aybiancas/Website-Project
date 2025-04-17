@@ -13,6 +13,7 @@ console.log("Folderul curent de lucru: ", process.cwd())
 
 app.set("view engine", "ejs");
 app.use("/resurse", express.static(path.join(__dirname,"resurse")))
+app.use("/node_modules", express.static(path.join(__dirname,"node_modules")))
 
 obGlobal = {
     obErori:null
@@ -98,7 +99,7 @@ function afisareEroare(res, identificator, titlu, text, imagine){
         var titluCustom = titlu || eroare.titlu;
         var textCustom = text || eroare.text;
         var imagineCustom = imagine || eroare.imagine;
-    }
+    } 
     else{
         var err = obGlobal.obErori.eroare_default
         var titluCustom = titlu || err.titlu;
@@ -114,6 +115,9 @@ function afisareEroare(res, identificator, titlu, text, imagine){
 }
 
 
+app.get("/favicon.ico", function(req, res){
+    res.sendFile(path.join(__dirname, "resurse/imagini/favicon/favicon.ico"))
+})
 
 
 app.get(["/","/index","/home"], function(req, res){
@@ -122,9 +126,9 @@ app.get(["/","/index","/home"], function(req, res){
 
 
 // IMPORTANT -- FA PAGINA DESPRENOI
-// app.get("/desprenoi", function(req, res){
-//     res.render("pagini/desprenoi");
-// })
+app.get("/desprenoi", function(req, res){
+    res.render("pagini/desprenoi");
+})
 
 // IMPORTANT -- FA PAGINA DE PRODUSE
 // app.get("/produse", function(req, res){
