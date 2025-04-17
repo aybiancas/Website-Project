@@ -3,6 +3,7 @@ $latime-buton: 80px;
 $culoare-fundal-nav: #C9A0A0;
 $culoare-fundal: #A77272;
 $culoare-bordura: #421112;
+$culoare-bordura-header: #5C1E20;
 
 @keyframes spatiere-meniu {
     0% {
@@ -20,6 +21,11 @@ nav {
     padding-bottom: 5px;
     font-size: 1.2rem;
     height: $inaltime-meniu;
+    border-left: 2px solid $culoare-bordura-header;
+    border-right: 2px solid $culoare-bordura-header;
+    border-bottom: 2px solid $culoare-bordura-header;
+    width: 93%;
+    margin: 0 auto;
 }
 
 #hamburger {
@@ -38,6 +44,7 @@ nav {
 }
 
 ol.meniu {
+    
     display: none;
     margin: 0;
     width: 100%;
