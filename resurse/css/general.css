@@ -68,6 +68,9 @@ html {
     --inaltime-harta: 400px;
     --margine-pagina: 20px;
     --padding-text: 10px;
+    --culoare-main: #5C1E20;
+    --culoare-semideschisa: #A77272;
+    --culoare-deschisa: #C9A0A0;
 }
 
 body {
@@ -111,9 +114,9 @@ p, details, #cr {
     display: block;
     margin-bottom: 5px;
     color: var(--culoare-text);
-    border: 2px solid #5C1E20;
+    border: 2px solid var(--culoare-main);
     border-radius: 5px 25px 5px 0;
-    box-shadow: inset 0 0 10px #5C1E20;
+    box-shadow: inset 0 0 10px var(--culoare-main);
     text-decoration: none;
     text-align: center;
     justify-content: center;
@@ -136,7 +139,7 @@ p, details, #cr {
 }
 
 .taburi-iframe > a:hover {
-    background-color: #5C1E20;
+    background-color: var(--culoare-main);
     text-shadow: white 1px 0 5px;
     color: #F6CCCC;
     transition: all 0.2s linear;
@@ -155,8 +158,8 @@ p, details, #cr {
 }
 
 .zona {
-    background-color: #C9A0A0;
-    border: 5px solid #5C1E20;
+    background-color: var(--culoare-deschisa);
+    border: 5px solid var(--culoare-main);
     border-radius: 20px;
     padding: 30px;
     overflow: hidden;
@@ -172,7 +175,7 @@ p, details, #cr {
 #zona2 {
     padding: 0;
     display: block;
-    background-color: #C9A0A0;
+    background-color: var(--culoare-deschisa);
     overflow: auto;
     width: 100%;
     box-sizing: border-box;
@@ -201,7 +204,7 @@ p, details, #cr {
 }
 
 #zona8 {
-    background-color: #A77272;
+    background-color: var(--culoare-semideschisa);
     border: none;
     margin: 0;
     padding: 0;
@@ -217,16 +220,16 @@ p, details, #cr {
                          "zona5 zona6 zona8 zona8"
                          "zona5 zona4 zona4 zona7";
     padding: 20px;
-    background-color: #A77272;
-    border: 5px solid #5C1E20;
+    background-color: var(--culoare-semideschisa);
+    border: 5px solid var(--culoare-main);
     border-radius: 20px;
-    box-shadow: 5px 5px #5C1E20;
+    box-shadow: 5px 5px var(--culoare-main);
 }
 
 #desprenoi, #inspiratie, #ceoferim {
-    border: 5px solid #5C1E20;
+    border: 5px solid var(--culoare-main);
     border-radius: 15px 50px;
-    background-color: #C9A0A0;
+    background-color: var(--culoare-deschisa);
     padding: 10px;
     margin: 10px;
     box-sizing: border-box;
@@ -234,20 +237,20 @@ p, details, #cr {
 }
 
 footer {
-    border: 5px solid #5C1E20;
+    border: 5px solid var(--culoare-main);
     border-radius: 20px;
-    box-shadow: 5px 5px #5C1E20;
-    background-color: #A77272;
+    box-shadow: 5px 5px var(--culoare-main);
+    background-color: var(--culoare-semideschisa);
     padding: 10px;
     margin-bottom: 10px;
 }
 
 header {
     box-sizing: border-box;
-    background-color: #A77272;
-    border: 5px solid #5C1E20;
+    background-color: var(--culoare-semideschisa);
+    border: 5px solid var(--culoare-main);
     border-radius: 30px 30px 0 0;
-    box-shadow: -6px 6px 0px #C9A0A0, 5px 5px 0px #5C1E20;
+    box-shadow: -6px 6px 0px var(--culoare-deschisa), 5px 5px 0px var(--culoare-main);
     padding: 30px;
 }
 
@@ -347,11 +350,11 @@ figure figcaption {
 }
 
 .tabel thead tr {
-    background-color: #A77272;
+    background-color: var(--culoare-semideschisa);
 }
 
 .tabel tbody td:nth-child(1), .tabel tbody td:nth-child(3) {
-    background-color: #A77272;
+    background-color: var(--culoare-semideschisa);
 }
 
 .tabel thead tr:nth-child(1), .tabel thead tr:nth-child(3) {
@@ -393,7 +396,7 @@ figure figcaption {
 math {
     padding-top: 10px;
     padding-bottom: 10px;
-    background-color: #A77272;
+    background-color: var(--culoare-semideschisa);
     border-radius: 25px;
 }
 
@@ -416,6 +419,64 @@ mo {
 mi:hover {
     transform: scale(1.1);
     transition: 0.1s ease-in;
+}
+
+figcaption {
+    display: none;
+}
+
+
+/*LINK CONTINUT PAGINE TO DO ANIMATIE GRANDIENT OVAL*/
+*:not(.meniu) a:not(.iframevid) {
+    display: inline-block;
+    background-image: radial-gradient(ellipse, white 0%, white 40%, transparent 80%, transparent 100%);
+    background-position: center;
+    background-size: 0 0;
+    background-repeat: no-repeat;
+    transition: background-size 0.8s ease-in-out;
+}
+
+*:not(.meniu) a:hover:not(.iframevid) {
+    background-size: 100% 60%;
+}
+
+/* a:not(.iframevid):hover {
+    background-image: radial-gradient(0% black, 40% black, 80% transparent, 100% transparent);
+    background-position: center;
+    background-size: 0;
+    transition: background-image 0.5s ease-in-out;
+  }
+  
+.meniu a:hover {
+background-image: none;
+} */
+
+a[href^="http"]:not(.iframevid):visited {
+    color: var(--culoare-main);
+}
+
+a[href^="http"]:not(.iframevid)::before {
+    content: "⮳";
+    font-size: 150%;
+}
+
+a[href^="http"]:not(.iframevid):hover::before {
+    color: var(--culoare-deschisa);
+    transition: all 0.2s ease-in-out;
+}
+
+/*LINK ACTIVE BORDER*/
+:not(.meniu) > a:not(.iframevid):active {
+    border: 1.5px solid black;
+}
+
+video {
+    height: 100%;
+    width: 90%;
+    min-width: 250px;
+    max-width: 500px;
+    display: flex;
+    justify-self: center;
 }
 
 @media print {
