@@ -10,6 +10,7 @@
         <p id="watermark"></p>
         <%- include("../fragmente/header.ejs") %>
         <main>
+            
             <div id="grid_pag">
                 <div class="zona" id="zona1">
                     <figure>
@@ -107,11 +108,17 @@
                     </div>
                 </div>
                 <div class="zona" id="zona4"> <!--ANUNTURI-->
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi soluta aut, voluptate, qui eum officia iusto iste autem repudiandae non cum illo beatae earum inventore libero. Adipisci repellat molestiae ratione.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi soluta aut, voluptate, qui eum officia iusto iste autem repudiandae non cum illo beatae earum inventore libero. Adipisci repellat molestiae ratione.</p>
+                    <video controls="controls" preload="none" poster="/resurse/video/poster.png">
+                        <source src="/resurse/video/video.mp4" type="video/mp4">
+                        <source src="/resurse/video/video.ogv" type="video/ogv">
+                        <source src="/resurse/video/video.mov" type="video/mov">
+                        <track default src="/resurse/tracks/my_captions.vtt" kind="captions" srclang="ro" label="romana" />
+                        <track  src="/resurse/tracks/my_captions_en.vtt" kind="captions" srclang="en" label="engleza" />
+                        VIDEO
+                    </video>                       
                 </div>
                 <div class="zona" id="zona5"> <!--USERS-->
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, rem provident nisi doloremque, non nulla eius quisquam officia voluptates animi nesciunt minima architecto neque quis nemo, fuga saepe expedita amet.</p>
+                    <p> <b>Ip: </b><%- locals.ip %> </p>
                 </div>
                 <div class="zona" id="zona6"> <!--user statistics-->
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum possimus consectetur sapiente, necessitatibus, molestiae odio harum quas, expedita maxime cupiditate suscipit sequi ullam deleniti ipsam molestias! Ratione corporis inventore facere.</p>
@@ -134,8 +141,8 @@
                         </p>
                         <div class="container-iframe">
                             <div class="taburi-iframe">
-                                <a id="tab_video1" href="https://www.youtube.com/embed/gJpFboFcGfE" target="video">Graphic Novels</a>
-                                <a id="tab_video2" href="https://www.youtube.com/embed/8OYEBRdAlNk" target="video">History</a>
+                                <a class="iframevid" id="tab_video1" href="https://www.youtube.com/embed/gJpFboFcGfE" target="video">Graphic Novels</a>
+                                <a class="iframevid" id="tab_video2" href="https://www.youtube.com/embed/8OYEBRdAlNk" target="video">History</a>
                             </div>
                                 <iframe name="video" id="video" src="https://www.youtube.com/embed/gJpFboFcGfE" title="Are Graphic Novels... Novels? (Feat. Princess Weekes) | It&#39;s Lit" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
