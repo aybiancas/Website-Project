@@ -1,0 +1,23 @@
+WEBVTT - Made with VTT Creator
+
+STYLE
+::cue {
+    font-size: 10px;
+    text-align: center;
+    text-shadow: 2px 1px black;
+    background-color: rgba(255,255,255,0);
+    color: white;
+}
+
+unu
+00:00.267 --> 00:02.267 position:50% align:middle line:2
+Super oferte zilnice!
+
+doi
+00:02.803 --> 00:04.803 position:50% align:middle line:6
+Titluri exclusive și prețuri accesibile!
+
+trei
+00:05.900 --> 00:08.900 position:50% align:middle line:-2
+<b>FansTOME</b>, de la fani pentru fani!
+
