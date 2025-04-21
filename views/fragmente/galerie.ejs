@@ -1,0 +1,22 @@
+<div id="grid-galerie">
+    <% d=new Date()
+        h=d.getHours()
+        for (let imag of locals.imagini) {  %>
+            <% 
+                [st, sf]=imag.timp.split('-')
+                stHour=parseInt(st, 10)
+                sfHour=parseInt(sf, 10)
+                if (h>=stHour&&h<=sfHour) { %>
+                <figure>
+                    <picture>
+                        <source srcset="<%- imag.fisier_mic  %>" media="screen and (max-width:500px)" />
+                        <source srcset="<%- imag.fisier_mediu  %>" media="screen and (max-width:1000px)" />
+                        <img src="<%- imag.fisier  %>" alt="<%- imag.alt || imag.cale_imagine.replace(/\.\w+$/, '') || imag.titlu %>" title="<%- imag.descriere %>">
+                    </picture>
+                    <figcaption>
+                        <%- imag.descriere %>
+                    </figcaption>
+                </figure>
+            <% }  %>
+        <% } %>
+</div>
