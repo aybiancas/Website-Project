@@ -301,3 +301,16 @@ figure img {
     padding: 10px;
     border: none;
 }
+
+#grid-galerie {
+    display: block;
+    gap: 1rem;
+}
+
+#grid-galerie picture {
+    margin: 10px;
+}
+
+#grid-galerie figcaption {
+    display: flex;
+}
