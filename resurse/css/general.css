@@ -490,6 +490,11 @@ video {
     counter-increment: imag;
 }
 
+#grid-galerie img:hover {
+    transform: translateY(-15%) scale(130%);
+    transition: all 0.5s ease-in-out;
+}
+
 #grid-galerie figcaption {
     display: block;
 }
@@ -529,6 +534,59 @@ video {
 
 #grid-galerie figure:nth-child(10) {
     grid-area: 3/4/4/5;
+}
+
+.bara {
+    border: none;
+    height: 10px;
+    background-image: linear-gradient(40deg, var(--culoare-main) 0%, var(--culoare-main) 15%, 
+                      transparent 15%, transparent 20%,
+                      var(--culoare-main) 20%, var(--culoare-main) 80%,
+                      transparent 80%, transparent 85%,
+                      var(--culoare-main) 85%, var(--culoare-main) 100%);
+    background-size: 100% 100%;
+    margin: 10px;
+}
+
+#text-reflectat {
+    position: relative;
+	transform-origin: 0 0;
+	transform: rotateX(180deg) skew(-45deg) scaleY(0.7) translate(0.3rem, -0.5rem); 
+	opacity: 0.55;
+    /* mask-image: repeating-linear-gradient(0deg, black 0px, black 1px, transparent 1px, transparent 2px); */
+    mask-image: repeating-radial-gradient(ellipse at center bottom, black 0px, black 5px, transparent 6px, transparent 10px);
+    mask-repeat: repeat;
+    mask-size: 40% 100%;
+    /* mask-position: center -30px; */
+    /* mask-origin: ; */
+}
+
+#text:hover + #text-reflectat {
+    animation-name: efect-apa;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+#text {
+    position: relative;
+}
+
+#text, #text-reflectat {
+    font-size: 1.5rem;
+	line-height: 1.5rem;
+	font-weight: bold;
+}
+
+@keyframes efect-apa {
+    0% {
+        mask-position: 0 0;
+        /* mark-image: repeating-radial-gradient(ellipse at 50%, black 0px, black 5px, transparent 6px, transparent 10px); */
+    }
+    100% {
+        mask-position: 0 -40px;
+        /* mark-image: repeating-radial-gradient(ellipse at 50%, black 5px, black 10px, transparent 11px, transparent 16px); */
+    }
 }
 
 @media print {
