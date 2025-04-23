@@ -37,9 +37,9 @@ app.use("/node_modules", express.static(path.join(__dirname,"node_modules")))
 obGlobal = {
     obErori:null,
     obImagini:null,
-    // folderScss:path.join(__dirname, "resurse/scss"),
-    // folderCss:path.join(__dirname, "resurse/css"),
-    // folderBackup:path.join(__dirname, "backup")
+    folderScss:path.join(__dirname, "resurse/scss"),
+    folderCss:path.join(__dirname, "resurse/css"),
+    folderBackup:path.join(__dirname, "backup")
 }
 
 vect_foldere = ["temp", "backup", "temp1"]
@@ -50,58 +50,60 @@ for (let folder of vect_foldere) {
     } 
 }
 
-// function compileazaScss(caleScss, caleCss){
-//     console.log("cale:",caleCss);
-//     if(!caleCss){
+function compileazaScss(caleScss, caleCss){
+    console.log("cale:",caleCss);
+    if(!caleCss){
         
-//         let numeFisExt=path.basename(caleScss);//folder1/folder2/ceva.txt - > ceva.txt (basename)
-//         let numeFis=numeFisExt.split(".")[0]   /// "a.scss"  -> ["a","scss"]
-//         // aici e nev de numele fisierului fara extensie
-//         // merge si cu path.extname - sa ia extensia fisierului
-//         caleCss=numeFis+".css";// output: a.css
-//     }
+        let numeFisExt=path.basename(caleScss);//folder1/folder2/ceva.txt - > ceva.txt (basename)
+        let numeFis=numeFisExt.split(".")[0]   /// "a.scss"  -> ["a","scss"]
+        caleCss=numeFis+".css";// output: a.css
+    }
     
-//     if (!path.isAbsolute(caleScss))
-//         caleScss=path.join(obGlobal.folderScss,caleScss )
-//     if (!path.isAbsolute(caleCss))
-//         caleCss=path.join(obGlobal.folderCss,caleCss )
+    if (!path.isAbsolute(caleScss))
+        caleScss=path.join(obGlobal.folderScss,caleScss )
+    if (!path.isAbsolute(caleCss))
+        caleCss=path.join(obGlobal.folderCss,caleCss )
     
-
-//     let caleBackup=path.join(obGlobal.folderBackup, "resurse/css");
-//     if (!fs.existsSync(caleBackup)) {
-//         fs.mkdirSync(caleBackup,{recursive:true}) // recursive creeaza toate folderele din subcale, da eroare ca nu gaseste resurse/css daca recursive false
-//     }
+    // salvare in backup a intregului folder css 
+    let caleBackup=path.join(obGlobal.folderBackup, "resurse/css");
+    if (!fs.existsSync(caleBackup)) {
+        fs.mkdirSync(caleBackup,{recursive:true}) // recursive creeaza toate folderele din subcale, da eroare ca nu gaseste resurse/css daca recursive false
+    }
     
-//     // la acest punct avem cai absolute in caleScss si  caleCss
+    // la acest punct avem cai absolute in caleScss si  caleCss
 
-//     let numeFisCss=path.basename(caleCss);
-//     if (fs.existsSync(caleCss)){
-//         fs.copyFileSync(caleCss, path.join(obGlobal.folderBackup, "resurse/css",numeFisCss ))// +(new Date()).getTime()
-//     }
-//     rez=sass.compile(caleScss, {"sourceMap":true}); // echivalent sass nume.scss nume.css
-//     fs.writeFileSync(caleCss,rez.css)
-//     // console.log("Compilare SCSS",rez);
-// }
-// //compileazaScss("a.scss");
-// // la pornirea serverului
-// vFisiere=fs.readdirSync(obGlobal.folderScss);
-// for( let numeFis of vFisiere ){
-//     if (path.extname(numeFis)==".scss"){
-//         compileazaScss(numeFis);
-//         // dupa compilare, duce fisierele scss compilate in foldercss, inclusiv customizarea bootstrap 
-//     }
-// }
+    // let numeFisCss=path.basename(caleCss);
+    // let extFisCss=path.extname(numeFisCss);
+    // let bazaCss=path.basename(numeFisCss, ext)
+    let timeSt=(new Date()).getTime();
+    let numeFisCss=path.basename(caleCss, path.extname(caleCss))+"_"+timeSt+".css"
+    if (fs.existsSync(caleCss)){
+        fs.copyFileSync(caleCss, path.join(obGlobal.folderBackup, "resurse/css", numeFisCss))// +(new Date()).getTime()
+    }
+    rez=sass.compile(caleScss, {"sourceMap":true}); // echivalent sass nume.scss nume.css
+    fs.writeFileSync(caleCss,rez.css)
+    // console.log("Compilare SCSS",rez);
+}
+//compileazaScss("a.scss");
+// la pornirea serverului
+vFisiere=fs.readdirSync(obGlobal.folderScss);
+for( let numeFis of vFisiere ){
+    if (path.extname(numeFis)==".scss"){
+        compileazaScss(numeFis);
+        // dupa compilare, duce fisierele scss compilate in foldercss, inclusiv customizarea bootstrap 
+    }
+}
 
-// // fs.watch = in cazul in care se modifica un fisier/folder etc nu mai e nevoie de restart la server
-// fs.watch(obGlobal.folderScss, function(eveniment, numeFis){
-//     console.log(eveniment, numeFis);
-//     if (eveniment=="change" || eveniment=="rename"){ // crearea unui fis e vazuta ca rename
-//         let caleCompleta=path.join(obGlobal.folderScss, numeFis);
-//         if (fs.existsSync(caleCompleta)){
-//             compileazaScss(caleCompleta);
-//         }
-//     }
-// })
+// fs.watch = in cazul in care se modifica un fisier/folder etc nu mai e nevoie de restart la server
+fs.watch(obGlobal.folderScss, function(eveniment, numeFis){
+    console.log(eveniment, numeFis);
+    if (eveniment=="change" || eveniment=="rename"){ // crearea unui fis e vazuta ca rename
+        let caleCompleta=path.join(obGlobal.folderScss, numeFis);
+        if (fs.existsSync(caleCompleta)){
+            compileazaScss(caleCompleta);
+        }
+    }
+})
 
 function initErori() {
     let continut = fs.readFileSync(path.join(__dirname,"resurse/json/erori.json")).toString("utf-8");
@@ -118,21 +120,6 @@ function initErori() {
 }
 
 initErori()
-
-// IDEE GALERIE STATICA BAZATA DE ORE:
-// O IMAGINE REPREZENTATIVA PENTRU FIECARE OFERTA
-// EDITEAZA OFERTE ORE!!!!
-
-// VEZI INDEX.EJS IN CURS6 FOLDER
-// LA GALERIA STATICA
-
-// EXEMPLU GALERIA STATICA CU PISICI
-// COORDONATE PENTRU GRIDUL DE GALERIE
-
-// LA COORDONATE
-// 2/3/3/4 LINIA 2 COLOANA 3, SE DUCE PANA LA LINIA 3, SE DUCE PANA LA COLOANA 4
-
-// VEZI EXEMPLU COUNTER LA EXEMPLE LINKURI CURS
 
 // INSTALARE BOOTSTRAP
 
