@@ -86,7 +86,7 @@
                         </tfoot>
                     </table>           
                 </div>
-                <div class="zona" id="zona3"> <!--CALENDAR-->
+                <div class="zona" id="zona3">
                     <p>Inscrie-te la programul nostru de loialitate! Vei primi, pe langa ultimele stiri despre produse noi, si reduceri atragatoare!</p>
                     <p>Atentie! Dupa inscrierea la programul de loialitate, preturile pentru produsele vizate de reduceri se vor calcula folosind formula: </p>
                     <div id="formula">
@@ -107,7 +107,7 @@
                         </math>
                     </div>
                 </div>
-                <div class="zona" id="zona4"> <!--ANUNTURI-->
+                <div class="zona" id="zona4">
                     <video controls="controls" preload="none" poster="/resurse/video/poster.png">
                         <source src="/resurse/video/video.mp4" type="video/mp4">
                         <source src="/resurse/video/video.ogv" type="video/ogv">
@@ -117,7 +117,15 @@
                         VIDEO
                     </video>                       
                 </div>
-                <div class="zona" id="zona5"> <!--USERS-->
+                <div class="zona" id="zona5">
+                    <div class="container-text">
+                        <div id="text">
+                            Utilizatori
+                        </div>
+                        <div id="text-reflectat">
+                            Utilizatori
+                        </div>
+                    </div>
                     <p> <b>Ip: </b><%- locals.ip %> </p>
                 </div>
                 <div class="zona" id="zona6"> <!--user statistics-->
@@ -155,9 +163,13 @@
                     </section>
                 </div>
             </div>
-            <br><br>
+            <br>
+            <hr class="bara">
+            <br>
             <%- include("../fragmente/galerie.ejs") %>
-            <br><br>
+            <br>
+            <hr class="bara">
+            <br>
         </main>
         <%- include("../fragmente/footer.ejs") %>
     </body>
