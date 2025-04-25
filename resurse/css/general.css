@@ -50,6 +50,10 @@ table {
     src: url("../fonts/PixeloidSans-Bold.ttf");
 }
 
+* {
+    box-sizing: content-box;
+}
+
 b {
     font-weight: bold;
 }
@@ -546,6 +550,7 @@ video {
                       var(--culoare-main) 85%, var(--culoare-main) 100%);
     background-size: 100% 100%;
     margin: 10px;
+    opacity: 1;
 }
 
 #text-reflectat {
