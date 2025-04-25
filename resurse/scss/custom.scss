@@ -1,0 +1,25 @@
+@use '../../node_modules/bootstrap/scss/bootstrap.scss' with 
+(
+    $primary: #5C1E20,
+    $light: white,
+    $body-bg: #C9A0A0,
+    $body-secondary-bg: white,
+    $font-family-base: Arial,
+    $border-width: 2px,
+    $font-size-base: 1rem,
+    $h1-font-size: 2.6rem,
+    $h2-font-size: 2.2rem,
+    $h3-font-size: 1.8rem,
+    $h4-font-size: 1.6rem,
+    $h5-font-size: 1.3rem,
+    $h6-font-size: 1.1rem,
+    $nav-link-color: #421112,
+    $grid-breakpoints: (
+        xs: 0,
+        sm: 575px,
+        md: 750px,
+        lg: 1000px,
+        xl: 1200px,
+        xxl: 1400px
+    )
+)
