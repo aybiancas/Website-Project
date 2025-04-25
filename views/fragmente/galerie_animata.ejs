@@ -1,0 +1,5 @@
+<div id="galerie-anim">
+    <% for (let imag of locals.imaginianim) { %>
+            <img src="<%- imag.fisier  %>" alt="<%- imag.alt || imag.cale_imagine.replace(/\.\w+$/, '') || imag.titlu %>" title="<%- imag.descriere %>">
+    <% } %>
+</div>
