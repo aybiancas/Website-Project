@@ -27,6 +27,7 @@ nav {
   height: 20px;
   width: 20px;
 }
+
 #hamburger div {
   width: 100%;
   height: 15%;
@@ -40,12 +41,14 @@ ol.meniu {
   width: 100%;
   background-color: #A77272;
 }
+
 ol.meniu li {
   margin: 0;
   width: 100%;
   border: 1px solid #421112;
   background-color: #A77272;
 }
+
 ol.meniu > li {
   animation-name: spatiere-meniu;
   animation-timing-function: ease-in-out;
@@ -53,6 +56,7 @@ ol.meniu > li {
   animation-duration: 0.05s;
   animation-fill-mode: none;
 }
+
 ol.meniu > li:hover {
   position: relative;
   text-shadow: none;
@@ -68,3 +72,4 @@ ol.meniu > li:hover {
   position: relative;
   z-index: 1;
 }
+
