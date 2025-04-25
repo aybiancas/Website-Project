@@ -183,13 +183,26 @@ function afisareEroare(res, identificator, titlu, text, imagine){
 
 }
 
+function shuffleImagini(imagini) {
+    let obLocalImg = imagini.imagini
+    console.log(obLocalImg.length)
+    // fisher yates
+    for (let i = obLocalImg.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      [obLocalImg[i], obLocalImg[j]] = [obLocalImg[j], obLocalImg[i]];
+    }
+    return obLocalImg.slice(0, 7);
+  }
+
 
 app.get("/favicon.ico", function(req, res){
     res.sendFile(path.join(__dirname, "resurse/imagini/favicon/favicon.ico"))
 })
 
 app.get(["/","/index","/home"], function(req, res){
-    res.render("pagini/index", {ip: req.ip, imagini:obGlobal.obImagini.imagini});
+    let imaginiAnim = shuffleImagini(obGlobal.obImagini);
+    console.log(imaginiAnim)
+    res.render("pagini/index", {ip:req.ip, imagini:obGlobal.obImagini.imagini, imaginianim:imaginiAnim});
 })
 
 app.get("/desprenoi", function(req, res){
