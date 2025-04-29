@@ -686,11 +686,20 @@ video {
         text-align: center;
         line-height: 2cm;
 		content: "Bianca Sandu";
+        font-size: 1rem;
 	}
 
     #end{
 		page-break-before: always;
 	}
+
+    #grid-galerie {
+        display: none;
+    }
+
+    video {
+        display: none;
+    }
 
     @page {
 		size: A4 portrait;
