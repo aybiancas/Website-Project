@@ -718,7 +718,6 @@ FodyWeavers.xsd
 
 # Custom directories
 temp/
-temp1/
 
 ### VisualStudio Patch ###
 # Additional files built by Visual Studio
