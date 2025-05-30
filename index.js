@@ -5,24 +5,24 @@ const sharp = require("sharp");
 const sass = require("sass");
 const pg = require("pg");
 
-// const Client=pg.Client;
-// client=new Client({
-//     database:"proiecttw",
-//     user:"localadmin",
-//     password:"localuserpass",
-//     host:"localhost",
-//     port:5432
-// })
+const Client=pg.Client;
+client=new Client({
+    database:"",
+    user:"",
+    password:"",
+    host:"",
+    port:5432
+})
 
-// client.connect()
-// client.query("select * from prajituri", function(err, rezultat ){
-//     // console.log(err)    
-//     // console.log(rezultat)
-// })
-// client.query("select * from unnest(enum_range(null::categ_prajitura))", function(err, rezultat ){
-//     console.log(err)    
-//     console.log(rezultat)
-// })
+client.connect()
+client.query("select * from produse", function(err, rezultat ){
+    // console.log(err)    
+    // console.log(rezultat)
+})
+client.query("select * from unnest(enum_range(null::tipuri_prod))", function(err, rezultat ){
+    console.log(err)    
+    console.log("Tipuri de PRODUSE------------------:", rezultat)
+})
 
 app=express();
 
@@ -39,8 +39,24 @@ obGlobal = {
     obImagini:null,
     folderScss:path.join(__dirname, "resurse/scss"),
     folderCss:path.join(__dirname, "resurse/css"),
-    folderBackup:path.join(__dirname, "backup")
+    folderBackup:path.join(__dirname, "backup"),
+    optiuniMeniu:null
 }
+
+client.query("select * from unnest(enum_range(null::tipuri_prod))", function(err, rezultat ){
+    // console.log(err)    
+    console.log("Tipuri produse dar IN OBGLOBAT-------------------------:", rezultat)
+    obGlobal.optiuniMeniu=rezultat.rows
+    console.log("OPTIUNI MENIU-------------------", obGlobal.optiuniMeniu)
+
+})
+
+
+// client.query("select distinct extract(year from data_aparitie) as an_apar from produse order by an_apar desc", function(err, rezultat){
+//     console.log("------------------ANI::::----------------", rezultat)
+//     obGlobal.
+// })
+
 
 vect_foldere = ["temp", "backup", "temp1"]
 for (let folder of vect_foldere) {
@@ -80,7 +96,7 @@ function compileazaScss(caleScss, caleCss){
     if (fs.existsSync(caleCss)){
         fs.copyFileSync(caleCss, path.join(obGlobal.folderBackup, "resurse/css", numeFisCss))// +(new Date()).getTime()
     }
-    rez=sass.compile(caleScss, {"sourceMap":true}); // echivalent sass nume.scss nume.css
+    rez=sass.compile(caleScss,{"sourceMap":true}); // echivalent sass nume.scss nume.css
     fs.writeFileSync(caleCss,rez.css)
     // console.log("Compilare SCSS",rez);
 }
@@ -97,7 +113,7 @@ for( let numeFis of vFisiere ){
 // fs.watch = in cazul in care se modifica un fisier/folder etc nu mai e nevoie de restart la server
 fs.watch(obGlobal.folderScss, function(eveniment, numeFis){
     console.log(eveniment, numeFis);
-    if (eveniment=="change" || eveniment=="rename"){ // crearea unui fis e vazuta ca rename
+    if (eveniment=="change" || eveniment=="rename"){
         let caleCompleta=path.join(obGlobal.folderScss, numeFis);
         if (fs.existsSync(caleCompleta)){
             compileazaScss(caleCompleta);
@@ -120,10 +136,6 @@ function initErori() {
 }
 
 initErori()
-
-// INSTALARE BOOTSTRAP
-
-// VEZI EXEMPLU BOOTSTRAP1 REPLIT
 
 function initImagini(){
     var continut= fs.readFileSync(path.join(__dirname,"resurse/json/galerie.json")).toString("utf-8");
@@ -191,8 +203,28 @@ function shuffleImagini(imagini) {
       let j = Math.floor(Math.random() * (i + 1));
       [obLocalImg[i], obLocalImg[j]] = [obLocalImg[j], obLocalImg[i]];
     }
-    return obLocalImg.slice(0, 7);
+    let options=[7, 8, 9, 11]
+    let cnt = options[Math.floor(Math.random() * options.length)]
+    return obLocalImg.slice(0, cnt);
   }
+
+
+  // /(.*)/
+
+// app.use(/(/.*)/, function(req, res, next){
+//     res.locals.optiuniMeniu=obGlobal.optiuniMeniu
+//     next();
+// })
+
+// app.use("/*", function(req, res, next){
+//     res.locals.optiuniMeniu=obGlobal.optiuniMeniu
+//     next();
+// })
+
+app.use(function(req, res, next){
+    res.locals.optiuniMeniu=obGlobal.optiuniMeniu
+    next();
+})
 
 
 app.get("/favicon.ico", function(req, res){
@@ -209,28 +241,95 @@ app.get("/desprenoi", function(req, res){
     res.render("pagini/desprenoi");
 })
 
-// app.get("/produse", function(req, res){
-//     console.log(req.query)
-//     var conditieQuery=""; // TO DO where din parametri
+app.get("/produse", function(req, res){
+    console.log(req.query)
+    var conditieQuery="";
+
+    if(req.query.tip) {
+        conditieQuery = ` where tip_produs='${req.query.tip}'`
+    }
+
+    var queryAni = "select distinct extract(year from data_aparitie) as an_apar from produse order by an_apar desc"
+    var queryMin = "select min(pret) as pret_min from produse"
+    var queryMax = "select max(pret) as pret_max from produse"
+    var queryISBN = "select isbn from produse"
 
 
-//     queryOptiuni="select * from unnest(enum_range(null::categ_prajitura))"
-//     client.query(queryOptiuni, function(err, rezOptiuni){
-//         console.log(rezOptiuni)
+    queryOptiuni="select * from unnest(enum_range(null::tipuri_coperti))"
+    client.query(queryOptiuni, function(err, rezOptiuni){
+        // console.log(rezOptiuni)
 
+        client.query(queryAni, function(err, rezAni){
+            if (err) {
+                console.log(err);
+                afisareEroare(res, 2);
+                return;
+            }
 
-//         queryProduse="select * from prajituri"
-//         client.query(queryProduse, function(err, rez){
-//             if (err){
-//                 console.log(err);
-//                 afisareEroare(res, 2);
-//             }
-//             else{
-//                 res.render("pagini/produse", {produse: rez.rows, optiuni:rezOptiuni.rows})
-//             }
-//         })
-//     });
-// })
+            client.query(queryMin, function(err, rezMin){
+                if (err) {
+                    console.log(err);
+                    afisareEroare(res, 2);
+                    return;
+                }
+
+                client.query(queryMax, function(err, rezMax){
+                    if (err) {
+                        console.log(err);
+                        afisareEroare(res, 2);
+                        return;
+                    }
+
+                    client.query(queryISBN, function(err, rezISBN){
+                        if (err){
+                            console.log(err);
+                            afisareEroare(res, 2);
+                        }
+
+                        var queryProduse = "select * from produse" + conditieQuery;
+
+                        client.query(queryProduse, function(err, rez){
+                            if (err){
+                                console.log(err);
+                                afisareEroare(res, 2);
+                            }
+                            else{
+                                // console.log("-------------------Ani: ---------------------", rezAni.rows.map(r => r.an_apar));
+                                // console.log("0000000000000000000 ISBN", rezISBN.rows)
+                                res.render("pagini/produse", {
+                                    produse: rez.rows,
+                                    optiuni: rezOptiuni.rows,
+                                    ani: rezAni.rows.map(r => r.an_apar),
+                                    pret_min: rezMin.rows[0].pret_min,
+                                    pret_max: rezMax.rows[0].pret_max,
+                                    isbn: rezISBN.rows
+                                });
+                            }
+                        })
+                    });
+                });
+            });
+        });
+    });
+})
+
+app.get("/produs/:id", function(req, res){
+    console.log(req.params)
+    client.query(`select * from produse where id=${req.params.id}`, function(err, rez){
+        if (err){
+            console.log(err);
+            afisareEroare(res, 2);
+        }
+        else{
+            if (rez.rowCount==0){
+                afisareEroare(res, 404);
+            }
+            else{
+                res.render("pagini/produs", {prod: rez.rows[0]})
+            }
+        }
+    })
+})
 
 app.get(/^\/resurse\/[a-zA-Z0-9_\/]*$/, function(req, res, next){
     afisareEroare(res, 403);
