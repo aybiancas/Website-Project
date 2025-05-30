@@ -1,5 +1,40 @@
 <div id="galerie-anim">
+  <div id="container-anim">
     <% for (let imag of locals.imaginianim) { %>
-            <img src="<%- imag.fisier  %>" alt="<%- imag.alt || imag.cale_imagine.replace(/\.\w+$/, '') || imag.titlu %>" title="<%- imag.descriere %>">
+            <img src="<%- imag.fisier  %>" alt="<%- imag.alt || imag.cale_imagine.replace(/\.\w+$/, '') || imag.titlu %>" title="<%- imag.descriere %>" class="slides">
     <% } %>
+  </div>
 </div>
+<script>
+  window.onload = function() {
+      var idx = -1;
+      const slides = document.querySelectorAll("#galerie-anim .slides")
+      const container = document.getElementById('galerie-anim')
+      let timer
+
+      function showNext() {
+        if (idx >= 0) {
+          slides[idx].classList.remove('active');
+        }
+        slides.forEach(s => s.classList.remove('visible'));
+        idx = (idx + 1) % slides.length;
+        slides[idx].classList.add('active');
+        const nextBehind = (idx + 1) % slides.length;
+        slides[nextBehind].classList.add('visible');
+
+        timer = setTimeout(showNext, 2000);
+      }
+
+    container.addEventListener('mouseenter', () => {
+      clearTimeout(timer);
+      if (idx >= 0) slides[idx].style.animationPlayState = 'paused';
+    });
+
+    container.addEventListener('mouseleave', () => {
+      if (idx >= 0) slides[idx].style.animationPlayState = 'running';
+      timer = setTimeout(showNext, 2000);
+    });
+
+    showNext();
+}
+</script>
