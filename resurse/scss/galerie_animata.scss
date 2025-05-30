@@ -1,107 +1,71 @@
-$display: 5s;
-$exit: 1s;
-$count: 7;
-$total: $display + $exit;
-$cycle: $total * $count;
+.slides {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 500px;
+  transform-origin: left center;
+  z-index: 1;
+  opacity: 1;
+
+  &.active {
+    display: block;
+    animation: slideAnim 1.8s ease-in-out both;
+    z-index: 3;
+  }
+
+  &.visible {
+    display: block;
+    z-index: 2;
+    opacity: 0.5;
+    animation: opac 1.5s ease-in-out both;
+  }
+}
 
 #galerie-anim {
-    display: block;
-    position: relative;
-    width: 800px; 
-    height: 500px;
-    overflow: hidden;
-    border: 20px solid black;
-//   border-image: url('images/frame.png') 20 round;
+  border: 10px solid black;
+  width: 80%;
+  max-width: 500px;
+  height: 500px;
+  margin: 2rem auto;
+  overflow: hidden;
+  position: relative;
 
-  img {
-    position: absolute;
-    top: 0; 
-    left: 0;
-    width: 100%; 
-    height: 100%;
-    opacity: 0;
-    transform-origin: center left;
-    animation: animatie-drop $total infinite linear;
-    // animation-fill-mode: forwards;
-  }
-
-  @for $i from 1 through 7 {
-    img:nth-child(#{$i}) {
-      animation-delay: ($i - 1) * $total;
-    }
-  }
-
-//   $disp-pct: calc(($display / $total) * 100%);
-  @keyframes animatie-drop {
-    // 0% 
-    // {
-    //     transform: scaleY(1) rotate(0deg) translate(0, 0);
-    //     opacity: 1;
-    // }
-    // 50% {
-    //     transform: scaleY(0.2) rotate(-90deg) translate(0, 0);
-    //     opacity: 1;
-    // }
-    // 100% {
-    //     transform: scaleY(0.2) rotate(-90deg) translate(-150%, 150%);
-    //     opacity: 0;
-    // }
-    // 0%, #{$disp-pct} {
-    //     opacity: 1;
-    //     transform: scaleY(1) rotate(0deg) translate(0,0);
-    //   }
-    //   // flatten to 20% height
-    //   #{($disp-pct + 0.01%)}, #{100% - calc($exit / $cycle) * 100%} {
-    //     opacity: 1;
-    //     transform: scaleY(0.2) rotate(0deg) translate(0,0);
-    //   }
-    // //   // rotate down-left to -135°, then continue to -180° while translating
-    // //   #{($disp-pct + 10.1%)} {
-    // //     opacity: 1;
-    // //     transform: scaleY(0.2) rotate(-135deg) translate(0,0);
-    // //   }
-    //   100% {
-    //     opacity: 0;
-    //     transform: scaleY(0.2) rotate(-180deg) translate(-150%, 150%);
-    //   }
-    // 0%, #{calc($display / $total) * 100%} {
-    //     opacity: 1;
-    //     transform: scaleY(1) rotate(0deg) translate(0, 0);
-    //   }
-  
-    //   // 5s → 5.4s (≈83.333% → 90%): flatten to 20% height
-    //   #{calc($display / $total) * 100% + 0.01%}, 90% {
-    //     opacity: 1;
-    //     transform: scaleY(0.2) rotate(0deg) translate(0, 0);
-    //   }
-  
-    //   // 5.4s → 6s (90% → 100%): rotate −180° and fade out / translate away
-    //   100% {
-    //     opacity: 0;
-    //     transform: scaleY(0.2) rotate(-180deg) translate(-150%, 150%);
-    //   }
-
-    // 6s animatia => 42s totalul
-    // dupa animatie => 36s standby de opacity 0 si eventual un zindex mic
-    // dupa ~35s standby se face opacity 1 si zindex resetat
-    // IMPORTANT daca e opacity 1 initial se afiseaza ultima poza
-    // se seteaza opacity 1 
-    0% {
-
-    }
-    10% {
-
-    }
-    20% {
-
-    }
-  }
-
-  &:hover img {
+  &:hover .slides {
     animation-play-state: paused;
   }
+}
 
-  @media (max-width: 1000px) {
-    display: none;
+@keyframes slideAnim {
+  0% {
+    height: 500px;
+    top: 0;
+    opacity: 1;
+  }
+  10% {
+    transform: rotateZ(0);
+    opacity: 0.9;
+  }
+  30% {
+    height: 70px;
+    transform: rotateZ(0);
+    top: 50%;
+    opacity: 0.5;
+  }
+  100% {
+    height: 50px;
+    transform: rotateZ(180deg);
+    top: 50%;
+    opacity: 0;
+  }
+}
+
+@keyframes opac {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
   }
 }
