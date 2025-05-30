@@ -1,0 +1,63 @@
+main{
+    --padd-main:1rem;
+    --culoare-main: #5C1E20;
+    color: var(--culoare-text);
+    font-size: 15px;
+    padding-left:var(--padd-main);
+    padding-right:var(--padd-main);
+}
+
+h2{
+    padding:0.4rem;
+}
+#art-produs{
+    margin:0 auto;
+    width:80%;
+    /* max-width:800px; */
+    /* background-color: var(--cl-light-t); */
+    border: 3px solid var(--culoare-main);
+    border-radius: 2rem;    
+    /* box-shadow: 0px 0px 10px 5px grey; */
+    padding:0.4rem;
+    display: grid;
+    /* grid-template-areas: "imag-produs detalii-prod"
+                         "nume detalii-prod"
+                         "pret detalii-prod"
+                         "categorie detalii-prod"; */
+    grid-template-areas: "imag-produs detalii-prod"
+                         "container-prod detalii-prod";
+}
+
+#art-produs p{
+    margin:0;
+    padding:0.4rem;
+    font-weight:bold;
+    font-size:1.1rem;
+}
+
+#art-produs p span{
+    font-weight: normal;
+    
+}
+
+.imag-produs{
+    text-align: center;
+    max-width: 350px;
+    max-height: 500px;
+}
+.imag-produs img{
+    width:70%;
+    height:auto;
+    
+}
+
+.indisponibil {
+    color: rgb(100, 100, 100);
+}
+
+@media screen and (max-width: 700px){
+    #art-produs{
+        margin:0 auto;
+        width:95%;
+    }
+}
