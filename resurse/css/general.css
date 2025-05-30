@@ -66,8 +66,10 @@ html {
     padding-top: 10px;
     font-size: 10px;
     font-family: Oxanium;
+}
+
+body {
     --culoare-text: #050301;
-    background-color: #C9A0A0;
     --latime-harta: 400px;
     --inaltime-harta: 400px;
     --margine-pagina: 20px;
@@ -75,15 +77,32 @@ html {
     --culoare-main: #5C1E20;
     --culoare-semideschisa: #A77272;
     --culoare-deschisa: #C9A0A0;
-}
-
-body {
-    /*a. Spatiere in stanga si in dreapta paginii pentru continut*/
+    --culoare-inchisa: #421112;
+    background-color: var(--culoare-deschisa);
     margin-left: var(--margine-pagina);
     margin-right: var(--margine-pagina);
     line-height: 1.5;
     box-sizing: border-box;
     counter-reset: images;
+    color: var(--culoare-text);
+}
+
+body.dark {
+    --culoare-text: #cfcfcf;
+    --latime-harta: 400px;
+    --inaltime-harta: 400px;
+    --margine-pagina: 20px;
+    --padding-text: 10px;
+    --culoare-main: #A77272;
+    --culoare-semideschisa: #5C1E20;
+    --culoare-deschisa: #421112;
+    --culoare-inchisa: #C9A0A0;
+    margin-left: var(--margine-pagina);
+    margin-right: var(--margine-pagina);
+    line-height: 1.5;
+    box-sizing: border-box;
+    counter-reset: images;
+    color: var(--culoare-text);
 }
 
 main {
@@ -95,6 +114,7 @@ main {
 }
 
 h1, h2, h3  {
+    color: var(--culoare-text);
     font-weight: bold;
     font-size: 2rem;
     padding: var(--padding-text);
@@ -111,13 +131,13 @@ p, details, #cr {
     padding: var(--padding-text);
 }
 
-/* stilizare taburi iframe */
 .taburi-iframe > a {
     font-weight: bolder;
     width: 60px;
     height: 35px;
     display: block;
     margin-bottom: 5px;
+    background-color: var(--culoare-deschisa);
     color: var(--culoare-text);
     border: 2px solid var(--culoare-main);
     border-radius: 5px 25px 5px 0;
@@ -178,6 +198,7 @@ p, details, #cr {
 }
 
 #zona2 {
+    color: var(--culoare-text);
     padding: 0;
     display: block;
     background-color: var(--culoare-deschisa);
@@ -197,6 +218,7 @@ p, details, #cr {
 }
 
 #zona5 {
+    color: var(--culoare-text);
     grid-area: zona5;
 }
 
@@ -275,7 +297,7 @@ header {
 }
 
 #terms {
-    border:5px solid #421112;
+    border:5px solid var(--culoare-inchisa);
     width: 500px; 
     height: 600px;
 }
@@ -291,7 +313,7 @@ header {
     box-sizing: border-box;
     line-height: 3rem;
     text-align: center;
-    border: 3px solid #421112;
+    border: 3px solid var(--culoare-inchisa);
     transform: rotate(45deg);
     background: white;
     justify-content: center;
@@ -299,7 +321,7 @@ header {
 
 #link-top:hover {
     opacity: 1;
-    background: #421112 ;
+    background: var(--culoare-inchisa) ;
     transition: all 0.2s linear;
 }
 
@@ -307,7 +329,7 @@ header {
     height: 0;
     width: 0;
     display: inline-block;
-    border-bottom: 2rem solid #421112;
+    border-bottom: 2rem solid var(--culoare-inchisa);
     border-radius: 0 0 1.3rem 1.3rem;
     border-left: 1.1rem solid transparent;
     border-right: 1.1rem solid transparent;
@@ -350,7 +372,7 @@ figure figcaption {
 .tabel thead th, .tabel tbody td {
     padding: 30px;
     text-align: center;
-    /* border: 2px solid #421112; */
+    /* border: 2px solid var(--culoare-inchisa); */
     transition: all 0.3s ease-in-out;
 }
 
@@ -416,7 +438,7 @@ mn {
 }
 
 mo {
-    color: #421112;
+    color: var(--culoare-inchisa);
     font-style: italic;
     font-size: 1.4rem;
 }
@@ -432,7 +454,7 @@ figcaption {
 
 
 /*LINK CONTINUT PAGINE TO DO ANIMATIE GRANDIENT OVAL*/
-*:not(.meniu) a:not(.iframevid) {
+/* :not(.meniu) a:not(.iframevid) {
     display: inline-block;
     background-image: radial-gradient(ellipse, white 0%, white 40%, transparent 80%, transparent 100%);
     background-position: center;
@@ -441,9 +463,9 @@ figcaption {
     transition: background-size 0.8s ease-in-out;
 }
 
-*:not(.meniu) a:hover:not(.iframevid) {
+:not(.meniu) a:hover:not(.iframevid) {
     background-size: 100% 60%;
-}
+} */
 
 /* a:not(.iframevid):hover {
     background-image: radial-gradient(0% black, 40% black, 80% transparent, 100% transparent);
@@ -451,9 +473,13 @@ figcaption {
     background-size: 0;
     transition: background-image 0.5s ease-in-out;
   }
-  
+  */ 
+
+/* .meniu a {
+    background-image: none;
+}
 .meniu a:hover {
-background-image: none;
+    background-image: none;
 } */
 
 a[href^="http"]:not(.iframevid):visited {
@@ -582,6 +608,48 @@ video {
 	line-height: 1.5rem;
 	font-weight: bold;
 }
+
+#container-switch {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.data, .desc, .disp, .isbn {
+    display: none;
+}
+
+#range-slider {
+    display: flex;
+    align-items: top;
+    gap: 0.5rem;
+}
+
+.range-lim {
+    text-align: center;
+}
+
+#infoRange {
+    display: flex;
+    justify-content: center;
+}
+
+/* #switch-tema > label {
+    padding-left: 0.5rem;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    align-content: center;
+}
+
+#switch-tema > label::before {
+    content: "\f185";
+    font-family: FontAwesome;
+    position: absolute;
+} */
+
+
 
 @keyframes efect-apa {
     0% {
