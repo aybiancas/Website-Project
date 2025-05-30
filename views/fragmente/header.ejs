@@ -1,6 +1,16 @@
+<script src="/resurse/js/tema.js"></script>
 <header>
     <img id="logo" src="/resurse/imagini/logo.png" alt="logo">
     <h1 id="titlu">FansTOME</h1><br>
+    <div id="container-switch">
+        <i class="fa-solid fa-sun"></i>
+        <div class="form-check form-switch" id="switch-tema">
+            <input class="form-check-input" type="checkbox" id="schimba_tema" role="switch"></input>
+            <!-- <label class="form-check-label" for="schimba_tema">Tema</label> -->
+        </div>
+        <i class="fa-solid fa-moon"></i>
+    </div>
+    
     
 </header>
 <nav>
@@ -32,11 +42,11 @@
             <div class="img-icon" id="pag3-icon">
                 <span class="fa-solid fa-book"></span>
             </div>
-            <a class="linkintern" href="" id="pag3" class="txt-icon">Produse</a>
+            <a class="linkintern" href="/produse" id="pag3" class="txt-icon">Produse</a>
             <ul>
-                <li><a class="linkintern" href="">Carti</a></li>
-                <li><a class="linkintern" href="">Benzi desenate</a></li>
-                <li><a class="linkintern" href="">Manga</a></li>                        
+                <% for (let opt of locals.optiuniMeniu) { %>
+                        <li><a href="/produse?tip=<%= opt.unnest %>"><%= opt.unnest %></a></li>
+                <% }  %>                        
             </ul>
         </li>
     </ol>
