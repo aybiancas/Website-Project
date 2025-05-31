@@ -1,5 +1,11 @@
 window.onload= function(){
     document.getElementById("mesaj-prod").style.display = 'none'
+
+    let produse= document.getElementsByClassName("produs")
+    for(let prod of produse) {
+        prod.querySelector("#icon-ieftin").style.display = 'none'
+    }
+
     function caractereRom(str){
         return str
         .toLowerCase()
@@ -17,6 +23,16 @@ window.onload= function(){
             textareaDesc.classList.remove("is-invalid");
         }
     });
+
+    function counterProduseAfisate() {
+        let produse = document.getElementsByClassName("produs")
+        let counterProd = Array.from(produse).filter(prod => prod.style.display === 'block').length
+
+        const mesajProd = document.getElementById("count-produse")
+        if(mesajProd) {
+            mesajProd.textContent = `Produse afisate: ${counterProd}`
+        }
+    }
     
  
     function filtareOnChange() {
@@ -44,6 +60,8 @@ window.onload= function(){
         let inpISBN = document.getElementById("inp-datalist").value.trim()
 
         let produse= document.getElementsByClassName("produs")
+        let pretMin = 10000
+
         for (let prod of produse){
             prod.style.display="none";
             let nume=prod.getElementsByClassName("val-nume")[0].innerHTML.trim().toLowerCase()
@@ -68,18 +86,32 @@ window.onload= function(){
             let isbn = prod.getElementsByClassName("val-isbn")[0].innerHTML.trim()
             let cond8 = (inpISBN == isbn || inpISBN == "")
             if (cond1 && cond2 && cond3 && cond4 && cond5 && cond6 && cond7 && cond8){
-                prod.style.display="block";
+                prod.style.display="block"
+                if(pret < pretMin) {
+                    pretMin = pret
+                }
+            }
+        }
+
+        counterProduseAfisate()
+
+        for(let prod of produse) {
+            if(parseFloat(prod.getElementsByClassName("val-pret")[0].innerHTML.trim()) == pretMin) {
+                prod.querySelector("#icon-ieftin").style.display = 'block'
+                console.log("-------------------query selector------------------------------", prod.querySelector("#icon-ieftin"))
+            }
+            else {
+                prod.querySelector("#icon-ieftin").style.display = 'none'
             }
         }
 
         let mesajProduse = document.getElementById("mesaj-prod")
-        // console.log("----MESAJ P----", mesajProduse)
         let condVizibil = Array.from(produse).some(prod => getComputedStyle(prod).display !== 'none');
         if (mesajProduse) {
             mesajProduse.style.display = condVizibil ? 'none' : 'block';
         }
     }
-
+    filtareOnChange()
     document.getElementById("inp-nume").onchange = filtareOnChange
     document.getElementById("inp-pret").onchange = filtareOnChange
     document.getElementById("inp-categorie").onchange = filtareOnChange
