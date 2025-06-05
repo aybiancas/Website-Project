@@ -1,12 +1,8 @@
 $inaltime-meniu: 40px;
 $latime-buton: 100px;
 $culoare-fundal-nav: #C9A0A0;
-$culoare-fundal: #A77272;
-$culoare-bordura: #5C1E20;
-$culoare-hover: #5C1E20;
 $culoare-text: black;
 $culoare-text-hover: white;
-$culoare-bordura-header: #5C1E20;
 $culoare-transparenta: rgba(255, 255, 255, 0);
 
 @keyframes animatie-submeniu {
@@ -36,11 +32,6 @@ nav {
     padding-right: 15px;
     z-index: 100;
     width: 100%;
-    // border-left: 5px solid $culoare-bordura-header;
-    // border-right: 5px solid $culoare-bordura-header;
-    // border-bottom: 5px solid $culoare-bordura-header;
-    // border-radius: 0 0 30px 30px;
-    // box-shadow: 5px 5px $culoare-bordura-header;
 }
 
 ol.meniu {
@@ -51,12 +42,11 @@ ol.meniu {
     padding: 0;
 
     li {
-        background-color: $culoare-fundal;
+        background-color: var(--culoare-semideschisa);
         width: 35%;
         height: $inaltime-meniu;
-        border: 2px solid $culoare-bordura;
+        border: 2px solid var(--culoare-main);
         border-top: none;
-        // box-sizing: border-box;
         text-align: center;
         font-weight: bold;
         line-height: $inaltime-meniu;
@@ -64,7 +54,7 @@ ol.meniu {
         text-shadow: 0 -15px $culoare-transparenta;
 
         &:hover {
-            background-color: $culoare-hover;
+            background-color: var(--culoare-main);
             text-shadow: 0 0 2px white;
 
             > .txt-icon a,
@@ -83,7 +73,7 @@ ol.meniu {
             padding: 0;
             animation: animatie-submeniu 0.5s linear forwards;
             transform-origin: 50% 0;
-            background-color: $culoare-fundal;
+            background-color: var(--culoare-semideschisa);
             list-style-type: none;
             width: 100%;
         }
