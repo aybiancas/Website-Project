@@ -26,7 +26,102 @@
     $form-select-bg: white,
     $input-bg: white,
     $form-range-thumb-width: 1.5rem,
-    $form-range-track-bg: #ffeaea,
-    $form-range-thumb-bg: #421112,
+    // $form-range-track-bg: #ffeaea,
+    // $form-range-thumb-bg: #421112,
     $btn-font-size: 20px
-)
+);
+
+:root {
+  --bs-primary: #5C1E20;
+  --bs-body-bg: #C9A0A0;
+  --bs-body-color: #050301;
+  --bs-secondary: #A77272;
+  --bs-nav-link-color: #421112;
+}
+
+body.dark {
+  --bs-primary: #A77272;
+  --bs-body-bg: #421112;
+  --bs-body-color: #cfcfcf;
+  --bs-secondary: #5C1E20;
+  --bs-nav-link-color: #C9A0A0;
+}
+
+body.albastru {
+  --bs-primary: #0097E5;
+  --bs-body-bg: #97D0E4;
+  --bs-body-color: #C9DDE3;
+  --bs-secondary: #5FB7E5;
+  --bs-nav-link-color: #30648E;
+}
+
+.btn-outline-primary {
+    background-color: transparent;
+    border-color: var(--bs-primary);
+    color: var(--bs-primary);
+
+    // &:hover {
+    //     color: var(--bs-body-color);
+    //     background-color: var(--bs-primary); 
+    //     border-color: var(--bs-primary);
+    // }
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active,
+    .btn-check:checked + &,
+    .show > & {
+        color: var(--bs-body-bg) !important;
+        background-color: var(--bs-primary) !important;
+        border-color: var(--bs-primary) !important;
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+    accent-color: var(--bs-primary);
+    }
+}
+
+.btn-check:checked + 
+.btn-outline-primary,
+.btn-outline-primary:hover,
+.btn-outline-primary:active,
+.btn-outline-primary.active,
+.show > .btn-outline-primary {
+  color: var(--bs-body-color);
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+
+.nav-link {
+  color: var(--bs-nav-link-color);
+}
+
+
+
+.form-range {
+  &::-webkit-slider-thumb {
+    background-color: var(--bs-primary);
+  }
+
+  &::-moz-range-thumb {
+    background-color: var(--bs-primary);
+  }
+
+  &::-ms-thumb {
+    background-color: var(--bs-primary);
+  }
+}
+
+.form-select {
+//   background-color: var(--bs-body-bg);
+  color: var(--bs-nav-link-color);
+  border-color: var(--bs-primary);
+
+  &:focus {
+    border-color: var(--bs-primary);
+    box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb, 0, 0, 0)),
+                0 0 0 0.25rem rgba(0, 0, 0, 0.1);
+  }
+}
