@@ -75,7 +75,45 @@
                     </article>
                 
             </section>
-            <br>
+            <section>
+                
+                <p>Produse similare:</p>
+                <div class="grid-produse">
+                 <% if (locals.produse && locals.produse.length > 0) { %>
+                    <% for(let prod of locals.produse) { %>
+                        <article class="produs" >
+                        <!-- <i class="bi bi-stars" id="icon-ieftin">Ieftin!</i> -->
+                        <!-- <p class="categorie">Tip coperta: <span class="val-categorie"><%- prod.tip_coperta%></span></p> -->
+                        <figure>
+                            <a href="/produs/<%-prod.id %>" ><img src="/resurse/imagini/produse/<%- prod.imagine %>"  alt="[imagine <%- prod.nume %>]" class="img-prod"/></a>
+                        </figure>
+                        <h3 class="nume"><a href="/produs/<%-prod.id %>" ><span class="val-nume"><%- prod.nume%></span></a></h3>
+                        <p class="autor">Autor: <span class="val-autor"><%- prod.autor%></span></p>
+                        <!-- <p class="categorie">Tip coperta: <span class="val-categorie"><%- prod.tip_coperta%></span></p> -->
+                        <div class="info-prod">
+                            <!-- <p class="autor">Autor: <span class="val-autor"><%- prod.autor%></span></p> -->
+                            <p class="categorie">Tip coperta: <span class="val-categorie"><%- prod.tip_coperta%></span></p>
+                            <p class="isbn">ISBN: <span class="val-isbn"><%- prod.isbn%></span></p>
+                            <p class="pret">Pret: <span class="val-pret"><%- prod.pret%> RON</span></p>
+                            <p class="data">An aparitie: <span class="val-data"><%= new Date(prod.data_aparitie).getFullYear() %></span></p>
+                            <p class="desc">Descriere: <span class="val-desc"><%- prod.descriere%></span></p>
+                            <p class="disp">Disponibilitate: <span class="val-disp"><%= prod.disponibil ? 'disponibil' : 'indisponibil' %></span></p>
+                            <!-- <p class="latime">Latime: <span class="val-latime"><%- prod.latime%> cm</span></p>
+                            <p class="lungime">Lungime: <span class="val-lungime"><%- prod.lungime%> cm</span></p> -->
+                        </div>
+                        
+                        
+                        <label class="selecteaza-cos">
+                            Selectează:<br/>
+                            <input type="checkbox" class="select-cos" value="<%-prod.id %>" autocomplete="off">
+                        </label>
+                    </article>
+                    <% } %>
+                <% } else { %>
+                    <p>Nu exista produse similare</p>
+                <% } %>
+                </div>
+        </section><br>
         </main>
 
     <%- include("../fragmente/footer") %>
