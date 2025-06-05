@@ -98,7 +98,7 @@ window.onload= function(){
         for(let prod of produse) {
             if(parseFloat(prod.getElementsByClassName("val-pret")[0].innerHTML.trim()) == pretMin) {
                 prod.querySelector("#icon-ieftin").style.display = 'block'
-                console.log("-------------------query selector------------------------------", prod.querySelector("#icon-ieftin"))
+                // console.log("-------------------query selector------------------------------", prod.querySelector("#icon-ieftin"))
             }
             else {
                 prod.querySelector("#icon-ieftin").style.display = 'none'
@@ -144,6 +144,7 @@ window.onload= function(){
             selectMult.options[i].selected = true
         }
         document.getElementById("inp-datalist").value = ""
+        filtareOnChange()
         let produse= document.getElementsByClassName("produs")
         for (let prod of produse){
             prod.style.display = "block";
