@@ -2,7 +2,6 @@
 
 main{
     --padd-main:1rem;
-    --culoare-main: #5C1E20;
     color: var(--culoare-text);
     font-size: 15px;
     padding-left:var(--padd-main);
@@ -113,6 +112,10 @@ main{
 #container-butoane {
     /* text-align: center; */
     align-items: center;
+}
+
+#container-switch {
+    width: 100px;
 }
 
 @media screen and (max-width:1000px) {
