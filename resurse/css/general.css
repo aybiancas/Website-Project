@@ -105,6 +105,25 @@ body.dark {
     color: var(--culoare-text);
 }
 
+body.albastru {
+    --culoare-text: #363636;
+    --latime-harta: 400px;
+    --inaltime-harta: 400px;
+    --margine-pagina: 20px;
+    --padding-text: 10px;
+    --culoare-main: #0097E5;
+    --culoare-semideschisa: #5FB7E5;
+    --culoare-deschisa: #97D0E4;
+    --culoare-inchisa: #30648E;
+    background-color: var(--culoare-deschisa);
+    margin-left: var(--margine-pagina);
+    margin-right: var(--margine-pagina);
+    line-height: 1.5;
+    box-sizing: border-box;
+    counter-reset: images;
+    color: var(--culoare-text);
+}
+
 main {
     margin-top: 10px;
 }
