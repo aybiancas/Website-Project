@@ -19,7 +19,8 @@
         <div id="grid-butoane" class="row">
 
             <div class="col-3">
-                <label> Nume: <input type="text" id="inp-nume" class="form-control"></label><br><br> 
+                <label> Nume: <input type="text" id="inp-nume" class="form-control" placeholder="ex: <%= locals.produse[3].nume.split(' ')[0] %>"></label><br><br> 
+                <!-- DAU SPLIT DOAR PENTRU PRIMUL CUVANT DIN TITLU -->
                 <div class="btn-group" role="group" id="container-butoane"> Autor:<!-- trebuie sa aiba acelasi name ca sa formeze un grup -->
                     <p>
                         <input id="i_rad1" value="A-J" name="gr_rad" type="radio" class="btn-check">
@@ -70,8 +71,8 @@
             <div class="col-3">
                 <p>
                     <div class="form-floating">
-                        <textarea id="desc-caut" class="form-control py-5 " placeholder="Cautare"></textarea>
-                        <label for="desc-caut">Cauta dupa descriere</label>
+                        <textarea id="desc-caut" class="form-control py-5 " placeholder="cautare"></textarea>
+                        <label for="desc-caut">Cuvant de ex: <%= locals.produse[5].descriere.split(' ')[1] %></label>
                     </div>
                 </p>
                 <p>
