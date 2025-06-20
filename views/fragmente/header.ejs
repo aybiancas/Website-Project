@@ -1,25 +1,14 @@
-<!-- <script src="/resurse/js/tema.js"></script> -->
 <header>
     <img id="logo" src="/resurse/imagini/logo.png" alt="logo">
     <h1 id="titlu">FansTOME</h1><br>
-    <!-- <div id="container-switch">
-        <i class="fa-solid fa-sun"></i>
-        <div class="form-check form-switch" id="switch-tema">
-            <input class="form-check-input" type="checkbox" id="schimba_tema" role="switch"></input>
-        </div>
-        <i class="fa-solid fa-moon"></i>
-    </div> -->
-
     <div id="container-switch">
         <label for="tema-select">Tema:</label>
         <select id="tema-select" class="form-select">
-            <option value="">Main</option>
+            <option value="">Principala</option>
             <option value="dark">Dark</option>
             <option value="albastru">Albastra</option>
-    </select>
-</div>
-    
-    
+        </select>
+    </div>   
 </header>
 <nav>
     <label id="hamburger" for="ch-menu">
@@ -30,11 +19,12 @@
     <input id="ch-menu" type="checkbox">
     <ol class="meniu">
         <li>
-            <div class="img-icon" id="pag1-icon">
-                <span class="fas fa-regular fa-house"></span>
+            <div>
+                <a class="linkintern" href="/index" id="pag1">
+                    <span class="fas fa-regular fa-house img-icon"></span>
+                    <span class="txt-icon" id="pag1-text">Acasa</span>
+                </a>
             </div>
-            <div class="txt-icon" id="pag1-text"><a class="linkintern" href="/index" id="pag1">Acasa</a></div>
-            
         </li>
         <li>
             <div class="img-icon" id="pag2-icon">
