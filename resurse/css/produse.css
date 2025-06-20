@@ -1,26 +1,18 @@
-
-
 main{
-    --padd-main:1rem;
+    --padd-main: 1rem;
     color: var(--culoare-text);
     font-size: 15px;
-    padding-left:var(--padd-main);
-    padding-right:var(--padd-main);
+    padding-left: var(--padd-main);
+    padding-right: var(--padd-main);
 }
 
-/* .grid-butoane {
-    display:grid;
-    grid-template-columns: 3fr 2fr 2fr 2fr 1fr;
-    grid-gap: 7rem;
-} */
-
 #container-sortari {
-    /* display: flex; */
     text-align: center;
 }
 
 #icon-ieftin {
     align-self: center;
+    padding: 5px;
 }
 
 .grid-produse{
@@ -28,10 +20,11 @@ main{
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 7rem;
 }
+
 .grid-produse .produs{
     border: 3px solid var(--culoare-main);
+    background-color: var(--culoare-semideschisa);
     border-radius: 2rem;
-    /* box-shadow: 0px 0px 0.8rem 0.3rem grey; */
     overflow: hidden;
 }
 
@@ -43,11 +36,13 @@ main{
 }
 
 .grid-produse .produs h3 a{
-    color:black;
+    color: var(--culoare-text);
 }
+
 .grid-produse .produs h3 a:hover{
-    color:white;
+    color: var(--culoare-text-hover);
 }
+
 .grid-produse .produs figure{
     margin-top: 10px;
     text-align: center;
@@ -55,14 +50,12 @@ main{
     max-width: 500px;
 }
 .grid-produse .produs figure img{
-    /* border:1px solid grey */
     width: 100px;
     height:auto; 
     max-height: 150px;
 }
 .grid-produse .produs .info-prod{
     display:flex;
-    background-color: var(--cl-marcare);
 }
 .grid-produse .produs .info-prod p{
     width:30%;
@@ -71,46 +64,26 @@ main{
 }
 
 .grid-produse .produs p.categorie{
-
     text-align:center;
     font-weight:bold;
-}
-
-.info-produse{
-    background-color: var(--cl-marcare);
-    padding:0.2rem;
-    box-shadow: 0px 0px 0.5rem 0.15rem grey;
 }
 
 .produs{
     position: relative;
 }
-.selecteaza-cos{
-    display: inline-block;
-    background-color: var(--culoare-mov);
-    position:absolute;
-    bottom:0.5rem;
-    right:0.5rem;
-    border-radius: 0.5rem;
-    text-align: center;
-    padding:0.3rem;
-    border:1px solid transparent;
-}
 
-.selecteaza-cos:hover{
-    background-color: var(--cl-marcare);
-    
-    border:1px solid  var(--culoare-mov);
-}
-
-.selectat {
-    color: green;
-    background-color: yellow;
-    font-weight: bold;
+#grid-butoane {
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    grid-template-columns: 1fr 1fr 3fr 2fr;
+    gap: 2rem;
+    background-color: var(--culoare-semideschisa);
+    border: 2px solid var(--culoare-main);
+    border-radius: 20px;
+    padding: 20px;
 }
 
 #container-butoane {
-    /* text-align: center; */
     align-items: center;
 }
 
@@ -118,12 +91,86 @@ main{
     width: 100px;
 }
 
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-box {
+    background-color: var(--culoare-deschisa);
+    border: 3px solid var(--culoare-main);
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y:scroll;
+    position: relative;
+    z-index: 1001;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.carousel-inner.fixed {
+    width: 100%;
+    max-width: 350px;
+    min-height: 200px;
+    display: flex;
+}
+
+.imag-produs{
+    text-align: center;
+    max-width: 350px;
+    max-height: 500px;
+}
+
+.imag-produs img {
+    width:70%;
+    height:auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+#container-sortari {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 @media screen and (max-width:1000px) {
     main {
         font-size: 10px;
     }
 
-    .grid-butoane {
+    #grid-butoane {
         grid-template-columns: 1fr 1fr;
         grid-gap: 4rem;
     }
@@ -139,7 +186,7 @@ main{
         font-size: 7.5px;
     }
 
-    .grid-butoane {
+    #grid-butoane {
         grid-template-columns: 1fr;
         grid-gap: 3rem;
     }
