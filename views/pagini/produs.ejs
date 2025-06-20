@@ -1,121 +1,153 @@
 <!DOCTYPE html>
-<html  lang="ro">
-    <head>
-        <meta name="keywords" content="librarie, magazin, banda desenata, benzi desenate, carte, carti, manga, carte in engleza, carti in engleza">
-        <meta name="description" content="Librarie online pentru carti in engleza, benzi desenate si manga.">
-        <%- include("../fragmente/head") %>  
+<html lang="ro">
+
+<head>
+    <meta name="keywords"
+        content="librarie, magazin, banda desenata, benzi desenate, carte, carti, manga, carte in engleza, carti in engleza">
+    <meta name="description" content="Librarie online pentru carti in engleza, benzi desenate si manga.">
+    <%- include("../fragmente/head") %>
         <title>FansTOME</title>
         <link href="/resurse/css/produs.css" type="text/css" rel="stylesheet" />
-    </head>
-    <body>
-        <%- include("../fragmente/header") %>
+</head>
+
+<body>
+    <%- include("../fragmente/header") %>
         <br>
         <main>
             <section>
-                <!-- <h2>Pagină produs</h2> -->
-                    <article id="art-produs">
-                        <figure class="imag-produs">
-                            <img  src="/resurse/imagini/produse/<%- locals.prod.imagine %>" alt="[imagine <%- locals.prod.nume %>]" />
-                        </figure> 
-                        
-                        <div id="detalii-prod">
-                            <details>
-                                <summary><b>Autor</b></summary> 
-                                <span class="autor"><i><%- locals.prod.autor %></i> </span>
-                            </details>
-                            <details>
-                                <summary><b>ISBN</b></summary> 
-                                <span class="isbn"><i><%- locals.prod.isbn %></i> </span>
-                            </details>
-                            <details>
-                                <summary><b>Latime</b></summary>
-                                <span class="latime"><i><%- locals.prod.latime %> cm</i></span>
-                            </details>
-                            <details>
-                                <summary><b>Lungime</b></summary>
-                                <span class="lungime"><i><%- locals.prod.lungime %> cm</i></span>
-                            </details>
-                            <details>
-                                <summary><b>Tip coperta</b></summary>
-                                <span class="tip_coperta"><i><%- locals.prod.tip_coperta %></i></span>
-                            </details>
-                            <details>
-                                <summary><b>Data aparitie</b></summary>
-                                <!-- <span class="data"><i><%- locals.prod.data_aparitie %></i> </span> -->
-                                 <!--FORMATEAZA DATA!!!-->
-                                <time lang="ro" datetime="<%- locals.prod.data_aparitie %>">
-                                        <% var data = new Date(locals.prod.data_aparitie)
-                                            var optiuni = {weekday: 'long', month: 'long', day: 'numeric', year: 'numeric'}
-                                            var formatData = data.toLocaleDateString('ro', optiuni).split(', ')
-                                            // var dataAfis = formatData
-                                            var weekday = formatData[0]
-                                            var [day, month, year] = formatData[1].split(" ")
-                                            %> 
-                                            <i>
-                                                <%= `${day} ${month} ${year} (${weekday})` %>
-                                            </i>
-                                        
+                <article id="art-produs">
+                    <div id="galerie-carousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner fixed">
+                            <% for (let i=0; i < locals.prod.imagini.length; i++) { %>
+                                <div class="w-100 carousel-item<%= i === 0 ? ' active' : '' %>">
+                                    <figure class="imag-produs">
+                                        <img src="/resurse/imagini/produse/<%- locals.prod.imagine %>/<%- locals.prod.imagini[i] %>"
+                                            alt="[imagine <%- locals.prod.nume %>]" />
+                                    </figure>
+                                </div>
+                                <% } %>
+                        </div>
+                        <button class="carousel-control-prev" data-bs-target="#galerie-carousel" type="button"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" data-bs-target="#galerie-carousel" type="button"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+
+                    </div>
+
+                    <div id="detalii-prod">
+                        <details>
+                            <summary><b>Autor</b></summary>
+                            <span class="autor"><i><%- locals.prod.autor %></i> </span>
+                        </details>
+                        <details>
+                            <summary><b>ISBN</b></summary>
+                            <span class="isbn"><i><%- locals.prod.isbn %></i> </span>
+                        </details>
+                        <details>
+                            <summary><b>Latime</b></summary>
+                            <span class="latime"><i><%- locals.prod.latime %> cm</i></span>
+                        </details>
+                        <details>
+                            <summary><b>Lungime</b></summary>
+                            <span class="lungime"><i><%- locals.prod.lungime %> cm</i></span>
+                        </details>
+                        <details>
+                            <summary><b>Tip coperta</b></summary>
+                            <span class="tip_coperta"><i><%- locals.prod.tip_coperta %></i></span>
+                        </details>
+                        <details>
+                            <summary><b>Data aparitie</b></summary>
+                            <!-- <span class="data"><i><%- locals.prod.data_aparitie %></i> </span> -->
+                            <time lang="ro" datetime="<%- locals.prod.data_aparitie %>">
+                                <% var data=new Date(locals.prod.data_aparitie) 
+                                    var optiuni={weekday: 'long', month: 'long' , day: 'numeric' , year: 'numeric' } 
+                                    var formatData=data.toLocaleDateString('ro', optiuni).split(', ')
+                                    var weekday = formatData[0]
+                                    var [day, month, year] = formatData[1].split(" ")
+                                %> 
+                                <i>
+                                    <%= `${day} ${month} ${year} (${weekday})` %>
+                                </i>  
                                 </time>
                             </details>
                             <details>
                                 <summary><b>Disponibilitate</b></summary>
-                                <span class="<%= prod.disponibil ? 'disponibil' : 'indisponibil' %>">
-                                    <i><%= prod.disponibil ? 'disponibil' : 'indisponibil' %></i>
-                                </span>
-                            </details>
+                                <span class="<%= prod.disponibil ? ' disponibil' : 'indisponibil' %>">
+                                    <i>
+                                        <%= prod.disponibil ? 'disponibil' : 'indisponibil' %>
+                                    </i>
+                                    </span>
+                        </details>
 
-                            <p>Descriere: <span class="descriere"><%- locals.prod.descriere %> </span></p>
+                        <p>Descriere: <span class="descriere"><%- locals.prod.descriere %> </span></p>
 
-                        </div>
-                        <div id="container-prod">
-                            <h2><span class="nume"><%- locals.prod.nume %></span></h2>
-                            <p>Categorie produs: <span class="categorie"><%- locals.prod.tip_produs %> </span></p>
-                            <p>Pret: <span class="pret"><%- locals.prod.pret %> </span></p>
-                        </div>
-                    </article>
-                
+                    </div>
+                    <div id="container-prod">
+                        <h2><span class="nume"><%- locals.prod.nume %></span></h2>
+                        <p>Categorie produs: <span class="categorie"><%- locals.prod.tip_produs %> </span></p>
+                        <p>Pret: <span class="pret"><%- locals.prod.pret %> </span></p>
+                    </div>
+                </article>
+
             </section>
             <section>
-                
+
                 <p>Produse similare:</p>
                 <div class="grid-produse">
-                 <% if (locals.produse && locals.produse.length > 0) { %>
-                    <% for(let prod of locals.produse) { %>
-                        <article class="produs" >
-                        <!-- <i class="bi bi-stars" id="icon-ieftin">Ieftin!</i> -->
-                        <!-- <p class="categorie">Tip coperta: <span class="val-categorie"><%- prod.tip_coperta%></span></p> -->
-                        <figure>
-                            <a href="/produs/<%-prod.id %>" ><img src="/resurse/imagini/produse/<%- prod.imagine %>"  alt="[imagine <%- prod.nume %>]" class="img-prod"/></a>
-                        </figure>
-                        <h3 class="nume"><a href="/produs/<%-prod.id %>" ><span class="val-nume"><%- prod.nume%></span></a></h3>
-                        <p class="autor">Autor: <span class="val-autor"><%- prod.autor%></span></p>
-                        <!-- <p class="categorie">Tip coperta: <span class="val-categorie"><%- prod.tip_coperta%></span></p> -->
-                        <div class="info-prod">
-                            <!-- <p class="autor">Autor: <span class="val-autor"><%- prod.autor%></span></p> -->
-                            <p class="categorie">Tip coperta: <span class="val-categorie"><%- prod.tip_coperta%></span></p>
-                            <p class="isbn">ISBN: <span class="val-isbn"><%- prod.isbn%></span></p>
-                            <p class="pret">Pret: <span class="val-pret"><%- prod.pret%> RON</span></p>
-                            <p class="data">An aparitie: <span class="val-data"><%= new Date(prod.data_aparitie).getFullYear() %></span></p>
-                            <p class="desc">Descriere: <span class="val-desc"><%- prod.descriere%></span></p>
-                            <p class="disp">Disponibilitate: <span class="val-disp"><%= prod.disponibil ? 'disponibil' : 'indisponibil' %></span></p>
-                            <!-- <p class="latime">Latime: <span class="val-latime"><%- prod.latime%> cm</span></p>
+                    <% if (locals.produse && locals.produse.length> 0) { %>
+                        <% for(let prod of locals.produse) { %>
+                            <article class="produs">
+                                <!-- <i class="bi bi-stars" id="icon-ieftin">Ieftin!</i> -->
+                                <!-- <p class="categorie">Tip coperta: <span class="val-categorie"><%- prod.tip_coperta%></span></p> -->
+                                <% var image=null; for (let i=0; i <=prod.imagini.length; i++) {
+                                    if(prod.imagini[i].includes('x')) { 
+                                        image=prod.imagini[i] 
+                                        break; 
+                                        } } %>
+                                    <figure>
+
+                                        <a href="/produs/<%-prod.id %>"><img
+                                                src="/resurse/imagini/produse/<%- prod.imagine %>/<%- image %>"
+                                                alt="[imagine <%- prod.nume %>]" class="img-prod" /></a>
+                                    </figure>
+                                    <h3 class="nume"><a href="/produs/<%-prod.id %>"><span class="val-nume"><%-
+                                                    prod.nume%></span></a></h3>
+                                    <p class="autor">Autor: <span class="val-autor"><%- prod.autor%></span></p>
+                                    <!-- <p class="categorie">Tip coperta: <span class="val-categorie"><%- prod.tip_coperta%></span></p> -->
+                                    <div class="info-prod w-100">
+                                        <!-- <p class="autor">Autor: <span class="val-autor"><%- prod.autor%></span></p> -->
+                                        <p class="categorie">Tip coperta: <span class="val-categorie"><%-
+                                                    prod.tip_coperta%></span></p>
+                                        <p class="isbn">ISBN: <span class="val-isbn"><%- prod.isbn%></span></p>
+                                        <p class="pret">Pret: <span class="val-pret"><%- prod.pret%> RON</span></p>
+                                        <p class="data">An aparitie: <span class="val-data">
+                                                <%= new Date(prod.data_aparitie).getFullYear() %>
+                                            </span></p>
+                                        <p class="desc">Descriere: <span class="val-desc"><%- prod.descriere%></span>
+                                        </p>
+                                        <p class="disp">Disponibilitate: <span class="val-disp">
+                                                <%= prod.disponibil ? 'disponibil' : 'indisponibil' %>
+                                            </span></p>
+                                        <!-- <p class="latime">Latime: <span class="val-latime"><%- prod.latime%> cm</span></p>
                             <p class="lungime">Lungime: <span class="val-lungime"><%- prod.lungime%> cm</span></p> -->
-                        </div>
-                        
-                        
-                        <label class="selecteaza-cos">
-                            Selectează:<br/>
-                            <input type="checkbox" class="select-cos" value="<%-prod.id %>" autocomplete="off">
-                        </label>
-                    </article>
-                    <% } %>
-                <% } else { %>
-                    <p>Nu exista produse similare</p>
-                <% } %>
+                                    </div>
+
+                            </article>
+                            <% } %>
+                                <% } else { %>
+                                    <p>Nu exista produse similare</p>
+                                    <% } %>
                 </div>
-        </section><br>
+            </section><br>
         </main>
 
-    <%- include("../fragmente/footer") %>
-    </body>
+        <%- include("../fragmente/footer") %>
+</body>
+
 </html>
