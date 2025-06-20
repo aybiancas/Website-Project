@@ -1,8 +1,8 @@
 $inaltime-meniu: 40px;
 $latime-buton: 100px;
-$culoare-fundal-nav: #C9A0A0;
-$culoare-text: black;
-$culoare-text-hover: white;
+// $culoare-fundal-nav: #C9A0A0;
+// $culoare-text: black;
+// $culoare-text-hover: white;
 $culoare-transparenta: rgba(255, 255, 255, 0);
 
 @keyframes animatie-submeniu {
@@ -60,7 +60,7 @@ ol.meniu {
             > .txt-icon a,
             > div,
             > a {
-                color: $culoare-text-hover;
+                color: var(--culoare-text-hover);
             }
         }
 
@@ -85,7 +85,7 @@ ol.meniu {
     }
 
     a, div {
-        color: $culoare-text;
+        color: var(--culoare-text);
         text-decoration: none;
         transition: all 0.5s ease-in;
         display: inline-block;

@@ -8,14 +8,14 @@
 }
 nav {
   z-index: 1;
-  background-color: #A77272;
+  background-color: var(--culoare-semideschisa);
   padding-top: 5px;
   padding-bottom: 5px;
   font-size: 1.2rem;
   height: 20px;
-  border-left: 2px solid #5C1E20;
-  border-right: 2px solid #5C1E20;
-  border-bottom: 2px solid #5C1E20;
+  border-left: 2px solid var(--culoare-main);
+  border-right: 2px solid var(--culoare-main);
+  border-bottom: 2px solid var(--culoare-main);
   width: 93%;
   margin: 0 auto;
 }
@@ -38,13 +38,13 @@ ol.meniu {
   display: none;
   margin: 0;
   width: 100%;
-  background-color: #A77272;
+  background-color: var(--culoare-semideschisa);
 }
 ol.meniu li {
   margin: 0;
   width: 100%;
-  border: 1px solid #421112;
-  background-color: #A77272;
+  border: 1px solid var(--culoare-inchisa);
+  background-color: var(--culoare-semideschisa);
 }
 ol.meniu > li {
   animation-name: spatiere-meniu;

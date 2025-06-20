@@ -52,7 +52,7 @@ ol.meniu li:hover {
 ol.meniu li:hover > .txt-icon a,
 ol.meniu li:hover > div,
 ol.meniu li:hover > a {
-  color: white;
+  color: var(--culoare-text-hover);
 }
 ol.meniu li div.img-icon {
   display: inline-block;
@@ -71,7 +71,7 @@ ol.meniu li:hover ul {
   position: relative;
 }
 ol.meniu a, ol.meniu div {
-  color: black;
+  color: var(--culoare-text);
   text-decoration: none;
   transition: all 0.5s ease-in;
   display: inline-block;

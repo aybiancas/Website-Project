@@ -1,9 +1,5 @@
 $inaltime-meniu: 20px;
 $latime-buton: 80px;
-$culoare-fundal-nav: #C9A0A0;
-$culoare-fundal: #A77272;
-$culoare-bordura: #421112;
-$culoare-bordura-header: #5C1E20;
 
 @keyframes spatiere-meniu {
     0% {
@@ -16,14 +12,14 @@ $culoare-bordura-header: #5C1E20;
 
 nav {
     z-index: 1;
-    background-color: $culoare-fundal;
+    background-color: var(--culoare-semideschisa);
     padding-top: 5px;
     padding-bottom: 5px;
     font-size: 1.2rem;
     height: $inaltime-meniu;
-    border-left: 2px solid $culoare-bordura-header;
-    border-right: 2px solid $culoare-bordura-header;
-    border-bottom: 2px solid $culoare-bordura-header;
+    border-left: 2px solid var(--culoare-main);
+    border-right: 2px solid var(--culoare-main);
+    border-bottom: 2px solid var(--culoare-main);
     width: 93%;
     margin: 0 auto;
 }
@@ -48,13 +44,13 @@ ol.meniu {
     display: none;
     margin: 0;
     width: 100%;
-    background-color: $culoare-fundal;
+    background-color: var(--culoare-semideschisa);
 
     li {
         margin: 0;
         width: 100%;
-        border: 1px solid $culoare-bordura;
-        background-color: $culoare-fundal;
+        border: 1px solid var(--culoare-inchisa);
+        background-color: var(--culoare-semideschisa);
     }
 
     > li {
