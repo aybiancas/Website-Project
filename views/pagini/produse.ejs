@@ -1,78 +1,77 @@
 <!DOCTYPE html>
-<html  lang="ro">
-    <head>
-        <meta name="keywords" content="librarie, magazin, banda desenata, benzi desenate, carte, carti, manga, carte in engleza, carti in engleza">
-        <meta name="description" content="Librarie online pentru carti in engleza, benzi desenate si manga.">
-        <link rel="stylesheet" href="/resurse/css/produse.css" type="text/css" />
-        <%- include("../fragmente/head") %>  
-        <title>FansTOME</title>   
+<html lang="ro">
+
+<head>
+    <meta name="keywords"
+        content="librarie, magazin, banda desenata, benzi desenate, carte, carti, manga, carte in engleza, carti in engleza">
+    <meta name="description" content="Librarie online pentru carti in engleza, benzi desenate si manga.">
+    <link rel="stylesheet" href="/resurse/css/produse.css" type="text/css" />
+    <%- include("../fragmente/head") %>
+        <title>FansTOME</title>
         <script type="text/javascript" src=/resurse/js/produse.js></script>
         <script type="text/javascript" src=/resurse/js/produse-cos.js></script>
-    </head>
-    <body>
+        <script type="text/javascript" src="/resurse/js/modalbox.js"></script>
+</head>
+
+<body>
     <%- include("../fragmente/header") %>
-    <br>
-    <!-- <header class="c1" id="titlu" >
-        
-    </header> -->
-    <main>
-        <div id="grid-butoane" class="row">
-
-            <div class="col-3">
-                <label> Nume: <input type="text" id="inp-nume" class="form-control" placeholder="ex: <%= locals.produse[3].nume.split(' ')[0] %>"></label><br><br> 
-                <!-- DAU SPLIT DOAR PENTRU PRIMUL CUVANT DIN TITLU -->
-                <div class="btn-group" role="group" id="container-butoane"> Autor:<!-- trebuie sa aiba acelasi name ca sa formeze un grup -->
-                    <p>
-                        <input id="i_rad1" value="A-J" name="gr_rad" type="radio" class="btn-check">
-                        <label class="btn btn-outline-primary" for="i_rad1">A-J</label>
-                    </p>
-                    <p>
-                        <input id="i_rad2" value="K-S" name="gr_rad" type="radio" class="btn-check">
-                        <label class="btn btn-outline-primary" for="i_rad2">K-S</label>
-                    </p>
-                    <p>
-                        <input id="i_rad3" value="T-Z" name="gr_rad" type="radio" class="btn-check">
-                        <label class="btn btn-outline-primary" for="i_rad3">T-Z</label>
-                    </p>
-                    <p>
-                        <input id="i_rad4" checked name="gr_rad" value="toate" type="radio" class="btn-check">
-                        <label class="btn btn-outline-primary" for="i_rad4">Toti</label>
-                    </p>
-                </div><br><br>
-                <div id="range-slider">
-                    <span class="range-lim">(<%- locals.pret_min %>)</span>
-                    <label><input type="range" id="inp-pret" step="0.1" value="<%- locals.pret_min %>" min="<%- locals.pret_min %>"  max="<%- locals.pret_max %>" class="form-range"> 
-                        <span id="infoRange">(<%- locals.pret_min %>)</span>
-                    </label>
-                    <span class="range-lim">(<%- locals.pret_max %>)</span>
+        <br>
+        <main>
+            <div id="grid-butoane" class="row">
+                <div>
+                    <label> Nume: <input type="text" id="inp-nume" class="form-control"
+                            placeholder="ex: <%= locals.produse[0].nume.split(' ')[0] %>"></label><br><br>
+                    <div class="btn-group" role="group" id="container-butoane">
+                        Autor:<!-- trebuie sa aiba acelasi name ca sa formeze un grup -->
+                        <p>
+                            <input id="i_rad1" value="A-J" name="gr_rad" type="radio" class="btn-check">
+                            <label class="btn btn-outline-primary" for="i_rad1">A-J</label>
+                        </p>
+                        <p>
+                            <input id="i_rad2" value="K-S" name="gr_rad" type="radio" class="btn-check">
+                            <label class="btn btn-outline-primary" for="i_rad2">K-S</label>
+                        </p>
+                        <p>
+                            <input id="i_rad3" value="T-Z" name="gr_rad" type="radio" class="btn-check">
+                            <label class="btn btn-outline-primary" for="i_rad3">T-Z</label>
+                        </p>
+                        <p>
+                            <input id="i_rad4" checked name="gr_rad" value="toate" type="radio" class="btn-check">
+                            <label class="btn btn-outline-primary" for="i_rad4">Toti</label>
+                        </p>
+                    </div><br><br>
+                    <div id="range-slider">
+                        <span class="range-lim">(<%- locals.pret_min %>)</span>
+                        <label><input type="range" id="inp-pret" step="0.1" value="<%- locals.pret_min %>"
+                                min="<%- locals.pret_min %>" max="<%- locals.pret_max %>" class="form-range">
+                            <span id="infoRange">(<%- locals.pret_min %>)</span>
+                        </label>
+                        <span class="range-lim">(<%- locals.pret_max %>)</span>
+                    </div>
+                    <br><br>
                 </div>
-                
-                <br><br>
-            </div>
-
-            <div class="col-2">
-                <label>Select simplu:
-                    <select id="inp-categorie" class="form-select">
-                        <option id="sel-toate" selected value="toate">toate</option>
-                        <% for (let opt of locals.optiuni) { %>
-                            <option value="<%- opt.unnest %>"><%- opt.unnest %> </option>
-                        <% } %>
-                    </select>
-                </label><br><br>
-                <label>Select multiplu:
+                <div>
+                    <label>Select simplu:
+                        <select id="inp-categorie" class="form-select">
+                            <option id="sel-toate" selected value="toate">toate</option>
+                            <% for (let opt of locals.optiuni) { %>
+                                <option value="<%- opt.unnest %>"><%- opt.unnest %> </option>
+                                <% } %>
+                        </select>
+                    </label><br><br>
+                    <label>Select multiplu:
                         <select id="inp-an" class="form-select" multiple>
                             <% for (let an of locals.ani) { %>
-                                <option selected value="<%- an  %>"><%- an  %> </option>
-                            <% } %>
+                                <option selected value="<%- an  %>"><%- an %> </option>
+                                <% } %>
                         </select>
                     </label>
                 </div>
-
-            <div class="col-3">
-                <p>
+                <div>
+                    <p>
                     <div class="form-floating">
                         <textarea id="desc-caut" class="form-control py-5 " placeholder="cautare"></textarea>
-                        <label for="desc-caut">Cuvant de ex: <%= locals.produse[5].descriere.split(' ')[1] %></label>
+                        <label for="desc-caut">Cuvant de ex: <%= locals.produse[0].descriere.split(' ')[1] %></label>
                     </div>
                 </p>
                 <p>
@@ -92,21 +91,37 @@
                     </datalist>
                 </p>
             </div>
-
-            <div class="col-3" id="container-sortari">
-                <p class="btn-group-vertical">
-                    <button id="sortCrescNume" class="btn btn-outline-primary">
-                        <i class="bi bi-sort-alpha-down"></i>
-                        <span class="span-label">Sorteaza crescator dupa pret si nume</span>
-                    </button> <br>
-                    <button id="sortDescrescNume" class="btn btn-outline-primary">
-                        <i class="bi bi-sort-alpha-down-alt"></i>
-                        <span class="span-label">Sorteaza descrescator dupa pret si nume</span>
+            <div id="container-sortari">
+                <div class="w-25">
+                    <label for="cheie1">Cheie 1</label>
+                    <select id="cheie1" class="form-select">
+                        <option value="pret">pret</option>
+                        <option value="nume">nume</option>
+                        <option value="an">an</option>
+                    </select>
+                </div><br>
+                <div class="w-25">
+                    <label for="cheie2">Cheie 2</label><br>
+                    <select id="cheie2" class="form-select">
+                        <option value="pret">pret</option>
+                        <option value="nume">nume</option>
+                        <option value="an">an</option>
+                    </select>
+                </div><br>
+                <div class="w-25">
+                    <label for="ordine">ordine</label>
+                    <select id="ordine" class="form-select">
+                        <option value="-1">desc</option>
+                        <option value="1">asc</option>
+                    </select>
+                </div><br>
+                <div>
+                    <button id="sortare-btn" class="btn btn-outline-primary">
+                        <i class="bi bi-sort-alpha-down"></i> Sorteaza
                     </button>
-                </p>
+                </div>
             </div>
-            
-            <div class="col-1">
+            <div id="filtr-res">
                 <p class="btn-group-vertical">
                     <button id="filtrare" class="btn btn-block btn-default btn-outline-primary">
                         <i class="bi bi-funnel"></i>
@@ -119,7 +134,7 @@
                 </p>
             </div>
         </div>
-            <p id="p-suma">Apăsați Alt+"c" pentru suma preturilor produselor afișate. </p>
+            <p id="p-suma">Apasati Alt+"c" pentru suma preturilor produselor afisate. </p>
         
         <section id="produse">
             <h2>Produse</h2>
@@ -128,37 +143,144 @@
                 <% for( let prod of locals.produse) { %>
                     <article class="produs" >
                         <i class="bi bi-stars" id="icon-ieftin">Ieftin!</i>
-                        <!-- <p class="categorie">Tip coperta: <span class="val-categorie"><%- prod.tip_coperta%></span></p> -->
                         <figure>
-                            <a href="/produs/<%-prod.id %>" ><img src="/resurse/imagini/produse/<%- prod.imagine %>"  alt="[imagine <%- prod.nume %>]" class="img-prod"/></a>
-                        </figure>
-                        <h3 class="nume"><a href="/produs/<%-prod.id %>" ><span class="val-nume"><%- prod.nume%></span></a></h3>
-                        <p class="autor">Autor: <span class="val-autor"><%- prod.autor%></span></p>
-                        <!-- <p class="categorie">Tip coperta: <span class="val-categorie"><%- prod.tip_coperta%></span></p> -->
-                        <div class="info-prod">
-                            <!-- <p class="autor">Autor: <span class="val-autor"><%- prod.autor%></span></p> -->
-                            <p class="categorie">Tip coperta: <span class="val-categorie"><%- prod.tip_coperta%></span></p>
-                            <p class="isbn">ISBN: <span class="val-isbn"><%- prod.isbn%></span></p>
-                            <p class="pret">Pret: <span class="val-pret"><%- prod.pret%> RON</span></p>
-                            <p class="data">An aparitie: <span class="val-data"><%= new Date(prod.data_aparitie).getFullYear() %></span></p>
-                            <p class="desc">Descriere: <span class="val-desc"><%- prod.descriere%></span></p>
-                            <p class="disp">Disponibilitate: <span class="val-disp"><%= prod.disponibil ? 'disponibil' : 'indisponibil' %></span></p>
-                            <!-- <p class="latime">Latime: <span class="val-latime"><%- prod.latime%> cm</span></p>
+                            <% 
+                                var image = null;
+                                for (let i = 0; i <= prod.imagini.length; i++) {
+                                    if(prod.imagini[i].includes('x')) { 
+                                        image=prod.imagini[i] 
+                                        break; 
+                                        } } %>
+                                <a class="open-modal" data-prod-id="<%- prod.id %>">
+                                    <img src="/resurse/imagini/produse/<%- prod.imagine %>/<%- image %>"
+                                        alt="[imagine <%- prod.nume %>]" class="img-prod" />
+                                </a>
+                                </figure>
+                                <h3 class="nume"><a href="/produs/<%-prod.id %>"><span class="val-nume"><%-
+                                                prod.nume%></span></a></h3>
+                                <p class="autor">Autor: <span class="val-autor"><%- prod.autor%></span></p>
+                                <!-- <p class="categorie">Tip coperta: <span class="val-categorie"><%- prod.tip_coperta%></span></p> -->
+                                <div class="info-prod">
+                                    <!-- <p class="autor">Autor: <span class="val-autor"><%- prod.autor%></span></p> -->
+                                    <p class="categorie">Tip coperta: <span class="val-categorie"><%-
+                                                prod.tip_coperta%></span></p>
+                                    <p class="isbn">ISBN: <span class="val-isbn"><%- prod.isbn %></span></p>
+                                    <p class="pret">Pret: <span class="val-pret"><%- prod.pret %> RON</span></p>
+                                    <p class="data">An aparitie: <span class="val-data">
+                                            <%= new Date(prod.data_aparitie).getFullYear() %>
+                                        </span></p>
+                                    <p class="desc">Descriere: <span class="val-desc"><%- prod.descriere%></span></p>
+                                    <p class="disp">Disponibilitate: <span class="val-disp">
+                                            <%= prod.disponibil ? 'disponibil' : 'indisponibil' %>
+                                        </span></p>
+                                    <!-- <p class="latime">Latime: <span class="val-latime"><%- prod.latime%> cm</span></p>
                             <p class="lungime">Lungime: <span class="val-lungime"><%- prod.lungime%> cm</span></p> -->
-                        </div>
-                        
-                        
-                        <label class="selecteaza-cos">
-                            Selectează:<br/>
-                            <input type="checkbox" class="select-cos" value="<%-prod.id %>" autocomplete="off">
-                        </label>
-                    </article>
-                <% }%>
-            </div>
-            <p id="mesaj-prod">Nu exista produse conform filtrarii curente.</p>
-        </section>
-    </main>
-    <br>
-    <%- include("../fragmente/footer") %>
-    </body>
+                                </div>
+                                <div class="modal-container hidden" data-prod-id="<%- prod.id %>">
+                                    <div class="modal-overlay"></div>
+                                    <div class="modal-box">
+                                        <button class="modal-close">&times;</button>
+                                        <div class="modal-content">
+                                            <article id="art-produs">
+
+                                                <div id="galerie-carousel" class="carousel slide"
+                                                    data-bs-ride="carousel">
+                                                    <div class="carousel-inner fixed">
+                                                        <% for (let i=0; i < prod.imagini.length; i++) { %>
+                                                            <div class="carousel-item<%= i === 0 ? ' active' : '' %>">
+                                                                <figure class="imag-produs">
+
+                                                                    <img src="/resurse/imagini/produse/<%- prod.imagine %>/<%- prod.imagini[i] %>"
+                                                                        alt="[imagine <%- prod.nume %>]"
+                                                                        class="d-block" />
+
+                                                                </figure>
+                                                            </div>
+                                                            <% } %>
+                                                    </div>
+                                                    <button class="carousel-control-prev"
+                                                        data-bs-target="#galerie-carousel" type="button"
+                                                        data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon"
+                                                            aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next"
+                                                        data-bs-target="#galerie-carousel" type="button"
+                                                        data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon"
+                                                            aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+
+                                                <div id="container-prod">
+                                                    <h2><span class="nume"><%- prod.nume %></span></h2>
+                                                    <p>Categorie produs: <span class="categorie"><%- prod.tip_produs %>
+                                                        </span></p>
+                                                    <p>Pret: <span class="pret"><%- prod.pret %> </span></p>
+                                                </div>
+
+                                                <div id="detalii-prod">
+                                                    <details>
+                                                        <summary><b>Autor</b></summary>
+                                                        <span class="autor"><i><%- prod.autor %></i> </span>
+                                                    </details>
+                                                    <details>
+                                                        <summary><b>ISBN</b></summary>
+                                                        <span class="isbn"><i><%- prod.isbn %></i> </span>
+                                                    </details>
+                                                    <details>
+                                                        <summary><b>Latime</b></summary>
+                                                        <span class="latime"><i><%- prod.latime %> cm</i></span>
+                                                    </details>
+                                                    <details>
+                                                        <summary><b>Lungime</b></summary>
+                                                        <span class="lungime"><i><%- prod.lungime %> cm</i></span>
+                                                    </details>
+                                                    <details>
+                                                        <summary><b>Tip coperta</b></summary>
+                                                        <span class="tip_coperta"><i><%- prod.tip_coperta %></i></span>
+                                                    </details>
+                                                    <details>
+                                                        <summary><b>Data aparitie</b></summary>
+                                                        <time lang="ro" datetime="<%- prod.data_aparitie %>">
+                                                            <% var date=new Date(prod.data_aparitie) 
+                                                                var optiuni={weekday: 'long' , month: 'long', day: 'numeric', year: 'numeric' } 
+                                                                var formatData=date.toLocaleDateString('ro', optiuni).split(', ')
+                                                                var weekday = formatData[0]
+                                                                var [day, month, year] = formatData[1].split(" ")
+                                                            %> 
+                                                            <i>
+                                                                <%= `${day} ${month} ${year} (${weekday})` %>
+                                                            </i>
+                                                </time>
+                                            </details>
+                                            <details>
+                                                <summary><b>Disponibilitate</b></summary>
+                                                <span class="<%= prod.disponibil ? ' disponibil' : 'indisponibil' %>">
+                                                                <i>
+                                                                    <%= prod.disponibil ? 'disponibil' : 'indisponibil'
+                                                                        %>
+                                                                </i>
+                                                                </span>
+                                                    </details>
+                                                    <p>Descriere: <span class="descriere"><%- prod.descriere %> </span>
+                                                    </p>
+                                                </div>
+
+                                            </article>
+                                        </div>
+                                    </div>
+                                </div>
+                                </article>
+                                <% }%>
+                    </div>
+                    <p id="mesaj-prod">Nu exista produse conform filtrarii curente.</p>
+                    </section>
+        </main>
+        <br>
+        <%- include("../fragmente/footer") %>
+</body>
+
 </html>
