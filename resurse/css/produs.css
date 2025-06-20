@@ -12,17 +12,10 @@ h2{
 #art-produs{
     margin:0 auto;
     width:80%;
-    /* max-width:800px; */
-    /* background-color: var(--cl-light-t); */
     border: 3px solid var(--culoare-main);
-    border-radius: 2rem;    
-    /* box-shadow: 0px 0px 10px 5px grey; */
+    border-radius: 2rem;
     padding:0.4rem;
     display: grid;
-    /* grid-template-areas: "imag-produs detalii-prod"
-                         "nume detalii-prod"
-                         "pret detalii-prod"
-                         "categorie detalii-prod"; */
     grid-template-areas: "imag-produs detalii-prod"
                          "container-prod detalii-prod";
 }
@@ -47,7 +40,14 @@ h2{
 .imag-produs img{
     width:70%;
     height:auto;
-    
+    object-fit: contain;
+}
+.carousel-inner.fixed {
+    width: 100%;
+    max-width: 350px;
+    min-height: 356px;
+    display: flex;
+    align-items: center;
 }
 
 .indisponibil {
@@ -62,7 +62,6 @@ h2{
 .grid-produse .produs{
     border: 3px solid var(--culoare-main);
     border-radius: 2rem;
-    /* box-shadow: 0px 0px 0.8rem 0.3rem grey; */
     overflow: hidden;
 }
 
@@ -74,10 +73,10 @@ h2{
 }
 
 .grid-produse .produs h3 a{
-    color:black;
+    color:var(--culoare-text);
 }
 .grid-produse .produs h3 a:hover{
-    color:white;
+    color:var(--culoare-text-hover);
 }
 .grid-produse .produs figure{
     margin-top: 10px;
@@ -86,15 +85,11 @@ h2{
     max-width: 500px;
 }
 .grid-produse .produs figure img{
-    /* border:1px solid grey */
     width: 100px;
     height:auto; 
     max-height: 150px;
 }
-.grid-produse .produs .info-prod{
-    display:flex;
-    background-color: var(--cl-marcare);
-}
+
 .grid-produse .produs .info-prod p{
     width:30%;
     text-align:center;
@@ -107,36 +102,37 @@ h2{
     font-weight:bold;
 }
 
-.info-produse{
-    background-color: var(--cl-marcare);
-    padding:0.2rem;
-    box-shadow: 0px 0px 0.5rem 0.15rem grey;
-}
-
 .produs{
     position: relative;
 }
-.selecteaza-cos{
-    display: inline-block;
-    background-color: var(--culoare-mov);
-    position:absolute;
-    bottom:0.5rem;
-    right:0.5rem;
-    border-radius: 0.5rem;
-    text-align: center;
-    padding:0.3rem;
-    border:1px solid transparent;
-}
 
-.selecteaza-cos:hover{
-    background-color: var(--cl-marcare);
-    
-    border:1px solid  var(--culoare-mov);
-}
-
-@media screen and (max-width: 700px){
+@media screen and (max-width: 1000px) {
     #art-produs{
         margin:0 auto;
         width:95%;
+        grid-template-areas: "imag-produs"
+                             "detalii-prod"
+                             "container-prod";
+    }
+
+    .grid-produse {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 4rem;
     }
 }
+
+@media screen and (max-width: 500px){
+    #art-produs{
+        margin:0 auto;
+        width:95%;
+        grid-template-areas: "imag-produs"
+                             "detalii-prod"
+                             "container-prod";
+    }
+
+    .grid-produse {
+    grid-template-columns: 1fr;
+    grid-gap: 3rem;
+    }
+}
+
