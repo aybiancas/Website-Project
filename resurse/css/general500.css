@@ -194,7 +194,7 @@ footer {
 }
 
 #terms {
-    border:5px solid #421112;
+    /* border:5px solid #421112; */
     width: 90%; 
     max-height: 400px;
 }
@@ -203,7 +203,7 @@ footer {
     width: 90%; 
     height: 90%;
     max-height: 500px;
-    border: 5px solid #421112;
+    /* border: 5px solid #421112; */
 }
 
 #link-top {
@@ -216,7 +216,7 @@ footer {
     box-sizing: border-box;
     line-height: 3rem;
     text-align: center;
-    border: 3px solid #421112;
+    /* border: 3px solid #421112; */
     transform: rotate(45deg);
     background: white;
     justify-content: center;
@@ -230,7 +230,7 @@ footer {
     height: 0;
     width: 0;
     display: inline-block;
-    border-bottom: 2rem solid #421112;
+    /* border-bottom: 2rem solid #421112; */
     border-radius: 0 0 1.3rem 1.3rem;
     border-left: 1.1rem solid transparent;
     border-right: 1.1rem solid transparent;
@@ -265,44 +265,12 @@ figure img {
 }
 
 .tabel thead th, .tabel tbody td {
-    padding: 30px;
     font-size: 1.5rem;
-    border: 2px solid #421112;
-    transition: all 0.3s ease-in-out;
-}
-
-.tabel thead tr {
-    background-color: #A77272;
-}
-
-.tabel tbody td:nth-child(1), .tabel tbody td:nth-child(3) {
-    background-color: #A77272;
-}
-
-.tabel thead tr:nth-child(1), .tabel thead tr:nth-child(3) {
-    background-color: #8A5151;
-}
-
-.tabel tbody td:hover {
-    background-color: white;
-}
-
-.tabel tbody tr:hover td:not(:hover) {
-    background-color: #F6CCCC;
 }
 
 /* CAPTION SUB TABEL */
 .tabel caption {
-    border: none;
-    caption-side: bottom;
-    text-align: center;
     margin-top: 5px;
-}
-
-.tabel tfoot td, .tabel tfoot > tr {
-    text-align: justify;
-    padding: 10px;
-    border: none;
 }
 
 #grid-galerie {
